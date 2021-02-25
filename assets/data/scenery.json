@@ -1,0 +1,36 @@
+{
+	"bedroom": {
+		"background": "roomKid",
+		"items":[
+			{"key": "roomCabinet", "x": 320, "y": 300},
+			{"key": "roomDesk", "x": 80, "y": 330},
+			{"key": "schoolbag", "x": 280, "y": 350}
+		],
+		"mommyWarns": ["too many candies hidden in your desk?"],
+		"events":{
+
+		}
+	},
+	"kitchen":{
+		"background": "roomKitchen",
+		"items":[
+			{"key": "kitchenCabinet", "x": 50, "y": 150},
+			{"key": "kitchenFridge", "x": 290, "y": 320}
+		],
+		"mommyWarns": ["be careful with knives there!!"],
+		"events":{
+			
+		}
+	},
+	"market":{
+		"background": "marketplace",
+		"items":[
+			{"key": "marketCandies", "x": 50, "y": 150},
+			{"key": "marketFruits", "x": 290, "y": 320}
+		],
+		"mommyWarns": ["hey check there for some fruits", "keep in mind, it's winter"],
+		"events":{
+			
+		}
+	}
+}

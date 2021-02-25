@@ -1,0 +1,6 @@
+{
+	"numberOfMeals": 3,
+	"nextMealTime": [15,80],
+	"mealNames": ["breakfast", "lunch", "afternoonSnack"],
+	"hashTag": "#cardioPrepare"
+}

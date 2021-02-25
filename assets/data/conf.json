@@ -177,8 +177,9 @@
 
 		}
 	},
-	"dayMeals":[
-		{
+	"dayMeals":{
+
+		"breakfast": {
 			"title": "Breakfast meal",
 			"momIntro":[
 				"hey Sammy, time for breakfast",
@@ -306,7 +307,7 @@
 			],
 			"next-scene": 1
 		},
-		{
+		"lunch":{
 			"title": "Lunch meal",
 			"momIntro":[
 				"let's prepare choose some meals",
@@ -318,7 +319,7 @@
 				"moreFiber": "Use fiber-rich ingredients",
 				"moreCarbs": "whole wheat bread"
 			},
-			"mealOptions": [
+			"badMealOptions": [
 				{
 					"name": "cottage",
 					"spritesheet": "buttons-breakfast",
@@ -374,13 +375,13 @@
 			],
 			"resolve":[
 				{"name":"cottage+bread", "momSays": "it’s okay overall. Keep in mind to take some fruit for snacking with you!", "scenery": "checkOven"},
-				{"name":"orange+banana", "momSays":"You'll probably get hungry soon! Prepase some tost for snack, check the kitchen self","scenery": "checkOven"},
-				{"name":"banana+bread", "momSays":"You'll probably get hungry soon! Prepase some tost for snack", "scenery": "checkOven"},
-				{"name":"orange+bread", "momSays":"You'll probably get hungry soon! Prepase some tost for snack", "scenery": "checkOven"}
+				{"name":"orange+banana", "momSays":"You'll probably get hungry soon! Prepase some toast for snack, check the kitchen self","scenery": "checkOven"},
+				{"name":"banana+bread", "momSays":"You'll probably get hungry soon! Prepase some toast for snack", "scenery": "checkOven"},
+				{"name":"orange+bread", "momSays":"You'll probably get hungry soon! Prepase some toast for snack", "scenery": "checkOven"}
 			],
 			"next-scene": 1
 		}
-	],
+	},
 
 	"mainMenu": {
 		"title": "Healthy-Habits\nTamagotchi",
