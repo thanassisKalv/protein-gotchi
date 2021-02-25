@@ -34,9 +34,9 @@
 	"character": {
 		"spriteName": "bodyHero",
 		"initialStats": {
-            "health": 50,
-            "fun": 50,
-            "nutrition": 50
+            "health": 60,
+            "fun": 60,
+            "nutrition": 60
 		},
 		"frame": {
 			"head": 0,
@@ -122,17 +122,17 @@
 		"info": {
 			"collection": [
 				{
-						"name": "fruit",
-						"spritesheet": "buttons",
-						"order": 1,
-						"offsetY": -45,
-						"frame": 0,
-						"type": 0,
-						"customParams": {
-							"health": 2,
-							"fun": -4,
-							"nutrition": 5
-						}
+					"name": "fruit",
+					"spritesheet": "buttons",
+					"order": 1,
+					"offsetY": -45,
+					"frame": 0,
+					"type": 0,
+					"customParams": {
+						"health": 2,
+						"fun": -4,
+						"nutrition": 5
+					}
 				},
 				{
 					"name": "medicine",
@@ -177,11 +177,216 @@
 
 		}
 	},
+	"dayMeals":[
+		{
+			"title": "Breakfast meal",
+			"momIntro":[
+				"hey Sammy, time for breakfast",
+				"you need energy and proteins"
+			],
+			"mealTips": [
+				"Include a source of lean protein",
+				"Add healthy fats",
+				"Use fiber-rich ingredients"
+			],
+			"mealParts": 2,
+			"badMealOptions": [
+				{
+					"name": "cake",
+					"spritesheet": "buttons-breakfast-bad",
+					"order": 1,
+					"offsetY": -45,
+					"frame": 0,
+					"type": 0,
+					"customParams": {
+						"health": 3,
+						"fun": 3,
+						"nutrition": 3
+					}
+				},
+				{
+					"name": "orange juice",
+					"spritesheet": "buttons-breakfast-bad",
+					"order": 2,
+					"offsetY": -45,
+					"frame": 1,
+					"type": 1,
+					"customParams": {
+						"health": 3,
+						"fun": 3,
+						"nutrition": 3
+					}
+				},
+				{
+					"name": "sandwich",
+					"spritesheet": "buttons-breakfast-bad",
+					"order": 3,
+					"offsetY": -45,
+					"frame": 2,
+					"type": 2,
+					"customParams": {
+						"health": 3,
+						"fun": 3,
+						"nutrition": 3
+					}
+				},
+				{
+					"name": "mayo",
+					"spritesheet": "buttons-breakfast-bad",
+					"order": 4,
+					"offsetY": -45,
+					"frame": 3,
+					"type": 3,
+					"customParams": {
+						"health": 1,
+						"fun": 1,
+						"nutrition": 1
+					}
+				}
+			],
+			"mealOptions": [
+				{
+					"name": "cottage",
+					"spritesheet": "buttons-breakfast",
+					"order": 1,
+					"offsetY": -45,
+					"frame": 0,
+					"type": 0,
+					"customParams": {
+						"health": 3,
+						"fun": 3,
+						"nutrition": 3
+					}
+				},
+				{
+					"name": "orange",
+					"spritesheet": "buttons-breakfast",
+					"order": 2,
+					"offsetY": -45,
+					"frame": 1,
+					"type": 1,
+					"customParams": {
+						"health": 3,
+						"fun": 3,
+						"nutrition": 3
+					}
+				},
+				{
+					"name": "bread",
+					"spritesheet": "buttons-breakfast",
+					"order": 3,
+					"offsetY": -45,
+					"frame": 2,
+					"type": 2,
+					"customParams": {
+						"health": 3,
+						"fun": 3,
+						"nutrition": 3
+					}
+				},
+				{
+					"name": "banana",
+					"spritesheet": "buttons-breakfast",
+					"order": 4,
+					"offsetY": -45,
+					"frame": 3,
+					"type": 3,
+					"customParams": {
+						"health": 1,
+						"fun": 1,
+						"nutrition": 1
+					}
+				}
+			],
+			"resolve":[
+				{"name":"cottage+bread", "momSays": "it’s okay overall. Keep in mind to take some fruit for snacking with you!", "scenery": "checkOven"},
+				{"name":"orange+banana", "momSays":"You'll probably get hungry soon! Prepase some tost for snack, check the kitchen self","scenery": "checkOven"},
+				{"name":"banana+bread", "momSays":"You'll probably get hungry soon! Prepase some tost for snack", "scenery": "checkOven"},
+				{"name":"orange+bread", "momSays":"You'll probably get hungry soon! Prepase some tost for snack", "scenery": "checkOven"}
+			],
+			"next-scene": 1
+		},
+		{
+			"title": "Lunch meal",
+			"momIntro":[
+				"let's prepare choose some meals",
+				"you need energy and proteins"
+			],
+			"mealTips": {
+				"moreProtein": "Include a source of lean protein",
+				"moreFats": "Add healthy fats",
+				"moreFiber": "Use fiber-rich ingredients",
+				"moreCarbs": "whole wheat bread"
+			},
+			"mealOptions": [
+				{
+					"name": "cottage",
+					"spritesheet": "buttons-breakfast",
+					"order": 1,
+					"offsetY": -45,
+					"frame": 0,
+					"type": 0,
+					"customParams": {
+						"health": 3,
+						"fun": 3,
+						"nutrition": 3
+					}
+				},
+				{
+					"name": "orange",
+					"spritesheet": "buttons-breakfast",
+					"order": 2,
+					"offsetY": -45,
+					"frame": 1,
+					"type": 1,
+					"customParams": {
+						"health": 3,
+						"fun": 3,
+						"nutrition": 3
+					}
+				},
+				{
+					"name": "bread",
+					"spritesheet": "buttons-breakfast",
+					"order": 3,
+					"offsetY": -45,
+					"frame": 2,
+					"type": 2,
+					"customParams": {
+						"health": 3,
+						"fun": 3,
+						"nutrition": 3
+					}
+				},
+				{
+					"name": "banana",
+					"spritesheet": "buttons-breakfast",
+					"order": 4,
+					"offsetY": -45,
+					"frame": 3,
+					"type": 3,
+					"customParams": {
+						"health": 1,
+						"fun": 1,
+						"nutrition": 1
+					}
+				}
+			],
+			"resolve":[
+				{"name":"cottage+bread", "momSays": "it’s okay overall. Keep in mind to take some fruit for snacking with you!", "scenery": "checkOven"},
+				{"name":"orange+banana", "momSays":"You'll probably get hungry soon! Prepase some tost for snack, check the kitchen self","scenery": "checkOven"},
+				{"name":"banana+bread", "momSays":"You'll probably get hungry soon! Prepase some tost for snack", "scenery": "checkOven"},
+				{"name":"orange+bread", "momSays":"You'll probably get hungry soon! Prepase some tost for snack", "scenery": "checkOven"}
+			],
+			"next-scene": 1
+		}
+	],
+
 	"mainMenu": {
-		"title": "virtualJCare",
+		"title": "Healthy-Habits\nTamagotchi",
 		"levelFarSpeed": 2,
 		"levelMidSpeed": 8,
-		"levelCloseSpeed": 4000,
+		"levelCloseSpeed": 2000,
 		"helpmeSpeed": 16000
 	},
 	"text": {
@@ -201,9 +406,9 @@
 			"itsA": "It's a",
 			"takingCareDuring": "I've taken care of J during",
 			"playAt": "Play at",
-			"helpMessage": "Hi! This is J, can you help me?"
+			"helpMessage": "Hey help me this day with my meal choices!"
 		}
 	},
-	"url": "http://www.jvrpath.com/virtualjcare",
-	"hashTag": "#virtualJCareGame"
+	"url": "https://test-pwa-phaser.herokuapp.com/",
+	"hashTag": "#virtualGoodHabits"
 }

@@ -1,3 +1,4 @@
+
 /**
  * @author       @jvalen <javiervalenciaromero@gmail.com>
  * @copyright    2015 Javier Valencia Romero
@@ -39,6 +40,23 @@ export function disableMoveChildren(parentSprite) {
 export function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+
+/**
+ * Custom tweening of color-tint
+ * @param {Phaser.game} game
+ * @param {Phaser.Sprite} spriteToTween
+ */
+export function tweenTint(game, spriteToTween, startColor, endColor, duration) {
+  var colorBlend = {step: 0};
+
+  game.add.tween(colorBlend).to({step: 100}, duration, Phaser.Easing.Default, false).loop(true).yoyo(true, 600)
+      .onUpdateCallback(() => {
+          spriteToTween.tint = Phaser.Color.interpolateColor(startColor, endColor, 100, colorBlend.step, 1);
+          spriteToTween.colorTween = true;
+      })
+      .start()
+};
 
 /**
  * Private handler to save Item in LocalStorage
@@ -95,3 +113,5 @@ export function shuffle(array) {
 
   return array;
 }
+
+

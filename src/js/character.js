@@ -245,28 +245,16 @@ Character.prototype.updateClothing = function (bodyPartName, clothingType) {
         clothingType
       ];
 
-      updateAnimationFrames(
-        bodyPartName,
-        firstBodyFrameCurrentType,
-        this._animationsInfo[bodyPartName].animations
-      );
+      updateAnimationFrames( bodyPartName, firstBodyFrameCurrentType, this._animationsInfo[bodyPartName].animations );
 
-      this.frame =
-        firstBodyFrameCurrentType +
-        this._animationsInfo.body.animations.walk.frameSecuence.length;
+      this.frame = firstBodyFrameCurrentType + this._animationsInfo.body.animations.walk.frameSecuence.length;
       break;
     case "head":
       this.clothingType.head.type = clothingType;
       this.clothingType.head.name = this.nameRelation.head[clothingType];
-      firstHeadFrameCurrentType = this.firstHeadSpritePositionArray[
-        clothingType
-      ];
+      firstHeadFrameCurrentType = this.firstHeadSpritePositionArray[ clothingType ];
 
-      updateAnimationFrames(
-        bodyPartName,
-        firstHeadFrameCurrentType,
-        this._animationsInfo[bodyPartName].animations
-      );
+      updateAnimationFrames( bodyPartName, firstHeadFrameCurrentType, this._animationsInfo[bodyPartName].animations );
 
       this.head.frame = firstHeadFrameCurrentType;
       break;
@@ -284,9 +272,7 @@ Character.prototype.restartAnimation = function (name) {
 
   switch (name) {
     case "walk":
-      this.frame =
-        firstBodyFrameCurrentType +
-        this._animationsInfo.body.animations.walk.frameSecuence.length;
+      this.frame = firstBodyFrameCurrentType + this._animationsInfo.body.animations.walk.frameSecuence.length;
       break;
   }
 };

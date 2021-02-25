@@ -1,7 +1,7 @@
 {
     "name": "virtualJCare",
-    "description": "HTML5 mobile game made with Phaser",
-    "author": "Javier Valencia Romero",
+    "description": "Tamagotchi-style mobile game made with Phaser",
+    "author": "tkalv@iti.gr",
     "main": "index.js",
     "scripts": {
         "dev": "webpack",

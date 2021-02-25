@@ -9,13 +9,21 @@ import {
   saveLocalItem,
   shuffle,
   getRandomInt,
+  tweenTint,
   findChild,
 } from "../util";
 import Character from "../character";
 import Item from "../item";
 import StatsUpdateItem from "../statsUpdateItem";
+import Phasetips from "../Phasetips"
 
 export default class extends Phaser.State {
+
+  init(dietType){
+
+    console.log(dietType);
+  }
+
   create() {
     //Setup data
     this.confData = JSON.parse(this.game.cache.getText("conf"));
@@ -39,17 +47,11 @@ export default class extends Phaser.State {
     if (this.game.world.bounds.height === this.game.height) {
       this.newWorldBoundaries = {
         width: this.game.world.bounds.width,
-        height:
-          this.game.world.bounds.height - this.game.world.bounds.height / 4,
+        height: this.game.world.bounds.height - this.game.world.bounds.height / 4,
       };
 
       //Reduce world y axis boundaries
-      this.game.world.setBounds(
-        0,
-        0,
-        this.newWorldBoundaries.width,
-        this.newWorldBoundaries.height
-      );
+      this.game.world.setBounds( 0, 0, this.newWorldBoundaries.width, this.newWorldBoundaries.height);
     }
 
     //Background
@@ -61,13 +63,17 @@ export default class extends Phaser.State {
     this.panelTimeImage = this.game.add.sprite(0, 0, "panelTime");
 
     //Time counter
-    this.timeCounter = this.game.add.text(265, 32, "0", {
-      font: "12px Arial",
-      fill: "#ffffff",
-      align: "center",
-    });
+    this.timeCounter = this.game.add.text(265, 32, "0", {font: "12px Arial", fill: "#ffffff",align: "center",});
     this.timeCounter.anchor.setTo(0.5, 0.5);
-    this.timeCounter.count = 0;
+    this.timeCounter.count = 120;
+    // new Phasetips(this.game, {
+    //   targetObject: this.timeCounter,
+    //   context: "time till next meal",
+    //   fontSize: 13, fontFill: "blue",
+    //   backgroundColor: 0x59d66b, roundedCornersRadius: 10,
+    //   strokeColor: 0xfec72c, position: "bottom", animationDelay: 100, 
+    //   animation: "grow", animationSpeedShow:200, animationSpeedHide:100
+    // });
 
     //Time highscore
     var highscoreData = getLocalItem("highscore");
@@ -75,13 +81,11 @@ export default class extends Phaser.State {
       highscoreData = 0;
       saveLocalItem("highscore", 0);
     }
-    this.highscore = this.game.add.text(85, 32, "0", {
-      font: "12px Arial",
-      fill: "#ffffff",
-      align: "center",
-    });
-    this.highscore.anchor.setTo(0.5, 0.5);
-    this.highscore.setText(highscoreData);
+    // this.highscore = this.game.add.text(85, 32, "0", { font: "12px Arial", fill: "#ffffff", align: "center", });
+    // this.highscore.anchor.setTo(0.5, 0.5);
+    // this.highscore.setText(highscoreData);
+    this.time2go = this.game.add.text(85, 32, "Time till next meal", { font: "15px Consolas", fill: "#ffda66", align: "center", });
+    this.time2go.anchor.setTo(0.5, 0.5);
 
     //Sounds
     this.sounds = {
@@ -91,50 +95,54 @@ export default class extends Phaser.State {
 
     //Characters
     this.characters = this.game.add.group();
-    this.character = new Character(
-      this.game,
-      {
-        x: 0,
-        y: 0,
-      },
-      this.confData.character
-    );
+    this.character = new Character( this.game, { x: 0, y: 0, }, this.confData.character );
     this.characters.add(this.character);
     this.character.enableClick();
-    this.newWorldBoundaries["floorHeight"] =
-      this.newWorldBoundaries.height - this.character.height;
+    this.newWorldBoundaries["floorHeight"] = this.newWorldBoundaries.height - this.character.height;
 
     //Item pool
     this.itemsGroup = this.add.group();
     this.itemsGroup.enableBody = true;
 
+    this.currentMeal = 0;
     //Create UI
-    this.createUi();
+    this.createUi(this.currentMeal);
+
+    this.momInfoButton = this.game.add.sprite( this.game.width-50, this.game.height/4, "momInfo");
+    this.momInfoButton.anchor.setTo(0.5);
+    this.momInfoButton.scale.setTo(0.75);
+    this.momInfoButton.alpha = 0.75;
+
+    this.tooltipsDialog( this.momInfoButton, this.confData.dayMeals[this.currentMeal].momIntro)
+
+    this.kitchenButton = this.game.add.sprite( this.game.width-30, 3*this.game.height/4, "kitchenButton");
+    this.kitchenButton.anchor.setTo(0.5);
+    this.kitchenButton.scale.setTo(0.75);
+    this.kitchenButton.alpha = 0.75;
+    new Phasetips(this.game, {
+      targetObject: this.kitchenButton,
+      context: "to kitchen",
+      fontSize: 13, fontFill: "blue",
+      backgroundColor: 0x59d66b, roundedCornersRadius: 10,
+      strokeColor: 0xfec72c, position: "left", animationDelay: 100, 
+      animation: "grow", animationSpeedShow:200, animationSpeedHide:100
+    });
 
     //Init music
-    this.sounds.kidLevelMusic.play("", 0, 0.2, true);
+    //this.sounds.kidLevelMusic.play("", 0, 0.2, true);
 
     //Decrease the stats every n seconds
     this.statsDecreaser = this.game.time.create(false);
-    this.statsDecreaser.loop(Phaser.Timer.SECOND, this.reduceProperties, this);
+    this.statsDecreaser.loop( 5*Phaser.Timer.SECOND, this.reduceProperties, this);
     this.statsDecreaser.start();
 
     this.timerTimeUpdate = this.game.time.create(false);
-    this.timerTimeUpdate.loop(
-      Phaser.Timer.SECOND,
-      this.updateTimeCounter,
-      this
-    );
+    this.timerTimeUpdate.loop( Phaser.Timer.SECOND, this.updateTimeCounter, this);
     this.timerTimeUpdate.start();
 
     //Throw Rocks Timer
-    this.rockIntervalTime =
-      Phaser.Timer.SECOND * this.confData.timers.rockInterval;
-    this.timerThrowRock = this.game.time.events.loop(
-      this.rockIntervalTime,
-      this.throwRock,
-      this
-    );
+    this.rockIntervalTime = Phaser.Timer.SECOND * this.confData.timers.rockInterval;
+    this.timerThrowRock = this.game.time.events.loop( this.rockIntervalTime, this.throwRock, this );
     this.timerThrowRock.timer.start();
 
     //Load cloth changing events
@@ -169,8 +177,7 @@ export default class extends Phaser.State {
               self.character.updateClothing(e.part, e.id);
 
               //Increase rock frecuency
-              self.rockIntervalTime -=
-                self.rockIntervalTime / self.confData.rockFrecuencyDivisor;
+              self.rockIntervalTime -=  self.rockIntervalTime / self.confData.rockFrecuencyDivisor;
               self.timerThrowRock.delay = self.rockIntervalTime;
 
               self.refreshStats(randomBoost);
@@ -248,8 +255,40 @@ export default class extends Phaser.State {
    * Update time counter
    */
   updateTimeCounter() {
-    this.timeCounter.count++;
+    this.timeCounter.count--;
     this.timeCounter.setText(this.timeCounter.count);
+  }
+
+
+  toolTipEvent(targetSprite, dialog){
+    var msgDelay = 2500;
+    var tmpTip = new Phasetips(this.game, {
+      targetObject: targetSprite,
+      context: dialog,
+      fontSize: 13, fontFill: "blue",
+      backgroundColor: 0xff9d5c, roundedCornersRadius: 10,
+      strokeColor: 0xfec72c, position: "left", animationDelay: 100, 
+      animation: "grow", animationSpeedShow:200, animationSpeedHide:100
+    });
+    tmpTip.simulateOnHoverOver();
+    this.game.time.events.add(msgDelay, function(){tmpTip.destroy()}, this);
+  }
+
+    /**
+   * A series of tooltip message upon a target-sprite
+   * @param {Phaser.Sprite} targetSprite
+   * @param {Array} dialogContent
+   */
+  tooltipsDialog(targetSprite, dialogContent){
+    var msgDelay = 2500;
+    var _this = this;
+
+    dialogContent.forEach(function(dialog, index){
+      _this.game.time.events.add(msgDelay * index, function(){
+          console.log(dialog);
+          _this.toolTipEvent(targetSprite, dialog);
+        }, _this);    
+    })
   }
 
   /**
@@ -261,10 +300,7 @@ export default class extends Phaser.State {
   throwItem(spriteType, currentProperties, event) {
     var item = this.itemsGroup.getFirstExists(false),
       positionY = -this.ITEM_WIDTH,
-      randomXposition = getRandomInt(
-        this.ITEM_WIDTH,
-        this.game.world.width - this.ITEM_WIDTH
-      ),
+      randomXposition = getRandomInt( this.ITEM_WIDTH, this.game.world.width - this.ITEM_WIDTH ),
       properties = {
         gravity: this.confData.items.gravity,
         maxSpeed: this.confData.items.maxVelocity,
@@ -302,33 +338,19 @@ export default class extends Phaser.State {
   throwRock() {
     var item = this.itemsGroup.getFirstExists(false),
       positionX =
-        Math.random() < 0.5
-          ? this.ITEM_WIDTH
-          : this.newWorldBoundaries.width - this.ITEM_WIDTH + 1,
-      randomYposition = getRandomInt(
-        this.ITEM_WIDTH,
-        this.game.world.height / 2
-      ),
+        Math.random() < 0.5 ? this.ITEM_WIDTH : this.newWorldBoundaries.width - this.ITEM_WIDTH + 1,
+      randomYposition = getRandomInt( this.ITEM_WIDTH, this.game.world.height / 2 ),
       currentProperties = {
-        health: getRandomInt(
-          this.confData.items.rock.impact.min,
-          this.confData.items.rock.impact.max
-        ),
-        fun: getRandomInt(
-          this.confData.items.rock.impact.min,
-          this.confData.items.rock.impact.max
-        ),
-        nutrition: getRandomInt(
-          this.confData.items.rock.impact.min,
-          this.confData.items.rock.impact.max
-        ),
+        health: getRandomInt( this.confData.items.rock.impact.min, this.confData.items.rock.impact.max ),
+        
+        fun: getRandomInt( this.confData.items.rock.impact.min, this.confData.items.rock.impact.max),
+
+        nutrition: getRandomInt( this.confData.items.rock.impact.min, this.confData.items.rock.impact.max),
+        
       },
       spriteType = this.confData.items.rock.rockItemId,
       velocity = {
-        x:
-          positionX === this.ITEM_WIDTH
-            ? this.confData.items.rock.velocity.x.min
-            : this.confData.items.rock.velocity.x.max,
+        x: positionX === this.ITEM_WIDTH ? this.confData.items.rock.velocity.x.min : this.confData.items.rock.velocity.x.max,
         y: this.confData.items.rock.velocity.x.min,
       },
       properties = {
@@ -391,15 +413,17 @@ export default class extends Phaser.State {
    * @param {boolean} positive
    */
   playLevelMusic() {
-    this.sounds.kidLevelMusic.play("", 0, 1, true);
+    //this.sounds.kidLevelMusic.play("", 0, 1, true);
   }
   /**
    * Create UI
    */
-  createUi() {
+  createUi(mealNo) {
     var buttonsData = this.confData.buttons,
       screenButtonSize = this.game.width / buttonsData.sizeDivisor,
-      buttonsCollection = buttonsData.info.collection,
+      //buttonsCollection = buttonsData.info.collection,
+      buttonsCollection = this.confData.dayMeals[mealNo].badMealOptions,
+      mealParts = this.confData.dayMeals[mealNo].mealParts,
       buttonArrayInfo = [],
       currentButton,
       currentXpos;
@@ -435,11 +459,7 @@ export default class extends Phaser.State {
     for (var i = 0; i < buttonArrayInfo.length; i++) {
       var currentItem = buttonArrayInfo[i];
 
-      this[currentItem.name] = this.game.add.sprite(
-        currentItem.x,
-        currentItem.y,
-        currentItem.spritesheet
-      );
+      this[currentItem.name] = this.game.add.sprite( currentItem.x, currentItem.y, currentItem.spritesheet );
       this[currentItem.name].frame = currentItem.frame;
       this[currentItem.name].type = currentItem.type;
       this[currentItem.name].anchor.setTo(0.5);
@@ -454,72 +474,30 @@ export default class extends Phaser.State {
 
     //Stat fields
     var labelCount = 3,
-      labelPortion = this.world.width / labelCount,
+      labelPortion = this.world.width / (labelCount*2),
       position1 = 0 + labelPortion / 2,
       position2 = labelPortion + labelPortion / 2,
       position3 = labelPortion * 2 + labelPortion / 2;
 
-    //Labels of property counters
-    this.healthLabel = this.game.add.bitmapText(
-      position1,
-      70,
-      "minecraftia",
-      this.confData.text[this.locale].health,
-      16
-    );
-    this.healthLabel.position.x =
-      this.healthLabel.position.x - this.healthLabel.textWidth / 2;
+    //Labels of property counters - [HEALTH - FUN - NUTRITION]
+    this.healthLabel = this.game.add.bitmapText( position1, 70, "minecraftia", this.confData.text[this.locale].health, 13 );
+    this.healthLabel.position.x = this.healthLabel.position.x - this.healthLabel.textWidth / 2;
 
-    this.funLabel = this.game.add.bitmapText(
-      position2,
-      70,
-      "minecraftia",
-      this.confData.text[this.locale].fun,
-      16
-    );
-    this.funLabel.position.x =
-      this.funLabel.position.x - this.funLabel.textWidth / 2;
+    this.funLabel = this.game.add.bitmapText( position2, 70, "minecraftia", this.confData.text[this.locale].fun, 13 );
+    this.funLabel.position.x = this.funLabel.position.x - this.funLabel.textWidth / 2;
 
-    this.nutritionLabel = this.game.add.bitmapText(
-      position3,
-      70,
-      "minecraftia",
-      this.confData.text[this.locale].nutrition,
-      16
-    );
-    this.nutritionLabel.position.x =
-      this.nutritionLabel.position.x - this.nutritionLabel.textWidth / 2;
+    this.nutritionLabel = this.game.add.bitmapText( position3, 70, "minecraftia", this.confData.text[this.locale].nutrition, 13 );
+    this.nutritionLabel.position.x = this.nutritionLabel.position.x - this.nutritionLabel.textWidth / 2;
 
-    //Character property counters
-    this.healthCounter = this.game.add.bitmapText(
-      position1,
-      100,
-      "minecraftia",
-      "00",
-      35
-    );
-    this.healthCounter.position.x =
-      this.healthCounter.position.x - this.healthCounter.textWidth / 2;
+    //Character property counters - [HEALTH - FUN - NUTRITION]
+    this.healthCounter = this.game.add.bitmapText( position1, 100, "minecraftia", "00", 18);
+    this.healthCounter.position.x = this.healthCounter.position.x - this.healthCounter.textWidth / 2;
 
-    this.funCounter = this.game.add.bitmapText(
-      position2,
-      100,
-      "minecraftia",
-      "00",
-      35
-    );
-    this.funCounter.position.x =
-      this.funCounter.position.x - this.funCounter.textWidth / 2;
+    this.funCounter = this.game.add.bitmapText( position2, 100, "minecraftia", "00", 18 );
+    this.funCounter.position.x = this.funCounter.position.x - this.funCounter.textWidth / 2;
 
-    this.nutritionCounter = this.game.add.bitmapText(
-      position3,
-      100,
-      "minecraftia",
-      "00",
-      35
-    );
-    this.nutritionCounter.position.x =
-      this.nutritionCounter.position.x - this.nutritionCounter.textWidth / 2;
+    this.nutritionCounter = this.game.add.bitmapText( position3, 100, "minecraftia", "00", 18);
+    this.nutritionCounter.position.x = this.nutritionCounter.position.x - this.nutritionCounter.textWidth / 2;
 
     //statUpdateItem pool
     this.statsUpdateInfoGroup = this.add.group();
@@ -559,6 +537,31 @@ export default class extends Phaser.State {
       }
     }
   }
+
+  /**
+   * Hero goes to kitchen
+   */
+  goToKitchen(sprite, event){
+    this.background.loadTexture('roomKitchen');
+    this.game.time.events.add(Phaser.Timer.SECOND * 4, this.mommyWarns, this);
+    
+  }
+   
+  mommyWarns(){
+    this.momInfoButton.loadTexture("momInfoWarn");
+    var warnTip = new Phasetips(this.game, {
+      targetObject: this.momInfoButton,
+      context: "be careful with knives there!!",
+      fontSize: 13, fontFill: "blue",
+      backgroundColor: 0xff9d5c, roundedCornersRadius: 10,
+      strokeColor: 0xfec72c, position: "left", animationDelay: 100, 
+      animation: "grow", animationSpeedShow:200, animationSpeedHide:100
+    });
+    warnTip.showTooltip();
+    this.game.time.events.add(Phaser.Timer.SECOND * 3, function(){warnTip.destroy()}, this);
+  }
+
+
   /**
    * Reduce stats by fixed value
    */
@@ -593,11 +596,8 @@ export default class extends Phaser.State {
       //Update character properties
       for (characterProperty in properties) {
         if (properties.hasOwnProperty(characterProperty)) {
-          var x = 0,
-            y = 20;
-
-          this.character.customParams[characterProperty] +=
-            properties[characterProperty];
+          var x = 0, y = 20;
+          this.character.customParams[characterProperty] += properties[characterProperty];
 
           switch (characterProperty) {
             case "health":
@@ -624,15 +624,16 @@ export default class extends Phaser.State {
       }
     }
 
+    this.checkEventsLimits();
+
     var messages = {
       reason: "",
       tryAgain: "",
     };
 
-    if (
-      this.character.customParams.health <= 0 ||
-      this.character.customParams.fun <= 0 ||
-      this.character.customParams.nutrition <= 0
+    if ( this.character.customParams.health <= 0 ||
+          this.character.customParams.fun <= 0 ||
+          this.character.customParams.nutrition <= 0
     ) {
       //Gameover
       if (this.character.customParams.health <= 0) {
@@ -648,9 +649,7 @@ export default class extends Phaser.State {
         messages.reason = this.confData.text[this.locale].hungry;
       }
 
-      messages.tryAgain = this.confData.text[
-        this.locale
-      ].tryAgain.toUpperCase();
+      messages.tryAgain = this.confData.text[ this.locale ].tryAgain.toUpperCase();
 
       //Update highscore if necessary
       if (this.timeCounter.count > getLocalItem("highscore")) {
@@ -694,12 +693,24 @@ export default class extends Phaser.State {
     }
 
     //Update stats
-    this.healthCounter.setText(this.character.customParams.health.toString());
-    this.funCounter.setText(this.character.customParams.fun.toString());
-    this.nutritionCounter.setText(
-      this.character.customParams.nutrition.toString()
-    );
+    this.healthCounter.setText(this.character.customParams.health.toString()) ;
+    this.funCounter.setText(this.character.customParams.fun.toString() );
+    this.nutritionCounter.setText( this.character.customParams.nutrition.toString() );
   }
+
+  checkEventsLimits(){
+    const limits = { "tooMuchSugar": 90};
+
+    if (this.character.customParams.nutrition > limits.tooMuchSugar) {
+      this.kitchenButton.alpha = 1.0;
+      if(this.kitchenButton.colorTween != true){
+        tweenTint(this.game, this.kitchenButton, 0xfffff,  0x00dd00, 700);
+        this.kitchenButton.inputEnabled = true;
+        this.kitchenButton.events.onInputDown.add(this.goToKitchen, this);
+      }
+    }
+  }
+
   /**
    * Character moves to a touched position
    * @param {Phaser.Sprite} sprite
@@ -769,9 +780,7 @@ export default class extends Phaser.State {
       this.gameOverPanel = this.add.sprite(0, 0, this.bgLayer);
       this.gameOverPanel.alpha = 0;
 
-      gameOverPanelTween = this.game.add
-        .tween(this.gameOverPanel)
-        .to({ alpha: 0.8 }, 300, Phaser.Easing.Linear.None, true);
+      gameOverPanelTween = this.game.add.tween(this.gameOverPanel).to({ alpha: 0.8 }, 300, Phaser.Easing.Linear.None, true);
 
       gameOverPanelTween.onComplete.add(function () {
         var highscoreData = getLocalItem("highscore"),
@@ -786,8 +795,6 @@ export default class extends Phaser.State {
           topLabel,
           topCounter,
           retryButton,
-          tweetButton,
-          fbButton,
           clothCombinationText,
           clothCombinationLabel,
           combinationName = this.character.giveMeName(),
@@ -820,41 +827,17 @@ export default class extends Phaser.State {
 
         //Result texts
         gameOverItemsGroup.y = this.game.height;
-        gameOverText = this.add.bitmapText(
-          halfWidth,
-          60,
-          "minecraftia",
-          this.confData.text[this.locale].gameOver.toUpperCase(),
-          50
-        );
+        gameOverText = this.add.bitmapText( halfWidth, 60, "minecraftia", this.confData.text[this.locale].gameOver.toUpperCase(),);
         gameOverText.anchor.setTo(0.5);
 
-        reasonText = this.add.bitmapText(
-          halfWidth,
-          120,
-          "minecraftia",
-          messages.reason,
-          30
-        );
+        reasonText = this.add.bitmapText( halfWidth, 120, "minecraftia", messages.reason, 30 );
         reasonText.anchor.setTo(0.5);
 
-        scoreLabel = this.game.add.bitmapText(
-          halfWidth + halfWidth / 4,
-          170,
-          "minecraftia",
-          this.confData.text[this.locale].score.toUpperCase(),
-          20
-        );
+        scoreLabel = this.game.add.bitmapText( halfWidth + halfWidth / 4, 170, "minecraftia", this.confData.text[this.locale].score.toUpperCase(), 20);
         scoreLabel.anchor.setTo(0.5);
         scoreLabel.tint = 0x6785bc;
 
-        scoreCounter = this.add.bitmapText(
-          halfWidth + halfWidth / 4,
-          210,
-          "minecraftia",
-          this.timeCounter.count + " sg",
-          40
-        );
+        scoreCounter = this.add.bitmapText( halfWidth + halfWidth / 4, 210, "minecraftia", this.timeCounter.count + " sg", 40 );
         scoreCounter.anchor.setTo(0.5);
 
         topLabel = this.add.bitmapText(
@@ -895,57 +878,11 @@ export default class extends Phaser.State {
         clothCombinationText.anchor.setTo(0.5);
         clothCombinationText.tint = 0x6785bc;
 
-        retryButton = this.game.add.button(
-          halfWidth,
-          470,
-          "button-retry",
-          this.restart,
-          this,
-          0,
-          0,
-          1,
-          0
-        );
+        retryButton = this.game.add.button( halfWidth, 470, "button-retry", this.restart, this, 0, 0, 1, 0 );
         retryButton.anchor.setTo(0.5);
 
-        tweetButton = this.game.add.button(
-          this.game.width / 2 - 48,
-          570,
-          "button-twitter",
-          function () {
-            this.tweetScore(this.timeCounter.count, combinationName);
-          },
-          this,
-          0,
-          0,
-          0,
-          0
-        );
-        tweetButton.anchor.setTo(0.5);
-
-        fbButton = this.game.add.button(
-          this.game.width / 2 + 48,
-          570,
-          "button-fb",
-          function () {
-            this.fbScore(this.timeCounter.count, combinationName);
-          },
-          this,
-          0,
-          0,
-          0,
-          0
-        );
-        fbButton.anchor.setTo(0.5);
-
         //Credits
-        creditsText = this.add.bitmapText(
-          0,
-          this.game.height - 20,
-          "minecraftia",
-          "By @jvalen",
-          10
-        );
+        creditsText = this.add.bitmapText( 0, this.game.height - 20, "minecraftia", "By @tkalv.iti", 10 );
         creditsText.align = "left";
         creditsText.x = this.game.width - creditsText.textWidth - 10;
         creditsText.inputEnabled = true;
@@ -964,8 +901,6 @@ export default class extends Phaser.State {
         gameOverItemsGroup.add(clothCombinationText);
         gameOverItemsGroup.add(retryButton);
         gameOverItemsGroup.add(sharedBodySprite);
-        gameOverItemsGroup.add(tweetButton);
-        gameOverItemsGroup.add(fbButton);
         gameOverItemsGroup.add(creditsText);
 
         this.game.add
@@ -992,61 +927,9 @@ export default class extends Phaser.State {
     this.game.state.start("Game");
   }
   tweetScore(score, name) {
-    //Tweet score
-    //share score on twitter
-    var twitterUrl = "http://twitter.com/home?status=",
-      tweetTxt =
-        this.confData.text[this.locale].itsA +
-        " " +
-        name +
-        "!! " +
-        this.confData.text[this.locale].takingCareDuring +
-        " " +
-        score +
-        " sg!!. " +
-        this.confData.text[this.locale].playAt +
-        ": " +
-        this.confData.url +
-        " " +
-        this.confData.hashTag,
-      finaltweet = twitterUrl + encodeURIComponent(tweetTxt);
-    window.open(finaltweet, "_blank");
+    //
   }
   fbScore(score, name) {
-    //Share score on fb
-    var fbUrl = "https://www.facebook.com/dialog/feed?",
-      fbAppId = 661693680633052,
-      subtitle = encodeURIComponent(
-        this.confData.text[this.locale].score + ": " + score + " sg"
-      ),
-      message = encodeURIComponent(
-        this.confData.text[this.locale].itsA +
-          " " +
-          name +
-          "!! " +
-          this.confData.text[this.locale].takingCareDuring +
-          " " +
-          score +
-          " sg!!"
-      ),
-      url = encodeURIComponent(this.confData.url),
-      fbParams =
-        "app_id=" +
-        fbAppId +
-        "&" +
-        "display=popup&" +
-        "caption=" +
-        subtitle +
-        "&" +
-        "description=" +
-        message +
-        "&" +
-        "link=" +
-        url +
-        "&" +
-        "redirect_uri=" +
-        this.confData.url,
-      finalFb = fbUrl + fbParams;
-    window.open(finalFb, "_blank");
+    //
   }
 }

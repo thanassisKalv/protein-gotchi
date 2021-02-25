@@ -14,58 +14,40 @@ export default class extends Phaser.State {
   preload() {
     var stamp = "?" + new Date().getTime();
 
-    this.asset = this.add.sprite(
-      this.game.world.bounds.width / 2,
-      this.game.world.bounds.height / 2,
-      "preloader"
-    );
+    this.asset = this.add.sprite( this.game.world.bounds.width / 2, this.game.world.bounds.height / 2, "preloader");
     this.asset.anchor.setTo(0.5, 0.5);
 
     this.load.onLoadComplete.addOnce(this.onLoadComplete, this);
     this.load.setPreloadSprite(this.asset);
 
     this.load.image("introFar", "./assets/images/intro_far.png");
-    this.load.image("introMid", "./assets/images/intro_mid.png");
+    this.load.image("introMid", "./assets/images/intro_mid_3.png");
     this.load.image("introClose", "./assets/images/intro_close.png");
     this.load.image("introJFace", "./assets/images/intro_jFace.png");
 
     this.load.image("auraParticle", "./assets/images/aura-particle.png");
 
-    this.load.spritesheet(
-      "headHero",
-      "./assets/sprites/head-sprite.png",
-      80,
-      80
-    );
-    this.load.spritesheet(
-      "bodyHero",
-      "./assets/sprites/body-sprite.png",
-      80,
-      80
-    );
-    this.load.spritesheet("items", "./assets/sprites/items.png", 50, 50);
-    this.load.spritesheet("buttons", "./assets/sprites/buttons.png", 70, 70);
-    this.load.spritesheet(
-      "button-retry",
-      "./assets/sprites/button-retry.png",
-      225,
-      112
-    );
-    this.load.spritesheet(
-      "button-fb",
-      "./assets/images/facebook_button.png",
-      64,
-      64
-    );
-    this.load.spritesheet(
-      "button-twitter",
-      "./assets/images/twitter_button.png",
-      64,
-      64
-    );
+    this.load.image("introType1", "./assets/sprites/type/cardio.png");
+    this.load.image("introType2", "./assets/sprites/type/weight-lifter.png");
 
-    this.load.image("roomKid", "./assets/images/roomKid.jpg");
-    this.load.image("panelTime", "./assets/images/panel-time.png");
+    this.load.spritesheet("headHero", "./assets/sprites/head-sprite-v2.png", 80, 80 );
+    this.load.spritesheet("bodyHero", "./assets/sprites/body-sprite.png", 80,80 );
+    this.load.spritesheet("items", "./assets/sprites/items.png", 50, 50);
+
+    this.load.spritesheet("buttons", "./assets/sprites/buttons-alt.png", 70, 70);
+    this.load.spritesheet("buttons-breakfast", "./assets/sprites/meal-breakfast-v1.png", 70, 70);
+    this.load.spritesheet("buttons-breakfast-bad", "./assets/sprites/buttons.png", 70, 70);
+    this.load.spritesheet("button-retry", "./assets/sprites/button-retry.png", 225, 112);
+    
+    this.load.image("momInfo", "./assets/sprites/mom-button-calm.gif");
+    this.load.image("momInfoWarn", "./assets/sprites/mom-button-warn.gif");
+
+    this.load.image("roomKid", "./assets/images/rooms/simplyRoom-pix.png");
+    this.load.image("roomKitchen", "./assets/images/rooms/kitchen-pix.png");
+    this.load.image("roomKitchenOpen", "./assets/images/rooms/kitchen-open-pix.png");
+
+    this.load.image("panelTime", "./assets/images/panel-right.png");
+    this.load.image("kitchenButton", "./assets/images/kitchen_button.png");
 
     this.game.load.audio("kidLevelMusic", [
       "./assets/sounds/kidLevel.ogg",
