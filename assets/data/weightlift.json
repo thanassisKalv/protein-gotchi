@@ -2,5 +2,10 @@
 	"numberOfMeals": 3,
 	"nextMealTime": [15,80],
 	"mealNames": ["breakfast", "lunch", "afternoonSnack"],
+	"mealGoals": [
+		{"protein":40, "carbs": 60, "fat": 25}, 
+		{"protein":50, "carbs": 50, "fat": 30}, 
+		{"protein":35, "carbs": 45, "fat": 25}
+	],
 	"hashTag": "#cardioPrepare"
 }

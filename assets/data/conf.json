@@ -34,9 +34,9 @@
 	"character": {
 		"spriteName": "bodyHero",
 		"initialStats": {
-            "health": 60,
-            "fun": 60,
-            "nutrition": 60
+            "protein": 50,
+            "fat": 25,
+            "carbs": 70
 		},
 		"frame": {
 			"head": 0,
@@ -103,15 +103,15 @@
 	},
 	"points": {
 		"boost": {
-			"health": {
+			"protein": {
 				"min": 8,
 				"max": 15
 			},
-			"fun": {
+			"carbs": {
 				"min": 8,
 				"max": 15
 			},
-			"nutrition": {
+			"fat": {
 				"min": 8,
 				"max": 15
 			}
@@ -129,9 +129,9 @@
 					"frame": 0,
 					"type": 0,
 					"customParams": {
-						"health": 2,
-						"fun": -4,
-						"nutrition": 5
+						"protein": 2,
+						"carbs": -4,
+						"fat": 5
 					}
 				},
 				{
@@ -142,9 +142,9 @@
 					"frame": 1,
 					"type": 1,
 					"customParams": {
-						"health": 5,
-						"fun": -1,
-						"nutrition": -1
+						"protein": 5,
+						"carbs": -1,
+						"fat": -1
 						}
 				},
 				{
@@ -155,9 +155,9 @@
 					"frame": 2,
 					"type": 2,
 					"customParams": {
-						"health": -4,
-						"fun": 5,
-						"nutrition": 2
+						"protein": -4,
+						"carbs": 5,
+						"fat": 2
 						}
 				},
 				{
@@ -168,9 +168,9 @@
 					"frame": 3,
 					"type": 3,
 					"customParams": {
-						"health": 1,
-						"fun": 4,
-						"nutrition": -2
+						"protein": 1,
+						"carbs": 4,
+						"fat": -2
 						}
 				}
 			]
@@ -200,9 +200,9 @@
 					"frame": 0,
 					"type": 0,
 					"customParams": {
-						"health": 3,
-						"fun": 3,
-						"nutrition": 3
+						"protein": 3,
+						"carbs": 3,
+						"fat": 3
 					}
 				},
 				{
@@ -213,9 +213,9 @@
 					"frame": 1,
 					"type": 1,
 					"customParams": {
-						"health": 3,
-						"fun": 3,
-						"nutrition": 3
+						"protein": 1,
+						"carbs": 5,
+						"fat": 1
 					}
 				},
 				{
@@ -226,9 +226,9 @@
 					"frame": 2,
 					"type": 2,
 					"customParams": {
-						"health": 3,
-						"fun": 3,
-						"nutrition": 3
+						"protein": 4,
+						"carbs": 4,
+						"fat": 4
 					}
 				},
 				{
@@ -239,9 +239,9 @@
 					"frame": 3,
 					"type": 3,
 					"customParams": {
-						"health": 1,
-						"fun": 1,
-						"nutrition": 1
+						"protein": 3,
+						"carbs": 2,
+						"fat": 3
 					}
 				}
 			],
@@ -254,9 +254,9 @@
 					"frame": 0,
 					"type": 0,
 					"customParams": {
-						"health": 3,
-						"fun": 3,
-						"nutrition": 3
+						"protein": 3,
+						"carbs": 3,
+						"fat": 3
 					}
 				},
 				{
@@ -267,9 +267,9 @@
 					"frame": 1,
 					"type": 1,
 					"customParams": {
-						"health": 3,
-						"fun": 3,
-						"nutrition": 3
+						"protein": 3,
+						"carbs": 3,
+						"fat": 3
 					}
 				},
 				{
@@ -280,9 +280,9 @@
 					"frame": 2,
 					"type": 2,
 					"customParams": {
-						"health": 3,
-						"fun": 3,
-						"nutrition": 3
+						"protein": 3,
+						"carbs": 3,
+						"fat": 3
 					}
 				},
 				{
@@ -293,9 +293,9 @@
 					"frame": 3,
 					"type": 3,
 					"customParams": {
-						"health": 1,
-						"fun": 1,
-						"nutrition": 1
+						"protein": 1,
+						"carbs": 1,
+						"fat": 1
 					}
 				}
 			],
@@ -328,9 +328,9 @@
 					"frame": 0,
 					"type": 0,
 					"customParams": {
-						"health": 3,
-						"fun": 3,
-						"nutrition": 3
+						"protein": 2,
+						"carbs": 2,
+						"fat": 2
 					}
 				},
 				{
@@ -341,9 +341,9 @@
 					"frame": 1,
 					"type": 1,
 					"customParams": {
-						"health": 3,
-						"fun": 3,
-						"nutrition": 3
+						"protein": 4,
+						"carbs": 4,
+						"fat": 4
 					}
 				},
 				{
@@ -354,9 +354,9 @@
 					"frame": 2,
 					"type": 2,
 					"customParams": {
-						"health": 3,
-						"fun": 3,
-						"nutrition": 3
+						"protein": 7,
+						"carbs": 7,
+						"fat": 7
 					}
 				},
 				{
@@ -367,9 +367,9 @@
 					"frame": 3,
 					"type": 3,
 					"customParams": {
-						"health": 1,
-						"fun": 1,
-						"nutrition": 1
+						"protein": 7,
+						"carbs": 7,
+						"fat": 7
 					}
 				}
 			],
@@ -399,10 +399,10 @@
 			"gameOver": "Game Over",
 			"score": "Score",
 			"top": "Top",
-			"health": "Health",
-			"fun": "Fun",
-			"nutrition": "Nutrition",
-			"touchScreen": "Touch screen to start",
+			"protein": "Protein",
+			"carbs": "Carbs",
+			"fat": "Fat",
+			"touchScreen": "Choose Sammy's activity and GO",
 			"youHaveGot": "You've got a",
 			"itsA": "It's a",
 			"takingCareDuring": "I've taken care of J during",

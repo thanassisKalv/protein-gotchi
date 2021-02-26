@@ -14,8 +14,8 @@
 	"kitchen":{
 		"background": "roomKitchen",
 		"items":[
-			{"key": "kitchenCabinet", "x": 50, "y": 150},
-			{"key": "kitchenFridge", "x": 290, "y": 320}
+			{"key": "kitchenCabinet", "x": 50, "y": 300},
+			{"key": "kitchenFridge", "x": 290, "y": 360}
 		],
 		"mommyWarns": ["be careful with knives there!!"],
 		"events":{
@@ -29,6 +29,17 @@
 			{"key": "marketFruits", "x": 290, "y": 320}
 		],
 		"mommyWarns": ["hey check there for some fruits", "keep in mind, it's winter"],
+		"events":{
+			
+		}
+	},
+	"picnic":{
+		"background": "picnic",
+		"items":[
+			{"key": "picnicBag", "x": 150, "y": 200},
+			{"key": "picnicTable", "x": 50, "y": 200}
+		],
+		"mommyWarns": ["you got some nice energy boost Sammy", "why not go a picnic in the woods?"],
 		"events":{
 			
 		}
