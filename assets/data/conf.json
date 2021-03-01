@@ -34,9 +34,9 @@
 	"character": {
 		"spriteName": "bodyHero",
 		"initialStats": {
-            "protein": 50,
-            "fat": 25,
-            "carbs": 70
+            "protein": 12,
+            "fat": 12,
+            "carbs": 12
 		},
 		"frame": {
 			"head": 0,
@@ -203,7 +203,8 @@
 						"protein": 3,
 						"carbs": 3,
 						"fat": 3
-					}
+					},
+					"hovertxt": "hover1"
 				},
 				{
 					"name": "orange juice",
@@ -216,7 +217,8 @@
 						"protein": 1,
 						"carbs": 5,
 						"fat": 1
-					}
+					},
+					"hovertxt": "hover2"
 				},
 				{
 					"name": "sandwich",
@@ -229,7 +231,8 @@
 						"protein": 4,
 						"carbs": 4,
 						"fat": 4
-					}
+					},
+					"hovertxt": "hover3"
 				},
 				{
 					"name": "mayo",
@@ -242,60 +245,115 @@
 						"protein": 3,
 						"carbs": 2,
 						"fat": 3
-					}
+					},
+					"hovertxt": "hover4"
 				}
 			],
-			"mealOptions": [
+			"optionsBreakfastDesk": [
 				{
-					"name": "cottage",
-					"spritesheet": "buttons-breakfast",
+					"name": "yogurt",
+					"spritesheet": "breakfast-desk",
 					"order": 1,
 					"offsetY": -45,
 					"frame": 0,
 					"type": 0,
 					"customParams": {
-						"protein": 3,
-						"carbs": 3,
-						"fat": 3
+						"protein": 6,
+						"carbs": 7,
+						"fat": 2
 					}
 				},
 				{
-					"name": "orange",
-					"spritesheet": "buttons-breakfast",
+					"name": "peanutbutter",
+					"spritesheet": "breakfast-desk",
 					"order": 2,
 					"offsetY": -45,
 					"frame": 1,
 					"type": 1,
 					"customParams": {
-						"protein": 3,
-						"carbs": 3,
-						"fat": 3
+						"protein": 7,
+						"carbs": 8,
+						"fat": 16
 					}
 				},
 				{
-					"name": "bread",
-					"spritesheet": "buttons-breakfast",
+					"name": "cupcake",
+					"spritesheet": "breakfast-desk",
 					"order": 3,
 					"offsetY": -45,
 					"frame": 2,
 					"type": 2,
 					"customParams": {
-						"protein": 3,
-						"carbs": 3,
-						"fat": 3
+						"protein": 1,
+						"carbs": 1,
+						"fat": 1
 					}
 				},
 				{
-					"name": "banana",
-					"spritesheet": "buttons-breakfast",
+					"name": "orange-juice",
+					"spritesheet": "breakfast-desk",
 					"order": 4,
 					"offsetY": -45,
 					"frame": 3,
 					"type": 3,
 					"customParams": {
 						"protein": 1,
-						"carbs": 1,
-						"fat": 1
+						"carbs": 9,
+						"fat": 0
+					}
+				}
+			],
+			"optionsBreakfastBag": [
+				{
+					"name": "banana",
+					"spritesheet": "breakfast-bag",
+					"order": 1,
+					"offsetY": -45,
+					"frame": 0,
+					"type": 0,
+					"customParams": {
+						"protein": 1,
+						"carbs": 23,
+						"fat": 0.5
+					}
+				},
+				{
+					"name": "peanutbutter",
+					"spritesheet": "breakfast-bag",
+					"order": 2,
+					"offsetY": -45,
+					"frame": 1,
+					"type": 1,
+					"customParams": {
+						"protein": 1,
+						"carbs": 23,
+						"fat": 0.5
+					}
+				},
+				{
+					"name": "apple",
+					"spritesheet": "breakfast-bag",
+					"order": 3,
+					"offsetY": -45,
+					"frame": 2,
+					"type": 2,
+					"customParams": {
+						"protein": 1,
+						"carbs": 23,
+						"fat": 0.5
+					}
+				},
+				{
+					"name": "carrot",
+					"spritesheet": "breakfast-bag",
+					"order": 4,
+					"offsetY": -45,
+					"frame": 3,
+					"type": 3,
+					"customParams": {
+						"protein": 1,
+						"carbs": 23,
+						"fat": 0.5
 					}
 				}
 			],
@@ -331,7 +389,8 @@
 						"protein": 2,
 						"carbs": 2,
 						"fat": 2
-					}
+					},
+					"hovertxt": "hover1"
 				},
 				{
 					"name": "orange",
@@ -344,7 +403,8 @@
 						"protein": 4,
 						"carbs": 4,
 						"fat": 4
-					}
+					},
+					"hovertxt": "hover2"
 				},
 				{
 					"name": "bread",
@@ -357,7 +417,8 @@
 						"protein": 7,
 						"carbs": 7,
 						"fat": 7
-					}
+					},
+					"hovertxt": "hover3"
 				},
 				{
 					"name": "banana",
@@ -370,6 +431,115 @@
 						"protein": 7,
 						"carbs": 7,
 						"fat": 7
+					},
+					"hovertxt": "hover4"
+				}
+			],
+			"optionsBreakfastDesk": [
+				{
+					"name": "yogurt",
+					"spritesheet": "breakfast-desk",
+					"order": 1,
+					"offsetY": -45,
+					"frame": 0,
+					"type": 0,
+					"customParams": {
+						"protein": 6,
+						"carbs": 7,
+						"fat": 2
+					}
+				},
+				{
+					"name": "peanutbutter",
+					"spritesheet": "breakfast-desk",
+					"order": 2,
+					"offsetY": -45,
+					"frame": 1,
+					"type": 1,
+					"customParams": {
+						"protein": 7,
+						"carbs": 8,
+						"fat": 16
+					}
+				},
+				{
+					"name": "cupcake",
+					"spritesheet": "breakfast-desk",
+					"order": 3,
+					"offsetY": -45,
+					"frame": 2,
+					"type": 2,
+					"customParams": {
+						"protein": 1,
+						"carbs": 1,
+						"fat": 1
+					}
+				},
+				{
+					"name": "orange-juice",
+					"spritesheet": "breakfast-desk",
+					"order": 4,
+					"offsetY": -45,
+					"frame": 3,
+					"type": 3,
+					"customParams": {
+						"protein": 1,
+						"carbs": 9,
+						"fat": 0
+					}
+				}
+			],
+			"optionsBreakfastBag": [
+				{
+					"name": "banana",
+					"spritesheet": "breakfast-bag",
+					"order": 1,
+					"offsetY": -45,
+					"frame": 0,
+					"type": 0,
+					"customParams": {
+						"protein": 1,
+						"carbs": 23,
+						"fat": 0.5
+					}
+				},
+				{
+					"name": "peanutbutter",
+					"spritesheet": "breakfast-bag",
+					"order": 2,
+					"offsetY": -45,
+					"frame": 1,
+					"type": 1,
+					"customParams": {
+						"protein": 1,
+						"carbs": 23,
+						"fat": 0.5
+					}
+				},
+				{
+					"name": "apple",
+					"spritesheet": "breakfast-bag",
+					"order": 3,
+					"offsetY": -45,
+					"frame": 2,
+					"type": 2,
+					"customParams": {
+						"protein": 1,
+						"carbs": 23,
+						"fat": 0.5
+					}
+				},
+				{
+					"name": "carrot",
+					"spritesheet": "breakfast-bag",
+					"order": 4,
+					"offsetY": -45,
+					"frame": 3,
+					"type": 3,
+					"customParams": {
+						"protein": 1,
+						"carbs": 23,
+						"fat": 0.5
 					}
 				}
 			],
@@ -384,7 +554,7 @@
 	},
 
 	"mainMenu": {
-		"title": "Healthy-Habits\nTamagotchi",
+		"title": "Sammy\nProteingotchi",
 		"levelFarSpeed": 2,
 		"levelMidSpeed": 8,
 		"levelCloseSpeed": 2000,
@@ -392,9 +562,9 @@
 	},
 	"text": {
 		"en": {
-			"sick": "J got sick",
-			"hungry": "J is hungry",
-			"bored": "J is bored",
+			"lowProtein": "Sammy didn't get enough protein",
+			"lowCarbs": "Sammy needed more carbs",
+			"lowFat": "Sammy ran out of fat",
 			"tryAgain": "Try Again!",
 			"gameOver": "Game Over",
 			"score": "Score",

@@ -1,6 +1,6 @@
 {
 	"numberOfMeals": 3,
-	"nextMealTime": [20,80],
+	"nextMealTime": [35,80],
 	"mealNames": ["breakfast", "lunch", "afternoonSnack"],
 	"mealGoals": [
 		{"protein":40, "carbs": 60, "fat": 25}, 

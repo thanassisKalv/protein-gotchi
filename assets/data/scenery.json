@@ -3,10 +3,10 @@
 		"background": "roomKid",
 		"items":[
 			{"key": "roomCabinet", "x": 320, "y": 300},
-			{"key": "roomDesk", "x": 80, "y": 330},
-			{"key": "schoolbag", "x": 280, "y": 350}
+			{"key": "roomDesk", "x": 80, "y": 360, "contains": "optionsBreakfastDesk", "mommyWarns": "I know you have candies hidden over there!" },
+			{"key": "schoolbag", "x": 280, "y": 350, "contains": "optionsBreakfastBag"}
 		],
-		"mommyWarns": ["too many candies hidden in your desk?"],
+		"mommyWarns": ["And keep your room clean!"],
 		"events":{
 
 		}
@@ -15,7 +15,7 @@
 		"background": "roomKitchen",
 		"items":[
 			{"key": "kitchenCabinet", "x": 50, "y": 300},
-			{"key": "kitchenFridge", "x": 290, "y": 360}
+			{"key": "kitchenFridge", "x": 305, "y": 380}
 		],
 		"mommyWarns": ["be careful with knives there!!"],
 		"events":{
