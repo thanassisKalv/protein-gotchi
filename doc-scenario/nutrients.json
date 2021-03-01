@@ -1,0 +1,1166 @@
+ {
+   "data": [
+        {
+            "codename": "chloride",
+            "created_at": "2018-06-05T00:48:46.697Z",
+            "id": 166,
+            "name": "Chloride",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "hmb",
+            "created_at": "2017-07-25T08:06:15.889Z",
+            "id": 165,
+            "name": "HMB",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "beta_alanine",
+            "created_at": "2017-07-25T08:06:15.880Z",
+            "id": 164,
+            "name": "Beta-Alanine",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "methylsulfonylmethane",
+            "created_at": "2017-07-25T08:06:15.870Z",
+            "id": 163,
+            "name": "Methylsulfonylmethane",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "colagen_complex",
+            "created_at": "2017-07-25T08:06:15.861Z",
+            "id": 162,
+            "name": "Colagen Complex",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "chondroitin_sulfate",
+            "created_at": "2017-07-25T08:06:15.851Z",
+            "id": 161,
+            "name": "Chondroitin Sulfate",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "hyaluronic_acid",
+            "created_at": "2017-07-25T08:06:15.841Z",
+            "id": 160,
+            "name": "Hyaluronic acid",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "lecithin",
+            "created_at": "2017-07-25T08:06:15.831Z",
+            "id": 159,
+            "name": "Lecithin",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "glutamine",
+            "created_at": "2017-07-25T08:06:15.817Z",
+            "id": 158,
+            "name": "Glutamine",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "creatine",
+            "created_at": "2017-07-25T08:06:15.807Z",
+            "id": 157,
+            "name": "Creatine",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "inositol",
+            "created_at": "2017-07-25T08:06:15.797Z",
+            "id": 156,
+            "name": "Inositol",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "cla",
+            "created_at": "2017-07-25T08:06:15.788Z",
+            "id": 155,
+            "name": "CLA",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "iodine",
+            "created_at": "2017-07-25T08:06:15.778Z",
+            "id": 154,
+            "name": "Iodine",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "chromium",
+            "created_at": "2017-07-25T08:06:15.769Z",
+            "id": 153,
+            "name": "Chromium",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "biotin",
+            "created_at": "2017-07-25T08:06:15.758Z",
+            "id": 152,
+            "name": "Biotin",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "creatine_monohydrate",
+            "created_at": "2017-07-25T08:06:15.742Z",
+            "id": 151,
+            "name": "Creatine monohydrate",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:32.135Z",
+            "id": 150,
+            "name": "18:1-11 t (18:1t n-7)",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:32.125Z",
+            "id": 149,
+            "name": "22:4",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:32.115Z",
+            "id": 148,
+            "name": "21:5",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:32.105Z",
+            "id": 147,
+            "name": "18:3i",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:32.096Z",
+            "id": 146,
+            "name": "20:4 n-6",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:32.087Z",
+            "id": 145,
+            "name": "20:3 n-6",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:32.078Z",
+            "id": 144,
+            "name": "20:3 n-3",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:32.067Z",
+            "id": 143,
+            "name": "18:3 n-3 c,c,c (ALA)",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:32.056Z",
+            "id": 142,
+            "name": "15:1",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:32.045Z",
+            "id": 141,
+            "name": "13:0",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "fatty_acids_transpolyenoic",
+            "created_at": "2016-01-19T19:31:32.034Z",
+            "id": 140,
+            "name": "Fatty acids, total trans-polyenoic",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "fatty_acids_transmonoenoic",
+            "created_at": "2016-01-19T19:31:32.022Z",
+            "id": 139,
+            "name": "Fatty acids, total trans-monoenoic",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:32.011Z",
+            "id": 138,
+            "name": "20:3 undifferentiated",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:32.002Z",
+            "id": 137,
+            "name": "17:1",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.994Z",
+            "id": 136,
+            "name": "18:3 n-6 c,c,c",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.985Z",
+            "id": 135,
+            "name": "22:1 c",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.976Z",
+            "id": 134,
+            "name": "18:2 n-6 c,c",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.967Z",
+            "id": 133,
+            "name": "18:1 c",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.959Z",
+            "id": 132,
+            "name": "16:1 c",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.951Z",
+            "id": 131,
+            "name": "20:2 n-6 c,c",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.942Z",
+            "id": 130,
+            "name": "24:1 c",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.934Z",
+            "id": 129,
+            "name": "18:2 CLAs",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.925Z",
+            "id": 128,
+            "name": "18:2 t,t",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.917Z",
+            "id": 127,
+            "name": "18:2 i",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.908Z",
+            "id": 126,
+            "name": "18:2 t not further defined",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.900Z",
+            "id": 125,
+            "name": "22:1 t",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.891Z",
+            "id": 124,
+            "name": "18:1 t",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.883Z",
+            "id": 123,
+            "name": "16:1 t",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.875Z",
+            "id": 122,
+            "name": "24:0",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.865Z",
+            "id": 121,
+            "name": "17:0",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.855Z",
+            "id": 120,
+            "name": "15:0",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "fatty_acids_polyunsaturated",
+            "created_at": "2016-01-19T19:31:31.846Z",
+            "id": 119,
+            "name": "Fatty acids, total polyunsaturated",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "fatty_acids_monounsaturated",
+            "created_at": "2016-01-19T19:31:31.835Z",
+            "id": 118,
+            "name": "Fatty acids, total monounsaturated",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "beta_sitosterol",
+            "created_at": "2016-01-19T19:31:31.823Z",
+            "id": 117,
+            "name": "Beta-sitosterol",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "campesterol",
+            "created_at": "2016-01-19T19:31:31.789Z",
+            "id": 116,
+            "name": "Campesterol",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "stigmasterol",
+            "created_at": "2016-01-19T19:31:31.778Z",
+            "id": 115,
+            "name": "Stigmasterol",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "phytosterols",
+            "created_at": "2016-01-19T19:31:31.768Z",
+            "id": 114,
+            "name": "Phytosterols",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.757Z",
+            "id": 113,
+            "name": "22:5 n-3 (DPA)",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.746Z",
+            "id": 112,
+            "name": "22:1 undifferentiated",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "eicosapentaenoic_acid",
+            "created_at": "2016-01-19T19:31:31.736Z",
+            "id": 111,
+            "name": "EPA",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.726Z",
+            "id": 110,
+            "name": "20:1",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.715Z",
+            "id": 109,
+            "name": "18:4",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.703Z",
+            "id": 108,
+            "name": "16:1 undifferentiated",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.693Z",
+            "id": 107,
+            "name": "14:1",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.682Z",
+            "id": 106,
+            "name": "22:0",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "docosahexaenoic_acid",
+            "created_at": "2016-01-19T19:31:31.673Z",
+            "id": 105,
+            "name": "DHA",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.664Z",
+            "id": 104,
+            "name": "20:4 undifferentiated",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.655Z",
+            "id": 103,
+            "name": "18:3 undifferentiated",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.646Z",
+            "id": 102,
+            "name": "18:2 undifferentiated",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.637Z",
+            "id": 101,
+            "name": "18:1 undifferentiated",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.627Z",
+            "id": 100,
+            "name": "20:0",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.618Z",
+            "id": 99,
+            "name": "18:0",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.609Z",
+            "id": 98,
+            "name": "16:0",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.600Z",
+            "id": 97,
+            "name": "14:0",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.590Z",
+            "id": 96,
+            "name": "12:0",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.580Z",
+            "id": 95,
+            "name": "10:0",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.571Z",
+            "id": 94,
+            "name": "8:0",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.563Z",
+            "id": 93,
+            "name": "6:0",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": null,
+            "created_at": "2016-01-19T19:31:31.554Z",
+            "id": 92,
+            "name": "4:0",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "fatty_acids_saturated",
+            "created_at": "2016-01-19T19:31:31.544Z",
+            "id": 91,
+            "name": "Fatty acids, total saturated",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "fatty_acids_trans",
+            "created_at": "2016-01-19T19:31:31.535Z",
+            "id": 90,
+            "name": "Fatty acids, total trans",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "cholesterol",
+            "created_at": "2016-01-19T19:31:31.524Z",
+            "id": 89,
+            "name": "Cholesterol",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "vitamin_b12_added",
+            "created_at": "2016-01-19T19:31:31.513Z",
+            "id": 88,
+            "name": "Vitamin B-12, added",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "vitamin_e_added",
+            "created_at": "2016-01-19T19:31:31.503Z",
+            "id": 87,
+            "name": "Vitamin E, added",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "hydroxyproline",
+            "created_at": "2016-01-19T19:31:31.492Z",
+            "id": 86,
+            "name": "Hydroxyproline",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "serine",
+            "created_at": "2016-01-19T19:31:31.481Z",
+            "id": 85,
+            "name": "Serine",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "proline",
+            "created_at": "2016-01-19T19:31:31.471Z",
+            "id": 84,
+            "name": "Proline",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "glycine",
+            "created_at": "2016-01-19T19:31:31.460Z",
+            "id": 83,
+            "name": "Glycine",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "glutamic_acid",
+            "created_at": "2016-01-19T19:31:31.449Z",
+            "id": 82,
+            "name": "Glutamic acid",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "aspartic_acid",
+            "created_at": "2016-01-19T19:31:31.438Z",
+            "id": 81,
+            "name": "Aspartic acid",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "alanine",
+            "created_at": "2016-01-19T19:31:31.426Z",
+            "id": 80,
+            "name": "Alanine",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "histidine",
+            "created_at": "2016-01-19T19:31:31.415Z",
+            "id": 79,
+            "name": "Histidine",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "arginine",
+            "created_at": "2016-01-19T19:31:31.403Z",
+            "id": 78,
+            "name": "Arginine",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "valine",
+            "created_at": "2016-01-19T19:31:31.392Z",
+            "id": 77,
+            "name": "Valine",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "tyrosine",
+            "created_at": "2016-01-19T19:31:31.378Z",
+            "id": 76,
+            "name": "Tyrosine",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "phenylalanine",
+            "created_at": "2016-01-19T19:31:31.363Z",
+            "id": 75,
+            "name": "Phenylalanine",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "cystine",
+            "created_at": "2016-01-19T19:31:31.351Z",
+            "id": 74,
+            "name": "Cystine",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "methionine",
+            "created_at": "2016-01-19T19:31:31.341Z",
+            "id": 73,
+            "name": "Methionine",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "lysine",
+            "created_at": "2016-01-19T19:31:31.330Z",
+            "id": 72,
+            "name": "Lysine",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "leucine",
+            "created_at": "2016-01-19T19:31:31.320Z",
+            "id": 71,
+            "name": "Leucine",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "isoleucine",
+            "created_at": "2016-01-19T19:31:31.309Z",
+            "id": 70,
+            "name": "Isoleucine",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "threonine",
+            "created_at": "2016-01-19T19:31:31.299Z",
+            "id": 69,
+            "name": "Threonine",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "tryptophan",
+            "created_at": "2016-01-19T19:31:31.290Z",
+            "id": 68,
+            "name": "Tryptophan",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "betaine",
+            "created_at": "2016-01-19T19:31:31.281Z",
+            "id": 67,
+            "name": "Betaine",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "folate_dfe",
+            "created_at": "2016-01-19T19:31:31.271Z",
+            "id": 66,
+            "name": "Folate, DFE",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "folate_food",
+            "created_at": "2016-01-19T19:31:31.261Z",
+            "id": 65,
+            "name": "Folate, food",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "folic_acid",
+            "created_at": "2016-01-19T19:31:31.252Z",
+            "id": 64,
+            "name": "Folic acid",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "vitamin_k",
+            "created_at": "2016-01-19T19:31:31.241Z",
+            "id": 63,
+            "name": "Vitamin K",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "dihydrophylloquinone",
+            "created_at": "2016-01-19T19:31:31.230Z",
+            "id": 62,
+            "name": "Dihydrophylloquinone",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "menaquinone_4",
+            "created_at": "2016-01-19T19:31:31.219Z",
+            "id": 61,
+            "name": "Menaquinone-4",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "choline",
+            "created_at": "2016-01-19T19:31:31.208Z",
+            "id": 60,
+            "name": "Choline, total",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "vitamin_b12",
+            "created_at": "2016-01-19T19:31:31.196Z",
+            "id": 59,
+            "name": "Vitamin B-12",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "folate",
+            "created_at": "2016-01-19T19:31:31.183Z",
+            "id": 58,
+            "name": "Folate, total",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "vitamin_b6",
+            "created_at": "2016-01-19T19:31:31.169Z",
+            "id": 57,
+            "name": "Vitamin B-6",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "pantothenic_acid",
+            "created_at": "2016-01-19T19:31:31.155Z",
+            "id": 56,
+            "name": "Pantothenic acid",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "niacin",
+            "created_at": "2016-01-19T19:31:31.142Z",
+            "id": 55,
+            "name": "Niacin",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "riboflavin",
+            "created_at": "2016-01-19T19:31:31.129Z",
+            "id": 54,
+            "name": "Riboflavin",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "thiamin",
+            "created_at": "2016-01-19T19:31:31.116Z",
+            "id": 53,
+            "name": "Thiamin",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "vitamin_c",
+            "created_at": "2016-01-19T19:31:31.105Z",
+            "id": 52,
+            "name": "Vitamin C",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "tocotrienol_delta",
+            "created_at": "2016-01-19T19:31:31.093Z",
+            "id": 51,
+            "name": "Tocotrienol, delta",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "tocotrienol_gamma",
+            "created_at": "2016-01-19T19:31:31.081Z",
+            "id": 50,
+            "name": "Tocotrienol, gamma",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "tocotrienol_beta",
+            "created_at": "2016-01-19T19:31:31.068Z",
+            "id": 49,
+            "name": "Tocotrienol, beta",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "tocotrienol_alpha",
+            "created_at": "2016-01-19T19:31:31.055Z",
+            "id": 48,
+            "name": "Tocotrienol, alpha",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "tocopherol_delta",
+            "created_at": "2016-01-19T19:31:31.042Z",
+            "id": 47,
+            "name": "Tocopherol, delta",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "tocopherol_gamma",
+            "created_at": "2016-01-19T19:31:31.029Z",
+            "id": 46,
+            "name": "Tocopherol, gamma",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "tocopherol_beta",
+            "created_at": "2016-01-19T19:31:31.016Z",
+            "id": 45,
+            "name": "Tocopherol, beta",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "lutein_zeaxanthin",
+            "created_at": "2016-01-19T19:31:31.004Z",
+            "id": 44,
+            "name": "Lutein + zeaxanthin",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "lycopene",
+            "created_at": "2016-01-19T19:31:30.990Z",
+            "id": 43,
+            "name": "Lycopene",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "cryptoxanthin_beta",
+            "created_at": "2016-01-19T19:31:30.977Z",
+            "id": 42,
+            "name": "Cryptoxanthin, beta",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "vitamin_d",
+            "created_at": "2016-01-19T19:31:30.965Z",
+            "id": 41,
+            "name": "Vitamin D (D2 + D3)",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "Vitamin_d3",
+            "created_at": "2016-01-19T19:31:30.954Z",
+            "id": 40,
+            "name": "Vitamin D3",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "vitamin_d2",
+            "created_at": "2016-01-19T19:31:30.943Z",
+            "id": 39,
+            "name": "Vitamin D2",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "vitamin_d_iu",
+            "created_at": "2016-01-19T19:31:30.933Z",
+            "id": 38,
+            "name": "Vitamin D",
+            "unit_of_measure_id": 13
+        },
+        {
+            "codename": "vitamin_e",
+            "created_at": "2016-01-19T19:31:30.847Z",
+            "id": 37,
+            "name": "Vitamin E",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "carotene_alpha",
+            "created_at": "2016-01-19T19:31:30.838Z",
+            "id": 36,
+            "name": "Carotene, alpha",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "carotene_beta",
+            "created_at": "2016-01-19T19:31:30.828Z",
+            "id": 35,
+            "name": "Carotene, beta",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "vitamin_a_rae",
+            "created_at": "2016-01-19T19:31:30.818Z",
+            "id": 34,
+            "name": "Vitamin A",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "retinol",
+            "created_at": "2016-01-19T19:31:30.808Z",
+            "id": 33,
+            "name": "Retinol",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "vitamin_a_iu",
+            "created_at": "2016-01-19T19:31:30.798Z",
+            "id": 32,
+            "name": "Vitamin A",
+            "unit_of_measure_id": 13
+        },
+        {
+            "codename": "selenium",
+            "created_at": "2016-01-19T19:31:30.789Z",
+            "id": 31,
+            "name": "Selenium",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "manganese",
+            "created_at": "2016-01-19T19:31:30.780Z",
+            "id": 30,
+            "name": "Manganese",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "fluoride",
+            "created_at": "2016-01-19T19:31:30.771Z",
+            "id": 29,
+            "name": "Fluoride",
+            "unit_of_measure_id": 11
+        },
+        {
+            "codename": "copper",
+            "created_at": "2016-01-19T19:31:30.761Z",
+            "id": 28,
+            "name": "Copper",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "zinc",
+            "created_at": "2016-01-19T19:31:30.752Z",
+            "id": 27,
+            "name": "Zinc",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "sodium",
+            "created_at": "2016-01-19T19:31:30.743Z",
+            "id": 26,
+            "name": "Sodium",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "potassium",
+            "created_at": "2016-01-19T19:31:30.732Z",
+            "id": 25,
+            "name": "Potassium",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "phosphorus",
+            "created_at": "2016-01-19T19:31:30.721Z",
+            "id": 24,
+            "name": "Phosphorus",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "magnesium",
+            "created_at": "2016-01-19T19:31:30.711Z",
+            "id": 23,
+            "name": "Magnesium",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "iron",
+            "created_at": "2016-01-19T19:31:30.699Z",
+            "id": 22,
+            "name": "Iron",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "calcium",
+            "created_at": "2016-01-19T19:31:30.688Z",
+            "id": 21,
+            "name": "Calcium",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "fiber",
+            "created_at": "2016-01-19T19:31:30.678Z",
+            "id": 20,
+            "name": "Fiber",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "galactose",
+            "created_at": "2016-01-19T19:31:30.666Z",
+            "id": 19,
+            "name": "Galactose",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "sugars",
+            "created_at": "2016-01-19T19:31:30.656Z",
+            "id": 18,
+            "name": "Sugars",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "energy_kj",
+            "created_at": "2016-01-19T19:31:30.646Z",
+            "id": 17,
+            "name": "Energy",
+            "unit_of_measure_id": 14
+        },
+        {
+            "codename": "theobromine",
+            "created_at": "2016-01-19T19:31:30.633Z",
+            "id": 16,
+            "name": "Theobromine",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "caffeine",
+            "created_at": "2016-01-19T19:31:30.622Z",
+            "id": 15,
+            "name": "Caffeine",
+            "unit_of_measure_id": 0
+        },
+        {
+            "codename": "adjusted_protein",
+            "created_at": "2016-01-19T19:31:30.612Z",
+            "id": 14,
+            "name": "Adjusted Protein",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "water",
+            "created_at": "2016-01-19T19:31:30.601Z",
+            "id": 13,
+            "name": "Water",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "alcohol",
+            "created_at": "2016-01-19T19:31:30.590Z",
+            "id": 12,
+            "name": "Alcohol",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "maltose",
+            "created_at": "2016-01-19T19:31:30.578Z",
+            "id": 11,
+            "name": "Maltose",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "lactose",
+            "created_at": "2016-01-19T19:31:30.565Z",
+            "id": 10,
+            "name": "Lactose",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "fructose",
+            "created_at": "2016-01-19T19:31:30.556Z",
+            "id": 9,
+            "name": "Fructose",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "glucose",
+            "created_at": "2016-01-19T19:31:30.547Z",
+            "id": 8,
+            "name": "Glucose",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "sucrose",
+            "created_at": "2016-01-19T19:31:30.539Z",
+            "id": 7,
+            "name": "Sucrose",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "starch",
+            "created_at": "2016-01-19T19:31:30.530Z",
+            "id": 6,
+            "name": "Starch",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "energy_kcal",
+            "created_at": "2016-01-19T19:31:30.520Z",
+            "id": 5,
+            "name": "Energy",
+            "unit_of_measure_id": 12
+        },
+        {
+            "codename": "ash",
+            "created_at": "2016-01-19T19:31:30.509Z",
+            "id": 4,
+            "name": "Ash",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "carbohydrate",
+            "created_at": "2016-01-19T19:31:30.499Z",
+            "id": 3,
+            "name": "Carbohydrate",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "fat",
+            "created_at": "2016-01-19T19:31:30.489Z",
+            "id": 2,
+            "name": "Fat",
+            "unit_of_measure_id": 3
+        },
+        {
+            "codename": "protein",
+            "created_at": "2016-01-19T19:31:30.478Z",
+            "id": 1,
+            "name": "Protein",
+            "unit_of_measure_id": 3
+        }
+    ]
+}
