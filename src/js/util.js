@@ -50,12 +50,13 @@ export function getRandomInt(min, max) {
 export function tweenTint(game, spriteToTween, startColor, endColor, duration) {
   var colorBlend = {step: 0};
 
-  game.add.tween(colorBlend).to({step: 100}, duration, Phaser.Easing.Default, false).loop(true).yoyo(true, 600)
-      .onUpdateCallback(() => {
+  spriteToTween.colorTweening = game.add.tween(colorBlend).to({step: 100}, duration, Phaser.Easing.Default, false).loop(true).yoyo(true, 600);
+  spriteToTween.colorTweening.onUpdateCallback(() => {
           spriteToTween.tint = Phaser.Color.interpolateColor(startColor, endColor, 100, colorBlend.step, 1);
           spriteToTween.colorTween = true;
       })
-      .start()
+  spriteToTween.colorTweening.start();
+  
 };
 
 /**
