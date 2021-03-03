@@ -16,6 +16,7 @@ export default class extends Phaser.State {
 
     this.asset = this.add.sprite( this.game.world.bounds.width / 2, this.game.world.bounds.height / 2, "preloader");
     this.asset.anchor.setTo(0.5, 0.5);
+    this.asset.scale.setTo(1.5);
 
     this.load.onLoadComplete.addOnce(this.onLoadComplete, this);
     this.load.setPreloadSprite(this.asset);
@@ -32,11 +33,22 @@ export default class extends Phaser.State {
 
     this.load.spritesheet("headHero", "./assets/sprites/head-sprite-v2.png", 80, 80 );
     this.load.spritesheet("bodyHero", "./assets/sprites/body-sprite.png", 80,80 );
-    this.load.spritesheet("items", "./assets/sprites/items.png", 50, 50);
+    this.load.spritesheet("items-breakfast-bad", "./assets/sprites/items.png", 50, 50);
+    this.load.spritesheet("items-breakfast", "./assets/sprites/items/items-breakfast.png", 50, 50);
+    this.load.spritesheet("items-breakfast-bag", "./assets/sprites/items/items-breakfast-bag.png", 50, 50);
+    this.load.spritesheet("items-breakfast-desk", "./assets/sprites/items/items-breakfast-desk.png", 50, 50);
+    this.load.spritesheet("items-kitchen-cabinet", "./assets/sprites/items/items-kitchen-cabinet.png", 50, 50);
+    this.load.spritesheet("items-kitchen-fridge", "./assets/sprites/items/items-kitchen-fridge.png", 50, 50);
 
     this.load.spritesheet("buttons", "./assets/sprites/buttons-alt.png", 70, 70);
-    this.load.spritesheet("buttons-breakfast", "./assets/sprites/meal-breakfast-v1.png", 70, 70);
-    this.load.spritesheet("buttons-breakfast-bad", "./assets/sprites/buttons.png", 70, 70);
+    this.load.spritesheet("breakfast", "./assets/sprites/meal-breakfast-v1.png", 70, 70);
+    this.load.spritesheet("breakfast-bad", "./assets/sprites/buttons.png", 70, 70);
+    this.load.spritesheet("breakfast-desk", "./assets/sprites/breakfast-desk.png", 70, 70);
+    this.load.spritesheet("breakfast-bag", "./assets/sprites/breakfast-bag.png", 70, 70);
+    this.load.spritesheet("kitchen-fridge", "./assets/sprites/kitchen-fridge.png", 70, 70);
+    this.load.spritesheet("kitchen-cabinet", "./assets/sprites/kitchen-cabinet.png", 70, 70);
+
+    
     this.load.spritesheet("button-retry", "./assets/sprites/button-retry.png", 225, 112);
     
     this.load.image("momInfo", "./assets/sprites/mom-button-calm.gif");
@@ -45,9 +57,20 @@ export default class extends Phaser.State {
     this.load.image("roomKid", "./assets/images/rooms/simplyRoom-pix.png");
     this.load.image("roomKitchen", "./assets/images/rooms/kitchen-pix.png");
     this.load.image("roomKitchenOpen", "./assets/images/rooms/kitchen-open-pix.png");
+    this.load.image("picnic", "./assets/images/rooms/picnic-pix.png");
 
     this.load.image("panelTime", "./assets/images/panel-right.png");
-    this.load.image("kitchenButton", "./assets/images/kitchen_button.png");
+    this.load.image("kitchenButton", "./assets/images/kichenButton.png");
+    this.load.image("picnicButton", "./assets/images/picnicButton.png");
+    this.load.image("roomButton", "./assets/images/roomButton.png");
+
+    this.load.image("roomCabinet", "./assets/images/room-items/roomCabinet.png");
+    this.load.image("roomDesk", "./assets/images/room-items/desk.png");
+    this.load.image("schoolbag", "./assets/images/room-items/schoolbag.png");
+    this.load.image("kitchenFridge", "./assets/images/room-items/kitchenFridge.png");
+    this.load.image("kitchenCabinet",  "./assets/images/room-items/bread-store.png");
+    this.load.image("picnicBag", "./assets/images/room-items/picnicBag.png");
+    this.load.image("picnicTable", "./assets/images/room-items/picnicTable.png");
 
     this.game.load.audio("kidLevelMusic", [
       "./assets/sounds/kidLevel.ogg",
@@ -74,8 +97,11 @@ export default class extends Phaser.State {
       "./assets/sounds/hit.mp3",
     ]);
 
-    //load level data
-    this.load.text("conf", "./assets/data/conf.json" + stamp);
+    // //load level data
+    this.load.text("conf", "./assets/data/conf.json" );
+    this.load.text("cardio", "./assets/data/cardio.json" );
+    this.load.text("weightLift", "./assets/data/weightlift.json" );
+    this.load.text("scenes", "./assets/data/scenery.json" );
 
     //Load font
     this.load.bitmapFont(
