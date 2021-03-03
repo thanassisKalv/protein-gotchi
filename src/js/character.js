@@ -20,9 +20,11 @@ let Character = function (game, position, properties) {
   this.x = game.world.centerX;
   this.y = game.world.height;
   this.anchor.setTo(0.5);
+  this.cgame = game;
 
   //Character properties
   this.customParams = properties.initialStats;
+  this.walkSpeed = 300;
 
   //Head (child)
   this.head = game.add.sprite(0, -75, "headHero");
@@ -129,6 +131,55 @@ Character.prototype.enableClick = function () {
 Character.prototype.disableClick = function () {
   this.inputEnabled = false;
 };
+
+
+
+  /**
+   * Character moves to a touched position
+   * @param {Phaser.Sprite} sprite
+   * @param {object} pointer
+   * @param {object} targetPosition
+   */
+  Character.prototype.walkingTo = function(sprite, pointer, targetPosition) {
+    var head = findChild(this, "headHero"),
+      x,
+      y;
+
+    if (!!targetPosition) {
+      //Walk to an item
+      x = targetPosition.x;
+      y = targetPosition.y;
+    } else {
+      //Walk to touch position
+      x = pointer.x;
+      y = pointer.y;
+    }
+
+    if (x < this.x) {
+      //Go left
+      this.scale.x = 1;
+      head.scale.x = -1;
+    } else {
+      //Go right
+      this.scale.x = -1;
+      head.scale.x = -1;
+    }
+
+    //Character animation
+    this.animations.play("walk");
+
+    //Move the character towards the cursor
+    var characterMov = this.cgame.add.tween(this);
+    characterMov.to({ x: x }, this.walkSpeed);
+    characterMov.onComplete.add(function () {
+      //Stop animation and set stopped frame
+      this.animations.stop();
+      this.restartAnimation("walk");
+    }, this);
+
+    characterMov.start();
+  }
+
 
 /**
  * Restart aura emitter
