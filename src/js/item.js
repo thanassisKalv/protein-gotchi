@@ -12,7 +12,7 @@
  * @extends {Phaser.Sprite}
  */
 let Item = function (game, position, properties) {
-  Phaser.Sprite.call(this, game, position.x, position.y, "items");
+  Phaser.Sprite.call(this, game, position.x, position.y, "items-"+properties.spritesheet);
 
   //Location
   this.x = position.x;
@@ -20,13 +20,6 @@ let Item = function (game, position, properties) {
   this.anchor.setTo(0.5);
 
   //Sprite Type
-  /*
-		0: Chocolate
-		1: Fruit
-		2: Medicine
-		3: skipRope
-		4: Rock
-	*/
   this.frame = properties.spriteType;
 
   //Item properties
@@ -66,6 +59,7 @@ Item.prototype.reset = function (position, properties) {
   this.frame = properties.spriteType;
   this.body.collideWorldBounds = true;
   this.outOfBoundsKill = false;
+  this.loadTexture("items-"+properties.spritesheet, this.frame  );
 };
 
 /**
