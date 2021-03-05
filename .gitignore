@@ -6,3 +6,4 @@ nbproject/*
 .directory
 dist/
 build/
+doc-scenario/
