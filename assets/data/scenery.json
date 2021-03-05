@@ -3,10 +3,15 @@
 		"background": "roomKid",
 		"items":[
 			{"key": "roomCabinet", "x": 320, "y": 300},
-			{"key": "roomDesk", "x": 80, "y": 360, "contains": "optionsBreakfastDesk", "mommyWarns": "I know you have candies hidden over there!" },
-			{"key": "schoolbag", "x": 280, "y": 350, "contains": "optionsBreakfastBag"}
+			{"key": "roomDesk", "x": 80, "y": 360, "contains": "optionsBreakfastDesk", "mommyWarns": ["I know you have candies hidden over there!"] },
+			{"key": "schoolbag", "x": 280, "y": 350, "contains": "optionsBreakfastBag", "mommyWarns": ["Add some carbs to your protein!"] }
 		],
 		"mommyWarns": ["And keep your room clean!"],
+		"foodWarnings":[
+			{"includes":["eggs", "lean-chicken"], "text":["Nice protein choice!"]},
+			{"includes":["pasta-cheese"], "text":["You got plenty of carbons but not enough protein!"]},
+			{"includes":["broccoli"], "text":["this is low in protein, fat and carbs but rich in vitamins and mineral!"]}
+		],
 		"events":{
 
 		}
@@ -14,10 +19,15 @@
 	"kitchen":{
 		"background": "roomKitchen",
 		"items":[
-			{"key": "kitchenCabinet", "x": 50, "y": 300},
-			{"key": "kitchenFridge", "x": 305, "y": 380}
+			{"key": "kitchenFridge", "x": 315, "y": 370, "contains": "breakfastFridge", "mommyWarns": ["Try to include lean protein for your post-workout meal!"] },
+			{"key": "kitchenCabinet", "x": 60, "y": 300, "contains": "breakfastCabinet", "mommyWarns": ["Why not add some whole grain carbs to your meal!"] }
 		],
-		"mommyWarns": ["be careful with knives there!!"],
+		"mommyWarns": ["Lunch time! Be careful with knives over there!!"],
+		"foodWarnings":[
+			{"includes":["eggs", "lean-chicken"], "text":["Nice protein choice!"]},
+			{"includes":["pasta-cheese"], "text":["You got plenty of carbons but not enough protein!"]},
+			{"includes":["broccoli"], "text":["this is low in protein, fat and carbs but rich in vitamins and mineral!"]}
+		],		
 		"events":{
 			
 		}
@@ -28,7 +38,8 @@
 			{"key": "marketCandies", "x": 50, "y": 150},
 			{"key": "marketFruits", "x": 290, "y": 320}
 		],
-		"mommyWarns": ["hey check there for some fruits", "keep in mind, it's winter"],
+		"mommyWarns": ["hey check there for some fruits", "and try to choose some unprocessed foods"],
+		"foodWarnings":[],
 		"events":{
 			
 		}
@@ -40,6 +51,7 @@
 			{"key": "picnicTable", "x": 50, "y": 200}
 		],
 		"mommyWarns": ["you got some nice energy boost Sammy", "why not go a picnic in the woods?"],
+		"foodWarnings":[],
 		"events":{
 			
 		}

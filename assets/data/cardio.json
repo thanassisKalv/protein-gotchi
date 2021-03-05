@@ -1,11 +1,36 @@
 {
 	"numberOfMeals": 3,
-	"nextMealTime": [35,80],
-	"mealNames": ["breakfast", "lunch", "afternoonSnack"],
-	"mealGoals": [
-		{"protein":40, "carbs": 60, "fat": 25}, 
-		{"protein":50, "carbs": 50, "fat": 30}, 
-		{"protein":35, "carbs": 45, "fat": 25}
+	"nextMealTime": [2400,2400],
+
+	"momIntro":[
+		"hey Sammy, time for breakfast before running",
+		"let's choose wisely and create a complete breakfast"
 	],
+
+	"mealNames": ["breakfast", "lunch", "afternoonSnack"],
+
+	"mealParts": [3, 3, 3],
+
+	"mealGoals": [
+		{"protein":55, "carbs": 60, "fat": 25}, 
+		{"protein":50, "carbs": 50, "fat": 30}, 
+		{"protein":35, "carbs": 35, "fat": 25}
+	],
+
+	"gameoverLimits":[
+		{"protein":65, "carbs": 70, "fat": 35}, 
+		{"protein":60, "carbs": 50, "fat": 35}, 
+		{"protein":45, "carbs": 45, "fat": 30}
+	],
+
+	"foodWarnings":[
+		{"includes":["eggs", "lean-chicken"], "text":"Lean protein but not great for cardio!", "immediate":false, "positive":false},
+		{"includes":["pasta-cheese"], "text":"Nice, you got plenty of carbons and a few protein!", "immediate":false, "positive":true},
+		{"includes":["broccoli"], "text":"this is low in protein, fat and carbs but rich in vitamins and mineral!", "immediate":false, "positive":true},
+		{"includes":["cupcake"],  "text":"Too much sugar Sammy! You better replace it with some slow carbs", "immediate":true, "positive":false},
+		{"includes":["yogurt"], "text": "easily digestible protein, perfect for pre-workout", "immediate":false, "positive":false},
+		{"includes":["banana", "apple"], "text": "now let's add some protein", "immediate":true, "positive":false}
+	],
+
 	"hashTag": "#cardioPrepare"
 }

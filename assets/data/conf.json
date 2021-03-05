@@ -13,6 +13,7 @@
 	"decreaseStatAmount": 2,
 	"rockFrecuencyDivisor": 6,
 	"redAlertLimit": 20,
+	"discardButton": "discardButton",
 	"timers": {
 		"rockInterval": 16,
 		"clothChangeArray": [10, 30, 50, 70, 90, 110, 130, 150, 170]
@@ -80,9 +81,10 @@
 		"maxSpeedY": 500
 	},
 	"items": {
-    "width": 50,
+    	"width": 50,
 		"gravity": 1100,
 		"maxVelocity": 800,
+		"texture": "breakfast-bad",
 		"rock": {
 			"rockItemId": 4,
 			"impact": {
@@ -131,7 +133,8 @@
 					"customParams": {
 						"protein": 2,
 						"carbs": -4,
-						"fat": 5
+						"fat": 5,
+						"available": 1
 					}
 				},
 				{
@@ -144,7 +147,8 @@
 					"customParams": {
 						"protein": 5,
 						"carbs": -1,
-						"fat": -1
+						"fat": -1,
+						"available": 1
 						}
 				},
 				{
@@ -157,7 +161,8 @@
 					"customParams": {
 						"protein": -4,
 						"carbs": 5,
-						"fat": 2
+						"fat": 2,
+						"available": 1
 						}
 				},
 				{
@@ -170,7 +175,8 @@
 					"customParams": {
 						"protein": 1,
 						"carbs": 4,
-						"fat": -2
+						"fat": -2,
+						"available": 1
 						}
 				}
 			]
@@ -183,7 +189,7 @@
 			"title": "Breakfast meal",
 			"momIntro":[
 				"hey Sammy, time for breakfast",
-				"you need energy and proteins"
+				"let's choose wisely to create a complete breakfast"
 			],
 			"mealTips": [
 				"Include a source of lean protein",
@@ -194,7 +200,7 @@
 			"badMealOptions": [
 				{
 					"name": "cake",
-					"spritesheet": "buttons-breakfast-bad",
+					"spritesheet": "breakfast-bad",
 					"order": 1,
 					"offsetY": -45,
 					"frame": 0,
@@ -202,13 +208,14 @@
 					"customParams": {
 						"protein": 3,
 						"carbs": 3,
-						"fat": 3
+						"fat": 3,
+						"available": 1
 					},
 					"hovertxt": "hover1"
 				},
 				{
 					"name": "orange juice",
-					"spritesheet": "buttons-breakfast-bad",
+					"spritesheet": "breakfast-bad",
 					"order": 2,
 					"offsetY": -45,
 					"frame": 1,
@@ -216,13 +223,14 @@
 					"customParams": {
 						"protein": 1,
 						"carbs": 5,
-						"fat": 1
+						"fat": 1,
+						"available": 1
 					},
 					"hovertxt": "hover2"
 				},
 				{
 					"name": "sandwich",
-					"spritesheet": "buttons-breakfast-bad",
+					"spritesheet": "breakfast-bad",
 					"order": 3,
 					"offsetY": -45,
 					"frame": 2,
@@ -230,13 +238,14 @@
 					"customParams": {
 						"protein": 4,
 						"carbs": 4,
-						"fat": 4
+						"fat": 4,
+						"available": 1
 					},
 					"hovertxt": "hover3"
 				},
 				{
 					"name": "mayo",
-					"spritesheet": "buttons-breakfast-bad",
+					"spritesheet": "breakfast-bad",
 					"order": 4,
 					"offsetY": -45,
 					"frame": 3,
@@ -244,7 +253,8 @@
 					"customParams": {
 						"protein": 3,
 						"carbs": 2,
-						"fat": 3
+						"fat": 3,
+						"available": 1
 					},
 					"hovertxt": "hover4"
 				}
@@ -260,7 +270,8 @@
 					"customParams": {
 						"protein": 6,
 						"carbs": 7,
-						"fat": 2
+						"fat": 2,
+						"available": 1
 					}
 				},
 				{
@@ -273,7 +284,8 @@
 					"customParams": {
 						"protein": 7,
 						"carbs": 8,
-						"fat": 16
+						"fat": 16,
+						"available": 1
 					}
 				},
 				{
@@ -286,7 +298,8 @@
 					"customParams": {
 						"protein": 1,
 						"carbs": 1,
-						"fat": 1
+						"fat": 1,
+						"available": 1
 					}
 				},
 				{
@@ -299,7 +312,8 @@
 					"customParams": {
 						"protein": 1,
 						"carbs": 9,
-						"fat": 0
+						"fat": 0,
+						"available": 1
 					}
 				}
 			],
@@ -314,7 +328,8 @@
 					"customParams": {
 						"protein": 1,
 						"carbs": 23,
-						"fat": 0.5
+						"fat": 0.3,
+						"available": 1
 					}
 				},
 				{
@@ -325,9 +340,10 @@
 					"frame": 1,
 					"type": 1,
 					"customParams": {
-						"protein": 1,
-						"carbs": 23,
-						"fat": 0.5
+						"protein": 22,
+						"carbs": 24,
+						"fat": 50,
+						"available": 1
 					}
 				},
 				{
@@ -339,8 +355,9 @@
 					"type": 2,
 					"customParams": {
 						"protein": 1,
-						"carbs": 23,
-						"fat": 0.5
+						"carbs": 14,
+						"fat": 0.5,
+						"available": 3
 					}
 				},
 				{
@@ -352,8 +369,125 @@
 					"type": 3,
 					"customParams": {
 						"protein": 1,
+						"carbs": 8.5,
+						"fat": 0.2,
+						"available": 3
+					}
+				}
+			],
+			"breakfastFridge": [
+				{
+					"name": "eggs",
+					"spritesheet": "kitchen-fridge",
+					"order": 1,
+					"offsetY": -45,
+					"frame": 0,
+					"type": 0,
+					"customParams": {
+						"protein": 13,
+						"carbs": 1,
+						"fat": 9.5,
+						"available": 1
+					}
+				},
+				{
+					"name": "pasta-cheese",
+					"spritesheet": "kitchen-fridge",
+					"order": 2,
+					"offsetY": -45,
+					"frame": 1,
+					"type": 1,
+					"customParams": {
+						"protein": 1,
 						"carbs": 23,
-						"fat": 0.5
+						"fat": 0.5,
+						"available": 1
+					}
+				},
+				{
+					"name": "lean-chicken",
+					"spritesheet": "kitchen-fridge",
+					"order": 3,
+					"offsetY": -45,
+					"frame": 2,
+					"type": 2,
+					"customParams": {
+						"protein": 24,
+						"carbs": 0.5,
+						"fat": 6.7,
+						"available": 1
+					}
+				},
+				{
+					"name": "broccoli",
+					"spritesheet": "kitchen-fridge",
+					"order": 4,
+					"offsetY": -45,
+					"frame": 3,
+					"type": 3,
+					"customParams": {
+						"protein": 1,
+						"carbs": 23,
+						"fat": 0.5,
+						"available": 1
+					}
+				}
+			],
+			"breakfastCabinet": [
+				{
+					"name": "bread",
+					"spritesheet": "kitchen-cabinet",
+					"order": 1,
+					"offsetY": -45,
+					"frame": 0,
+					"type": 0,
+					"customParams": {
+						"protein": 1,
+						"carbs": 23,
+						"fat": 0.5,
+						"available": 1
+					}
+				},
+				{
+					"name": "french-fries",
+					"spritesheet": "kitchen-cabinet",
+					"order": 2,
+					"offsetY": -45,
+					"frame": 1,
+					"type": 1,
+					"customParams": {
+						"protein": 1,
+						"carbs": 23,
+						"fat": 0.5,
+						"available": 1
+					}
+				},
+				{
+					"name": "simple-pasta",
+					"spritesheet": "kitchen-cabinet",
+					"order": 3,
+					"offsetY": -45,
+					"frame": 2,
+					"type": 2,
+					"customParams": {
+						"protein": 1,
+						"carbs": 23,
+						"fat": 0.5,
+						"available": 1
+					}
+				},
+				{
+					"name": "pasta-cheese",
+					"spritesheet": "kitchen-cabinet",
+					"order": 4,
+					"offsetY": -45,
+					"frame": 3,
+					"type": 3,
+					"customParams": {
+						"protein": 1,
+						"carbs": 23,
+						"fat": 0.5,
+						"available": 1
 					}
 				}
 			],
@@ -368,7 +502,7 @@
 		"lunch":{
 			"title": "Lunch meal",
 			"momIntro":[
-				"let's prepare choose some meals",
+				"let's prepare your lunch meal",
 				"you need energy and proteins"
 			],
 			"mealTips": {
@@ -380,21 +514,22 @@
 			"badMealOptions": [
 				{
 					"name": "cottage",
-					"spritesheet": "buttons-breakfast",
+					"spritesheet": "breakfast",
 					"order": 1,
 					"offsetY": -45,
 					"frame": 0,
 					"type": 0,
 					"customParams": {
-						"protein": 2,
-						"carbs": 2,
-						"fat": 2
+						"protein": 11,
+						"carbs": 3.5,
+						"fat": 4.5,
+						"available": 1
 					},
 					"hovertxt": "hover1"
 				},
 				{
 					"name": "orange",
-					"spritesheet": "buttons-breakfast",
+					"spritesheet": "breakfast",
 					"order": 2,
 					"offsetY": -45,
 					"frame": 1,
@@ -402,13 +537,14 @@
 					"customParams": {
 						"protein": 4,
 						"carbs": 4,
-						"fat": 4
+						"fat": 4,
+						"available": 1
 					},
 					"hovertxt": "hover2"
 				},
 				{
 					"name": "bread",
-					"spritesheet": "buttons-breakfast",
+					"spritesheet": "breakfast",
 					"order": 3,
 					"offsetY": -45,
 					"frame": 2,
@@ -416,13 +552,14 @@
 					"customParams": {
 						"protein": 7,
 						"carbs": 7,
-						"fat": 7
+						"fat": 7,
+						"available": 1
 					},
 					"hovertxt": "hover3"
 				},
 				{
 					"name": "banana",
-					"spritesheet": "buttons-breakfast",
+					"spritesheet": "breakfast",
 					"order": 4,
 					"offsetY": -45,
 					"frame": 3,
@@ -430,7 +567,8 @@
 					"customParams": {
 						"protein": 7,
 						"carbs": 7,
-						"fat": 7
+						"fat": 7,
+						"available": 1
 					},
 					"hovertxt": "hover4"
 				}
@@ -446,7 +584,8 @@
 					"customParams": {
 						"protein": 6,
 						"carbs": 7,
-						"fat": 2
+						"fat": 2,
+						"available": 1
 					}
 				},
 				{
@@ -459,7 +598,8 @@
 					"customParams": {
 						"protein": 7,
 						"carbs": 8,
-						"fat": 16
+						"fat": 16,
+						"available": 1
 					}
 				},
 				{
@@ -472,7 +612,8 @@
 					"customParams": {
 						"protein": 1,
 						"carbs": 1,
-						"fat": 1
+						"fat": 1,
+						"available": 1
 					}
 				},
 				{
@@ -485,7 +626,8 @@
 					"customParams": {
 						"protein": 1,
 						"carbs": 9,
-						"fat": 0
+						"fat": 0,
+						"available": 1
 					}
 				}
 			],
@@ -500,7 +642,8 @@
 					"customParams": {
 						"protein": 1,
 						"carbs": 23,
-						"fat": 0.5
+						"fat": 0.3,
+						"available": 1
 					}
 				},
 				{
@@ -511,9 +654,10 @@
 					"frame": 1,
 					"type": 1,
 					"customParams": {
-						"protein": 1,
-						"carbs": 23,
-						"fat": 0.5
+						"protein": 22,
+						"carbs": 24,
+						"fat": 50,
+						"available": 1
 					}
 				},
 				{
@@ -525,8 +669,9 @@
 					"type": 2,
 					"customParams": {
 						"protein": 1,
-						"carbs": 23,
-						"fat": 0.5
+						"carbs": 14,
+						"fat": 0.5,
+						"available": 3
 					}
 				},
 				{
@@ -538,8 +683,9 @@
 					"type": 3,
 					"customParams": {
 						"protein": 1,
-						"carbs": 23,
-						"fat": 0.5
+						"carbs": 8.5,
+						"fat": 0.2,
+						"available": 3
 					}
 				}
 			],
@@ -565,6 +711,10 @@
 			"lowProtein": "Sammy didn't get enough protein",
 			"lowCarbs": "Sammy needed more carbs",
 			"lowFat": "Sammy ran out of fat",
+			"highProtein": "Sammy got too much protein",
+			"highCarbs": "Sammy got too much carbs",
+			"highFat": "Sammy got too much fat",
+
 			"tryAgain": "Try Again!",
 			"gameOver": "Game Over",
 			"score": "Score",
