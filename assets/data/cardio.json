@@ -27,7 +27,7 @@
 		{"includes":["eggs", "lean-chicken"], "text":"Lean protein but not great for cardio!", "immediate":false, "positive":false},
 		{"includes":["pasta-cheese"], "text":"Nice, you got plenty of carbons and a few protein!", "immediate":false, "positive":true},
 		{"includes":["broccoli"], "text":"this is low in protein, fat and carbs but rich in vitamins and mineral!", "immediate":false, "positive":true},
-		{"includes":["cupcake"],  "text":"Too much sugar Sammy! You better replace it with some slow carbs", "immediate":true, "positive":false},
+		{"includes":["cupcake"],  "text":"Too much sugar Sammy! You better replace it with some slow carbs", "immediate":false, "positive":false},
 		{"includes":["yogurt"], "text": "easily digestible protein, perfect for pre-workout", "immediate":false, "positive":false},
 		{"includes":["banana", "apple"], "text": "now let's add some protein", "immediate":true, "positive":false}
 	],
