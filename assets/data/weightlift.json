@@ -3,7 +3,7 @@
 	"nextMealTime": [2400,2400],
 
 	"momIntro":[
-		"let's prepare your breakfast meal",
+		"let's prepare your pre-workout breakfast meal",
 		"you need a good portion of proteins and some energy"
 	],
 
@@ -30,7 +30,7 @@
 		{"includes":["pasta-cheese"], "text":"You got plenty of carbs but not enough protein!", "immediate":false, "positive":true},
 		{"includes":["broccoli"], "text":"this is low in protein, fat and carbs but rich in vitamins and mineral!", "immediate":false, "positive":true},
 		{"includes":["cupcake"],  "text":"Too much sugar Sammy! You better replace it with some slow carbs", "immediate":false, "positive":false},
-		{"includes":["yogurt"], "text": "easily digestible protein, perfect for pre-workout", "immediate":false, "positive":false},
+		{"includes":["yogurt"], "text": "easily digestible protein, perfect for pre-workout", "immediate":false, "positive":true},
 		{"includes":["banana", "apple"], "text": "now let's add some protein", "immediate":true, "positive":false}
 	],
 

@@ -20,9 +20,9 @@
 		"background": "roomKitchen",
 		"items":[
 			{"key": "kitchenFridge", "x": 315, "y": 370, "contains": "breakfastFridge", "mommyWarns": ["Try to include lean protein for your post-workout meal!"] },
-			{"key": "kitchenCabinet", "x": 60, "y": 300, "contains": "breakfastCabinet", "mommyWarns": ["Why not add some whole grain carbs to your meal!"] }
+			{"key": "kitchenCabinet", "x": 60, "y": 300, "contains": "breakfastCabinet", "mommyWarns": ["Why not opt for some whole-grain carbs!"] }
 		],
-		"mommyWarns": ["Lunch time! Be careful with knives over there!!"],
+		"mommyWarns": ["Kitchen time! Be careful with knives over there!!"],
 		"foodWarnings":[
 			{"includes":["eggs", "lean-chicken"], "text":["Nice protein choice!"]},
 			{"includes":["pasta-cheese"], "text":["You got plenty of carbons but not enough protein!"]},

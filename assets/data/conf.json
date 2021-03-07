@@ -86,10 +86,11 @@
 		"maxVelocity": 800,
 		"texture": "breakfast-bad",
 		"rock": {
-			"rockItemId": 4,
+			"texture": "pill-texture",
+			"rockItemId": 0,
 			"impact": {
-				"min": -8,
-				"max": -1
+				"min": 3,
+				"max": 5
 			},
 			"velocity": {
 				"x": {
@@ -199,22 +200,22 @@
 			"mealParts": 2,
 			"badMealOptions": [
 				{
-					"name": "cake",
+					"name": "cottage",
 					"spritesheet": "breakfast-bad",
 					"order": 1,
 					"offsetY": -45,
 					"frame": 0,
 					"type": 0,
 					"customParams": {
-						"protein": 3,
-						"carbs": 3,
-						"fat": 3,
+						"protein": 11,
+						"carbs": 3.5,
+						"fat": 4.5,
 						"available": 1
 					},
 					"hovertxt": "hover1"
 				},
 				{
-					"name": "orange juice",
+					"name": "orange",
 					"spritesheet": "breakfast-bad",
 					"order": 2,
 					"offsetY": -45,
@@ -222,38 +223,38 @@
 					"type": 1,
 					"customParams": {
 						"protein": 1,
-						"carbs": 5,
-						"fat": 1,
+						"carbs": 13,
+						"fat": 0,
 						"available": 1
 					},
 					"hovertxt": "hover2"
 				},
 				{
-					"name": "sandwich",
+					"name": "bread",
 					"spritesheet": "breakfast-bad",
 					"order": 3,
 					"offsetY": -45,
 					"frame": 2,
 					"type": 2,
 					"customParams": {
-						"protein": 4,
-						"carbs": 4,
-						"fat": 4,
+						"protein": 9,
+						"carbs": 49,
+						"fat": 3,
 						"available": 1
 					},
 					"hovertxt": "hover3"
 				},
 				{
-					"name": "mayo",
+					"name": "banana",
 					"spritesheet": "breakfast-bad",
 					"order": 4,
 					"offsetY": -45,
 					"frame": 3,
 					"type": 3,
 					"customParams": {
-						"protein": 3,
-						"carbs": 2,
-						"fat": 3,
+						"protein": 1,
+						"carbs": 23,
+						"fat": 0.3,
 						"available": 1
 					},
 					"hovertxt": "hover4"
@@ -296,9 +297,9 @@
 					"frame": 2,
 					"type": 2,
 					"customParams": {
-						"protein": 1,
-						"carbs": 1,
-						"fat": 1,
+						"protein": 3.5,
+						"carbs": 43,
+						"fat": 5,
 						"available": 1
 					}
 				},
@@ -435,7 +436,7 @@
 			],
 			"breakfastCabinet": [
 				{
-					"name": "bread",
+					"name": "croissant",
 					"spritesheet": "kitchen-cabinet",
 					"order": 1,
 					"offsetY": -45,
@@ -449,7 +450,7 @@
 					}
 				},
 				{
-					"name": "french-fries",
+					"name": "choco-bisquits",
 					"spritesheet": "kitchen-cabinet",
 					"order": 2,
 					"offsetY": -45,
@@ -463,30 +464,30 @@
 					}
 				},
 				{
-					"name": "simple-pasta",
+					"name": "toast-bread",
 					"spritesheet": "kitchen-cabinet",
 					"order": 3,
 					"offsetY": -45,
 					"frame": 2,
 					"type": 2,
 					"customParams": {
-						"protein": 1,
-						"carbs": 23,
-						"fat": 0.5,
+						"protein": 11,
+						"carbs": 52,
+						"fat": 4.5,
 						"available": 1
 					}
 				},
 				{
-					"name": "pasta-cheese",
+					"name": "whole-wheat",
 					"spritesheet": "kitchen-cabinet",
 					"order": 4,
 					"offsetY": -45,
 					"frame": 3,
 					"type": 3,
 					"customParams": {
-						"protein": 1,
-						"carbs": 23,
-						"fat": 0.5,
+						"protein": 12,
+						"carbs": 43,
+						"fat": 3.5,
 						"available": 1
 					}
 				}
@@ -535,9 +536,9 @@
 					"frame": 1,
 					"type": 1,
 					"customParams": {
-						"protein": 4,
-						"carbs": 4,
-						"fat": 4,
+						"protein": 1,
+						"carbs": 13,
+						"fat": 0,
 						"available": 1
 					},
 					"hovertxt": "hover2"
@@ -550,9 +551,9 @@
 					"frame": 2,
 					"type": 2,
 					"customParams": {
-						"protein": 7,
-						"carbs": 7,
-						"fat": 7,
+						"protein": 9,
+						"carbs": 49,
+						"fat": 3,
 						"available": 1
 					},
 					"hovertxt": "hover3"
@@ -565,9 +566,9 @@
 					"frame": 3,
 					"type": 3,
 					"customParams": {
-						"protein": 7,
-						"carbs": 7,
-						"fat": 7,
+						"protein": 1,
+						"carbs": 23,
+						"fat": 0.3,
 						"available": 1
 					},
 					"hovertxt": "hover4"
@@ -711,12 +712,12 @@
 			"lowProtein": "Sammy didn't get enough protein",
 			"lowCarbs": "Sammy needed more carbs",
 			"lowFat": "Sammy ran out of fat",
-			"highProtein": "Sammy got too much protein",
-			"highCarbs": "Sammy got too much carbs",
-			"highFat": "Sammy got too much fat",
+			"highProtein": "Sammy got too many proteins",
+			"highCarbs": "Sammy got too many carbs",
+			"highFat": "Sammy got too many fat",
 
 			"tryAgain": "Try Again!",
-			"gameOver": "Game Over",
+			"gameOver": "Help Sammy with next meal",
 			"score": "Score",
 			"top": "Top",
 			"protein": "Protein",
@@ -725,9 +726,9 @@
 			"touchScreen": "Choose Sammy's activity and GO",
 			"youHaveGot": "You've got a",
 			"itsA": "It's a",
-			"takingCareDuring": "I've taken care of J during",
 			"playAt": "Play at",
-			"helpMessage": "Hey help me this day with my meal choices!"
+			"helpMessage": "Hey, help me today making my meals!",
+			"mealReady": "A balanced meal is ready!"
 		}
 	},
 	"url": "https://test-pwa-phaser.herokuapp.com/",
