@@ -341,7 +341,7 @@ Character.prototype.shareCharacterInfo = function () {
         y: this.head.y,
       },
       //Get the annoyed face
-      spriteFrame: Math.floor(this.head.frame / 4) * 4 + 3,
+      spriteFrame: 3  //Math.floor(this.head.frame / 4) * 4 + 3,
     },
     body: {
       spriteName: "bodyHero",

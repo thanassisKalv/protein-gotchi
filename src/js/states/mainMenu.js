@@ -20,6 +20,9 @@ export default class extends Phaser.State {
     //Turn on music
     this.mainMenuMusic = this.game.add.audio("mainMenuMusic");
     this.mainMenuMusic.play("", 0, 1, true);
+    this.mainMenuMusic.volume -= 0.1;
+    this.mainMenuMusic.volume -= 0.1;
+
   }
   init(messages) {
     this.messages = messages;
@@ -61,7 +64,7 @@ export default class extends Phaser.State {
     groundIntroTween.start();
 
     //Credits
-    this.creditsTxt = this.add.bitmapText(x, 5,"minecraftia", "By @tkalv.iti", 10 );
+    this.creditsTxt = this.add.bitmapText(x, 5,"minecraftia", "By @protein.eu", 10 );
     this.creditsTxt.align = "left";
     this.creditsTxt.tint = 0x0077ff;
     this.creditsTxt.x = this.game.width - this.creditsTxt.textWidth - 10;
@@ -69,6 +72,7 @@ export default class extends Phaser.State {
     var credUrl = "https://protein-h2020.eu/";
     this.creditsTxt.events.onInputDown.add(function () { window.open(credUrl, "_blank"); }, this);
 
+    // Sammy's options for nutrition-activity type
     this.type1 = this.game.add.sprite( this.game.width/2-70, this.game.height/2-70, "introType1");
     this.type1.anchor.setTo(0.5);
     this.type1.scale.setTo(0.35);
@@ -81,8 +85,9 @@ export default class extends Phaser.State {
     groundIntroTween.onComplete.add(function () {
       //Stop animation and set stopped frame
       helpmeMessageTween.start();
-      this.startTxt = this.add.bitmapText(x, y, "minecraftia", "| " + this.confData.text[this.locale].touchScreen.toUpperCase() + " |", 14 );
+      this.startTxt = this.add.bitmapText(x, y-25, "minecraftia", "| " + this.confData.text[this.locale].touchScreen.toUpperCase() + " |", 14 );
       this.startTxt.align = "center";
+      this.startTxt.tint = 0x007eff;
       this.startTxt.x = this.game.width / 2 - this.startTxt.textWidth / 2;
 
       this.timerBlickTitle = this.game.time.create(false);

@@ -31,6 +31,8 @@ let StatsUpdateItem = function (game, position, amount, positive) {
   //Set up tweens for position and fading
   game.add.tween(this).to({ x: position.x + 50 }, 1500, Phaser.Easing.Linear.None, true);
   game.add.tween(this).to({ alpha: 0 }, 1500, Phaser.Easing.Linear.None, true);
+
+  game.world.bringToTop(this);
 };
 StatsUpdateItem.prototype = Object.create(Phaser.Text.prototype);
 StatsUpdateItem.prototype.constructor = StatsUpdateItem;

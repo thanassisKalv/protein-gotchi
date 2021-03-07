@@ -59,7 +59,8 @@ Item.prototype.reset = function (position, properties) {
   this.frame = properties.spriteType;
   this.body.collideWorldBounds = true;
   this.outOfBoundsKill = false;
-  this.loadTexture("items-"+properties.spritesheet, this.frame  );
+  this.loadTexture("items-"+properties.spritesheet, properties.spriteType);
+  console.log(this);
 };
 
 /**

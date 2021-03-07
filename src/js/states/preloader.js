@@ -33,16 +33,17 @@ export default class extends Phaser.State {
 
     this.load.spritesheet("headHero", "./assets/sprites/head-sprite-v2.png", 80, 80 );
     this.load.spritesheet("bodyHero", "./assets/sprites/body-sprite.png", 80,80 );
-    this.load.spritesheet("items-breakfast-bad", "./assets/sprites/items.png", 50, 50);
+    this.load.spritesheet("items-breakfast-bad", "./assets/sprites/items/items-breakfast.png", 50, 50);
     this.load.spritesheet("items-breakfast", "./assets/sprites/items/items-breakfast.png", 50, 50);
     this.load.spritesheet("items-breakfast-bag", "./assets/sprites/items/items-breakfast-bag.png", 50, 50);
     this.load.spritesheet("items-breakfast-desk", "./assets/sprites/items/items-breakfast-desk.png", 50, 50);
     this.load.spritesheet("items-kitchen-cabinet", "./assets/sprites/items/items-kitchen-cabinet.png", 50, 50);
     this.load.spritesheet("items-kitchen-fridge", "./assets/sprites/items/items-kitchen-fridge.png", 50, 50);
+    this.load.spritesheet("items-pill-texture", "./assets/sprites/pill-texture.png", 50, 50);
 
     this.load.spritesheet("buttons", "./assets/sprites/buttons-alt.png", 70, 70);
     this.load.spritesheet("breakfast", "./assets/sprites/meal-breakfast-v1.png", 70, 70);
-    this.load.spritesheet("breakfast-bad", "./assets/sprites/buttons.png", 70, 70);
+    this.load.spritesheet("breakfast-bad", "./assets/sprites/meal-breakfast-v1.png", 70, 70);
     this.load.spritesheet("breakfast-desk", "./assets/sprites/breakfast-desk.png", 70, 70);
     this.load.spritesheet("breakfast-bag", "./assets/sprites/breakfast-bag.png", 70, 70);
     this.load.spritesheet("kitchen-fridge", "./assets/sprites/kitchen-fridge.png", 70, 70);
@@ -50,6 +51,8 @@ export default class extends Phaser.State {
 
     
     this.load.spritesheet("button-retry", "./assets/sprites/button-retry.png", 225, 112);
+    this.load.image("button-notify", "./assets/sprites/button-notify.png");
+    this.load.image("discardButton", "./assets/sprites/discardButton.png")
     
     this.load.image("momInfo", "./assets/sprites/mom-button-calm.gif");
     this.load.image("momInfoWarn", "./assets/sprites/mom-button-warn.gif");
@@ -77,8 +80,8 @@ export default class extends Phaser.State {
       "./assets/sounds/kidLevel.mp3",
     ]);
     this.game.load.audio("mainMenuMusic", [
-      "./assets/sounds/mainMenu.ogg",
-      "./assets/sounds/mainMenu.mp3",
+      "./assets/sounds/kidLevel.ogg",
+      "./assets/sounds/kidLevel.mp3",
     ]);
     this.game.load.audio("aura", [
       "./assets/sounds/aura.ogg",
