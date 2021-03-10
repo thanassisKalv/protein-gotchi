@@ -1,0 +1,18 @@
+{
+    "rules":[
+        {
+            "foods":["meatball", "bread"],
+            "action": ["freeze them to use as quick addition of protein to other meal"]
+        },
+        {
+            "foods":["orange-juice", "bread"],
+            "action": ["keep in your sack for a post-work meal"]
+        },
+        {
+            "foods":["carrots", "broccoli", "potato"],
+            "action": ["The steamed, roasted or grilled vegetables leftovers can become soup on another day"]
+        }
+
+    ]
+
+}

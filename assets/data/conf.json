@@ -98,7 +98,7 @@
 					"max": -300
 				},
 				"y": {
-					"min": -200,
+					"min": 100,
 					"max": -200
 				}
 			}
@@ -210,7 +210,8 @@
 						"protein": 11,
 						"carbs": 3.5,
 						"fat": 4.5,
-						"available": 1
+						"available": 1,
+						"grams":[50, 100, 150]
 					},
 					"hovertxt": "hover1"
 				},
@@ -225,7 +226,8 @@
 						"protein": 1,
 						"carbs": 13,
 						"fat": 0,
-						"available": 1
+						"available": 1,
+						"grams":[50, 100, 150]
 					},
 					"hovertxt": "hover2"
 				},
@@ -240,7 +242,8 @@
 						"protein": 9,
 						"carbs": 49,
 						"fat": 3,
-						"available": 1
+						"available": 1,
+						"grams":[50, 100, 150]
 					},
 					"hovertxt": "hover3"
 				},
@@ -255,7 +258,8 @@
 						"protein": 1,
 						"carbs": 23,
 						"fat": 0.3,
-						"available": 1
+						"available": 1,
+						"grams":[50, 100, 150]
 					},
 					"hovertxt": "hover4"
 				}
@@ -272,7 +276,8 @@
 						"protein": 6,
 						"carbs": 7,
 						"fat": 2,
-						"available": 1
+						"available": 1,
+						"grams":[100, 150, 200]
 					}
 				},
 				{
@@ -286,7 +291,8 @@
 						"protein": 7,
 						"carbs": 8,
 						"fat": 16,
-						"available": 1
+						"available": 1,
+						"grams":[30, 50, 70]
 					}
 				},
 				{
@@ -300,7 +306,8 @@
 						"protein": 3.5,
 						"carbs": 43,
 						"fat": 5,
-						"available": 1
+						"available": 1,
+						"grams":[30, 50, 70]
 					}
 				},
 				{
@@ -314,7 +321,8 @@
 						"protein": 1,
 						"carbs": 9,
 						"fat": 0,
-						"available": 1
+						"available": 1,
+						"grams":[30, 50, 70]
 					}
 				}
 			],
