@@ -18,7 +18,7 @@ let Item = function (game, position, properties) {
   this.x = position.x;
   this.y = position.y;
   this.anchor.setTo(0.5);
-
+  this.name = properties.name;
   //Sprite Type
   this.frame = properties.spriteType;
 
@@ -60,8 +60,10 @@ Item.prototype.reset = function (position, properties) {
   this.body.collideWorldBounds = true;
   this.outOfBoundsKill = false;
   this.loadTexture("items-"+properties.spritesheet, properties.spriteType);
-  console.log(this);
+  //console.log(this);
 };
+
+
 
 /**
  * Set Item to be thrown
