@@ -1,8 +1,10 @@
 {
-    "rules":[
+    "ideas":[
         {
-            "foods":["meatball", "bread"],
-            "action": ["freeze them to use as quick addition of protein to other meal"]
+            "foods":["meatball"],
+            "action": ["freeze them to use as quick addition of protein to other meal"],
+            "rules": "Quickly refrigerate foods like meat, poultry, fish, dairy, and eggs."
+
         },
         {
             "foods":["orange-juice", "bread"],
@@ -11,6 +13,11 @@
         {
             "foods":["carrots", "broccoli", "potato"],
             "action": ["The steamed, roasted or grilled vegetables leftovers can become soup on another day"]
+        },
+        {
+            "foods": ["bread"],
+            "action" : ["use day-old bread, season them with oil on top of a salad"]
+        
         }
 
     ]

@@ -3,11 +3,11 @@
 	"nextMealTime": [2400,2400],
 
 	"momIntro":[
-		"hey Yammy, time for good breakfast before jogging",
-		"let's choose wisely and create a breakfast easy to digest"
+		"hey Yammy, you will be sitting all day at office",
+		"let's prepare some light and clever meals"
 	],
 
-	"mealNames": ["breakfast", "lunch", "afternoonSnack"],
+	"mealNames": ["muesli-yogurt", "lunch", "afternoonSnack"],
 
 	"mealParts": [3, 3, 3],
 
@@ -24,11 +24,11 @@
 	],
 
 	"foodWarnings":[
-		{"includes":["eggs", "lean-chicken"], "text":"Lean protein, better for post-workout!", "immediate":false, "positive":false},
+		{"includes":["eggs", "lean-chicken"], "text":"Lean protein, will keep you filled for a couple of hours", "immediate":false, "positive":false},
 		{"includes":["pasta-cheese"], "text":"Nice, you got plenty of carbons and a few protein!", "immediate":false, "positive":true},
 		{"includes":["broccoli"], "text":"this is low in protein, fat and carbs but rich in vitamins and minerals!", "immediate":false, "positive":true},
 		{"includes":["cupcake"],  "text":"Too much sugar Yammy! You better replace it with some slow carbs", "immediate":false, "positive":false},
-		{"includes":["yogurt"], "text": "easily digestible protein, perfect for pre-workout", "immediate":false, "positive":true},
+		{"includes":["yogurt"], "text": "Light meal with easily digestible proteins", "immediate":false, "positive":true},
 		{"includes":["banana", "apple"], "text": "healthy carbs choice! let's add some protein!", "immediate":true, "positive":false}
 	],
 

@@ -3,7 +3,7 @@
 		"background": "roomKid",
 		"items":[
 			{"key": "roomCabinet", "x": 320, "y": 300},
-			{"key": "roomDesk", "x": 80, "y": 360, "contains": "optionsBreakfastDesk", "mommyWarns": ["I know you have candies hidden over there!"] },
+			{"key": "roomDesk", "x": 80, "y": 360, "contains": "meal_add", "mommyWarns": ["Let's add some protein, Yummy!"] },
 			{"key": "schoolbag", "x": 280, "y": 350, "contains": "optionsBreakfastBag", "mommyWarns": ["Add some carbs to your protein!"] }
 		],
 		"mommyWarns": ["And keep your room clean!"],
@@ -50,7 +50,7 @@
 			{"key": "picnicBag", "x": 150, "y": 200},
 			{"key": "picnicTable", "x": 50, "y": 200}
 		],
-		"mommyWarns": ["you got some nice energy boost Sammy", "why not go a picnic in the woods?"],
+		"mommyWarns": ["you got some nice energy boost Yammy", "why not go a picnic in the woods?"],
 		"foodWarnings":[],
 		"events":{
 			
