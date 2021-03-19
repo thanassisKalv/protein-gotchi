@@ -15,6 +15,7 @@
 import { disableMoveChildren, findChild } from "./util";
 let Character = function (game, position, properties) {
   Phaser.Sprite.call(this, game, position.x, position.y, properties.spriteName);
+  this.scale.setTo(0.8);
 
   //Location
   this.x = game.world.centerX;
@@ -69,8 +70,7 @@ let Character = function (game, position, properties) {
         if (bodyPart !== "body") {
           this[bodyPart].animations.add(
             animationInfo,
-            this._animationsInfo[bodyPart].animations[animationInfo]
-              .frameSecuence,
+            this._animationsInfo[bodyPart].animations[animationInfo].frameSecuence,
             this._animationsInfo[bodyPart].animations[animationInfo].frameRate,
             this._animationsInfo[bodyPart].animations[animationInfo].loop
           );
@@ -99,7 +99,8 @@ let Character = function (game, position, properties) {
   //Events
   this.inputEnabled = true;
   this.events.onInputDown.add(this.annoyed, this);
-
+  this.jumpingAway = false;
+  
   /* 	@require util.js
 		Set that physics don't affect to character children
     */
@@ -132,7 +133,31 @@ Character.prototype.disableClick = function () {
   this.inputEnabled = false;
 };
 
+Character.prototype.jumpAway = function(foodItem){
+  this.annoyed();
+  this.jumpingAway = true;
+  this.animations.stop();
+  if (this.characterMov!== 'undefined' && this.characterMov.isRunning){
+    this.characterMov.pause();
+    this.characterMov.stop();
+  }
 
+  if (foodItem.x<this.x){
+    this.animations.play("jump");
+    this.body.velocity.y = -350;
+    this.body.velocity.x = 250;
+  }
+  else{
+    this.animations.play("jump");
+    this.body.velocity.y = -350;
+    this.body.velocity.x = -250
+  }
+
+  var jumpAnim = this.animations.getAnimation("jump");
+  jumpAnim.onComplete.add(function () {
+    //Stop animation and set stopped frame
+    this.jumpingAway = false;
+  }, this);}
 
   /**
    * Character moves to a touched position
@@ -141,9 +166,10 @@ Character.prototype.disableClick = function () {
    * @param {object} targetPosition
    */
   Character.prototype.walkingTo = function(sprite, pointer, targetPosition) {
-    var head = findChild(this, "headHero"),
-      x,
-      y;
+    if(this.jumpingAway)
+      return;
+    var head = findChild(this, "headHero");
+    var x, y;
 
     if (!!targetPosition) {
       //Walk to an item
@@ -157,11 +183,11 @@ Character.prototype.disableClick = function () {
 
     if (x < this.x) {
       //Go left
-      this.scale.x = 1;
+      this.scale.x = 0.75;
       head.scale.x = -1;
     } else {
       //Go right
-      this.scale.x = -1;
+      this.scale.x = - 0.75;
       head.scale.x = -1;
     }
 
@@ -169,15 +195,15 @@ Character.prototype.disableClick = function () {
     this.animations.play("walk");
 
     //Move the character towards the cursor
-    var characterMov = this.cgame.add.tween(this);
-    characterMov.to({ x: x }, this.walkSpeed);
-    characterMov.onComplete.add(function () {
+    this.characterMov = this.cgame.add.tween(this);
+    this.characterMov.to({ x: x }, this.walkSpeed);
+    this.characterMov.onComplete.add(function () {
       //Stop animation and set stopped frame
       this.animations.stop();
       this.restartAnimation("walk");
     }, this);
 
-    characterMov.start();
+    this.characterMov.start();
   }
 
 
@@ -265,8 +291,7 @@ Character.prototype.updateClothing = function (bodyPartName, clothingType) {
     self = this;
 
   function updateAnimationFrames(bodyPart, type, animationsInfo) {
-    var animationManager =
-      bodyPart === "body" ? self.animations : self[bodyPart].animations;
+    var animationManager = bodyPart === "body" ? self.animations : self[bodyPart].animations;
 
     for (var currentAnimation in animationManager._anims) {
       if (animationsInfo.hasOwnProperty(currentAnimation)) {
