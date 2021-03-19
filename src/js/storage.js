@@ -51,16 +51,16 @@ Storage.prototype.storeNewFood = function () {
       item.body.velocity.y = _this.confData.physics.jump.velocity.y;
       console.log(item.key, item.frame);
 
-      _this.storedFoods.push({"key":item.key, "frame":item.frame, "name":item.name});
+      _this.storedFoods.push({"key":item.key, "frame":item.frame, "name":item.name, "contains":item.tags});
       item.body.enable = false;
       _this.updateModal();
 
-      var itemDiscard = _this.game.add.tween( item );
-      itemDiscard.to({x: _this.x, y:_this.y}, 300).start()
+      var itemSave = _this.game.add.tween( item );
+      itemSave.to({x: _this.x, y:_this.y}, 300).start()
       var itemScaleDown = _this.game.add.tween( item.scale );
       itemScaleDown.to({ x: 0.1, y: 0.1}, 300).start()
 
-      itemDiscard.onComplete.add(function () {
+      itemSave.onComplete.add(function () {
         item.kill();
         item.destroy();
       });
@@ -76,7 +76,7 @@ Storage.prototype.updateModal = function() {
   this.modalHandler.destroyModal(this.containsModalName);
   console.log(this.storedFoods);
 
-  const startY= -120;
+  const startY= -220;
   var itemsArrNew = [];
   for(var i=0; i<this.storedFoods.length; i++){
     itemsArrNew.push({
@@ -85,7 +85,7 @@ Storage.prototype.updateModal = function() {
       fontFamily: "Luckiest Guy",
       fontSize: 22,
       color: "0xfb387c",
-      offsetY: startY+i*30,
+      offsetY: startY+i*55,
       offsetX: -50,
       graphicWidth: 200
     })
@@ -93,7 +93,7 @@ Storage.prototype.updateModal = function() {
       type: "sprite",
       atlasParent: this.storedFoods[i].key,
       content: this.storedFoods[i].frame,
-      offsetY: startY+i*30,
+      offsetY: startY+i*45,
       offsetX: 50,
       graphicWidth: 200
     })
@@ -177,12 +177,12 @@ Storage.prototype.displayModal = function (empty) {
 
 
 /**
- * Display a modal with the foods that Sammy has saved
+ * Display a modal with the foods that Yammy has saved
  */
 function foodsModal(){
 
   if (this.storedFoods.length==0){
-    console.log("we're here");
+    //console.log("we're here");
     this.displayModal(true);
   }
   else
