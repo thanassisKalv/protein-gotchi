@@ -1,4 +1,7 @@
-
+import {
+  saveLocalItemStorage,
+  getLocalItemStorage
+} from "./util";
 
 /**
  * Storage class
@@ -39,9 +42,19 @@ let Storage = function (game, position, confData) {
   this.emptyModalName = "emptyfoodStorage";
   this.containsModalName = "foodStorage";
 
+  this.checkExistingStorage();
+
 };
 Storage.prototype = Object.create(Phaser.Sprite.prototype);
 Storage.prototype.constructor = Storage;
+
+// Load previously saved items
+Storage.prototype.checkExistingStorage = function () {
+
+  this.storedFoods = getLocalItemStorage("foods");
+  console.log(this.storedFoods);
+  this.updateModal();
+}
 
 // Store a regular item
 Storage.prototype.storeNewFood = function () {
@@ -64,7 +77,7 @@ Storage.prototype.storeNewFood = function () {
         item.kill();
         item.destroy();
       });
-      // this.character.head.animations.play("eat");  <-- make an animation?
+      // this.character.head.animations.play("eat");  <-- make an item-saving animation?
       //this.clearSelection();
       //this.uiBlocked = false;
     }
