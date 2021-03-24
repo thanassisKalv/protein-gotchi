@@ -75,6 +75,38 @@ export function saveLocalItem(key, data) {
 }
 
 /**
+ * Private handler to save Item in LocalStorage
+ * @param {string} key
+ * @param {string|Array|Object} data
+ */
+ export function saveLocalItemStorage(key, data) {
+  var prefix = "vjcare_storage_";
+
+  if (typeof data === "string") {
+    localStorage.setItem(prefix + key, data);
+  } else {
+    localStorage.setItem(prefix + key, JSON.stringify(data));
+  }
+}
+
+/**
+ * Private handler to load Items saved in LocalStorage
+ * @param {string} key
+ * @param {string|Array|Object} data
+ */
+ export function getLocalItemStorage(key) {
+  var prefix = "vjcare_storage_";
+  var data = localStorage.getItem(prefix + key);
+
+  try {
+    return JSON.parse(data);
+  } catch (e) {
+    return data;
+  }
+}
+
+
+/**
  * Private handler to get Item from LocalStorage
  * @param {string} key
  * @returns {Array|Object}
