@@ -1,12 +1,12 @@
 ***
-The code of original game from JValen https://github.com/jvalen/virtualJCare
+Little Yammy needs some help with his meals. His mother knows about his habits and throws some advices from time to time
+
+Explore the rooms and choose some nice and healthy ingredients for Yammy's meals
 ***
 
 ============
 
-Little Sammy needs some help with his meals. His mother knows about his habits and throws some advices from time to time
-
-Explore the rooms and choose some nice and healthy ingredients for Sammy's meals
+Credis to Jvalen for the code of the original game https://github.com/jvalen/virtualJCare
 
 
 ### Credits
