@@ -1,0 +1,454 @@
+{
+"meals":{
+    "coffee_sandwich":{
+            "foods": ["Coffee", "Bread", "Margarine", "Marmalade", "Ham", "Tomatoes"],
+            "tags": ["kcal", "fat", "carb", "protein", "fiber"],
+            "nutrition": [340, "10", "62", "21", "5"]
+        },
+
+    "bread_cheese_fruit":{
+            "foods": ["Bread", "Cheese", "Pears", "Butter"],
+            "tags": ["kcal", "fat", "carb", "protein", "fiber"],
+            "nutrition": [589, "34", "55", "20", "8"]    
+        },
+
+    "eggs_meat_veg":{
+            "foods": [ "Eggs", "Gouda cheese", "Chicken", "Onion" ],
+            "tags": ["kcal", "fat", "carb", "protein", "fiber"],
+            "nutrition": [423, "28", "2", "41", "1"]    
+        },
+
+    "egg_sandwich_fruit": {
+            "foods": ["Eggs", "Spinach", "Bread", "Apples", "Cinnamon", "Butter"],
+            "tags": ["kcal", "fat", "carb", "protein", "fiber"],
+            "nutrition": [476, "22", "49", "25", "8"]
+        },
+
+    "crispbread_eggs": {
+            "foods": ["Eggs", "Crispbread", "Cucumber", "Basil", "Tomatoes"],
+            "tags": ["kcal", "fat", "carb", "protein", "fiber"],
+            "nutrition": [390, "12", "53", "21", "5"]    
+        },
+
+    "sandwich_eggs_fruit": {
+            "foods": ["Bread", "Eggs", "Chives", "Raspberries"],
+            "tags": ["kcal", "fat", "carb", "protein", "fiber"],
+            "nutrition": [433, "11", "54", "23", "9"]
+        },
+
+    "muesli-yogurt": {
+			"place": "bedroom",
+            "momIntro":[
+                "hey Yammy, time for breakfast",
+                "let's choose wisely to create a complete breakfast"
+            ],
+            "spritesheet": "muesli-yogurt",
+            "foods": ["yogurt", "muesli"],
+            "tags": ["kcal", "fat", "carb", "protein", "fiber"],
+            "nutrition": [397, "18", "48", "11", "4"],
+            "foods_extra": ["yogurt", "muesli", "peach"],
+            "remove": ["peach"],
+            "remove_reason": "Let's move some carbs to our snack",
+            "add": ["eggs", "bread"],
+            "add_reason": "Let's make our breakfast more protein full",
+			"instructions": [
+				["Add a few more protein, keep a good source of carbs"], ["save a piece of fruit for snack"], 
+				["better increase a little bit your overall protein and save some carbs for a later meal"],
+				["hmm ok, you got your sugar snack for today, let's keep on fruits snack"] ],
+            "meal_basic": [
+				{
+					"name": "yogurt",
+					"spritesheet": "muesli-yogurt",
+					"order": 1,
+					"offsetY": -90,
+					"frame": 0,
+					"type": 0,
+                    "toDo": "eat",
+					"gram":200,
+					"step":50,
+					"customParams": {
+						"protein": 11,
+						"carbs": 3.5,
+						"fat": 4.5,
+						"available": 1
+					}
+				},
+				{
+					"name": "muesli",
+					"spritesheet": "muesli-yogurt",
+					"order": 2,
+					"offsetY": -90,
+					"frame": 1,
+					"type": 1,
+                    "toDo": "eat",
+					"gram":40,
+					"step":20,
+					"customParams": {
+						"protein": 9,
+						"carbs": 63,
+						"fat": 17,
+						"available": 1
+					}
+				},
+				{
+					"name": "peach",
+					"spritesheet": "muesli-yogurt",
+					"order": 3,
+					"offsetY": -90,
+					"frame": 2,
+					"type": 2,
+                    "toDo": "save",
+					"gram":150,
+					"step":-1,
+					"customParams": {
+						"protein": 1,
+						"carbs": 9,
+						"fat": 0,
+						"available": 1
+					}
+				}
+            ],
+            "meal_add": [
+				{
+					"name": "eggs",
+					"spritesheet": "kitchen-fridge",
+					"order": 1,
+					"offsetY": -90,
+					"frame": 0,
+					"type": 0,
+                    "toDo": "eat",
+					"gram": 60,
+					"step":-1,
+					"customParams": {
+						"protein": 5,
+						"carbs": 1,
+						"fat": 6,
+						"available": 1
+					}
+				},
+				{
+					"name": "bread",
+					"spritesheet": "breakfast",
+					"order": 2,
+					"offsetY": -90,
+					"frame": 2,
+					"type": 2,
+                    "toDo": "save",
+					"gram": 80,
+					"step":-1,
+					"customParams": {
+						"protein": 9,
+						"carbs": 49,
+						"fat": 3,
+						"available": 1
+					}
+				}
+            ],
+			"meal_finish": [
+				{
+					"name": "croissant",
+					"spritesheet": "kitchen-cabinet",
+					"order": 1,
+					"offsetY": -90,
+					"frame": 0,
+					"type": 0,
+					"toDo": "eat",
+					"gram": 60,
+					"step":-1,
+					"customParams": {
+						"protein": 8,
+						"carbs": 43,
+						"fat": 23,
+						"available": 1
+					}
+				}
+            ]
+        },
+    
+	"lunch_at_office":{
+		"momIntro":[
+			"hey Yammy, let's make your lunch",
+			"this will be a balanced lunch"
+		],
+		"place": "picnic",
+		"spritesheet": "muesli-yogurt",
+		"foods": ["pita_bread", "tuna", "tomatoes", "cucumber", "oil", "mustard", "yogurt", "Honey"],
+		"tags": ["kcal", "fat", "carb", "protein", "fiber"],
+		"nutrition": [526, "18", "56", "35", "3"],
+		"id_": "Charite-C2-2000-28-Pescatarian",
+		"instructions": [
+			["prepare a nice salad, add up more veggies", "save you fruit later for a snack"], 
+			["Tuna is a lean source of protein, why not add more of it"],
+			["you need more fats", "olive oil is healthy pure source of it"] ],
+		"meal_basic": [
+			{
+				"name": "cucumber",
+				"spritesheet": "salad-lunch",
+				"order": 1,
+				"offsetY": -90,
+				"frame": 0,
+				"type": 0,
+				"toDo": "eat",
+				"gram":20,
+				"step":20,
+				"customParams": {
+					"protein": 1,
+					"carbs": 3.5,
+					"fat": 0,
+					"available": 1
+				}
+			},
+			{
+				"name": "raspberries",
+				"spritesheet": "salad-lunch",
+				"order": 2,
+				"offsetY": -90,
+				"frame": 1,
+				"type": 1,
+				"toDo": "save",
+				"gram":20,
+				"step":20,
+				"customParams": {
+					"protein": 1,
+					"carbs": 12,
+					"fat": 1,
+					"available": 1
+				}
+			},
+			{
+				"name": "tomatoes",
+				"spritesheet": "salad-lunch",
+				"order": 3,
+				"offsetY": -90,
+				"frame": 2,
+				"type": 2,
+				"toDo": "eat",
+				"gram":20,
+				"step":20,
+				"customParams": {
+					"protein": 1,
+					"carbs": 3.9,
+					"fat": 0,
+					"available": 1
+				}
+			}
+		],
+		"meal_add": [
+			{
+				"name": "tuna",
+				"spritesheet": "main-lunch",
+				"order": 1,
+				"offsetY": -90,
+				"frame": 0,
+				"type": 0,
+				"toDo": "eat",
+				"gram": 60,
+				"step":20,
+				"customParams": {
+					"protein": 24,
+					"carbs": 0,
+					"fat": 3,
+					"available": 1
+				}
+			},
+			{
+				"name": "broccoli",
+				"spritesheet": "main-lunch",
+				"order": 2,
+				"offsetY": -90,
+				"frame": 1,
+				"type": 1,
+				"toDo": "eat",
+				"gram": 80,
+				"step":-1,
+				"customParams": {
+					"protein": 2.5,
+					"carbs": 7,
+					"fat": 0.5,
+					"available": 1
+				}
+			}
+		],
+		"meal_finish": [
+			{
+				"name": "olive_oil",
+				"spritesheet": "main-lunch",
+				"order": 1,
+				"offsetY": -90,
+				"frame": 2,
+				"type": 2,
+				"toDo": "eat",
+				"gram": 10,
+				"step": 2,
+				"customParams": {
+					"protein": 0,
+					"carbs": 0,
+					"fat": 100,
+					"available": 1
+				}
+			},
+			{
+				"name": "toast-bread",
+				"spritesheet": "kitchen-cabinet",
+				"order": 2,
+				"offsetY": -90,
+				"frame": 2,
+				"type": 2,
+				"toDo": "eat",
+				"gram": 60,
+				"step": 10,
+				"customParams": {
+					"protein": 11,
+					"carbs": 52,
+					"fat": 4.5,
+					"available": 1
+				}
+			}
+
+		]
+		},
+	
+		"dinner_after_office":{
+			"momIntro":[
+				"hey Yammy, time for dinner",
+				"this can be a like a light snack"
+			],
+			"place": "picnic",
+			"spritesheet": "muesli-yogurt",
+			"foods": ["pita_bread", "tuna", "tomatoes", "cucumber", "oil", "mustard", "yogurt", "Honey"],
+			"tags": ["kcal", "fat", "carb", "protein", "fiber"],
+			"nutrition": [526, "18", "56", "35", "3"],
+			"id_": "Charite-C2-2000-28-Pescatarian",
+			"instructions": [
+				["prepare a nice salad, add up more veggies", "save you fruit later for a snack"], 
+				["Tuna is a lean source of protein, why not add more of it"],
+				["you need more fats", "olive oil is healthy pure source of it"] ],
+			"meal_basic": [
+				{
+					"name": "cucumber",
+					"spritesheet": "salad-lunch",
+					"order": 1,
+					"offsetY": -90,
+					"frame": 0,
+					"type": 0,
+					"toDo": "eat",
+					"gram":20,
+					"step":20,
+					"customParams": {
+						"protein": 1,
+						"carbs": 9,
+						"fat": 0,
+						"available": 1
+					}
+				},
+				{
+					"name": "raspberries",
+					"spritesheet": "salad-lunch",
+					"order": 2,
+					"offsetY": -90,
+					"frame": 1,
+					"type": 1,
+					"toDo": "save",
+					"gram":20,
+					"step":20,
+					"customParams": {
+						"protein": 1,
+						"carbs": 9,
+						"fat": 0,
+						"available": 1
+					}
+				},
+				{
+					"name": "tomatoes",
+					"spritesheet": "salad-lunch",
+					"order": 3,
+					"offsetY": -90,
+					"frame": 2,
+					"type": 2,
+					"toDo": "eat",
+					"gram":20,
+					"step":20,
+					"customParams": {
+						"protein": 1,
+						"carbs": 9,
+						"fat": 0,
+						"available": 1
+					}
+				}
+			],
+			"meal_add": [
+				{
+					"name": "tuna",
+					"spritesheet": "main-lunch",
+					"order": 1,
+					"offsetY": -90,
+					"frame": 0,
+					"type": 0,
+					"toDo": "eat",
+					"gram": 60,
+					"step":20,
+					"customParams": {
+						"protein": 24,
+						"carbs": 0,
+						"fat": 3,
+						"available": 1
+					}
+				},
+				{
+					"name": "broccoli",
+					"spritesheet": "main-lunch",
+					"order": 2,
+					"offsetY": -90,
+					"frame": 1,
+					"type": 1,
+					"toDo": "eat",
+					"gram": 80,
+					"step":-1,
+					"customParams": {
+						"protein": 2.5,
+						"carbs": 7,
+						"fat": 0.5,
+						"available": 1
+					}
+				}
+			],
+			"meal_finish": [
+				{
+					"name": "olive_oil",
+					"spritesheet": "main-lunch",
+					"order": 1,
+					"offsetY": -90,
+					"frame": 2,
+					"type": 2,
+					"toDo": "eat",
+					"gram": 10,
+					"step": 2,
+					"customParams": {
+						"protein": 0,
+						"carbs": 0,
+						"fat": 100,
+						"available": 1
+					}
+				},
+				{
+					"name": "toast-bread",
+					"spritesheet": "kitchen-cabinet",
+					"order": 2,
+					"offsetY": -90,
+					"frame": 2,
+					"type": 2,
+					"toDo": "eat",
+					"gram": 60,
+					"step": 10,
+					"customParams": {
+						"protein": 11,
+						"carbs": 52,
+						"fat": 4.5,
+						"available": 1
+					}
+				}
+	
+			]
+			}
+	}
+}
