@@ -12,8 +12,9 @@
 	},
 	"decreaseStatAmount": 2,
 	"rockFrecuencyDivisor": 6,
-	"redAlertLimit": 20,
+	"redAlertLimit": 10,
 	"discardButton": "discardButton",
+	"nutriInfo": "nutriInfo",
 	"timers": {
 		"rockInterval": 16,
 		"clothChangeArray": [10, 30, 50, 70, 90, 110, 130, 150, 170]
@@ -35,9 +36,9 @@
 	"character": {
 		"spriteName": "bodyHero",
 		"initialStats": {
-            "protein": 12,
-            "fat": 12,
-            "carbs": 12
+            "protein": 1,
+            "fat": 1,
+            "carbs": 1
 		},
 		"frame": {
 			"head": 0,
@@ -58,7 +59,11 @@
 					"jump": {
 						"frameRate": 5,
 						"frameSecuence": [5, 4],
-						"loop": false}
+						"loop": false},
+						"ropejump": {
+							"frameRate": 4,
+							"frameSecuence": [5, 4, 5, 4, 5, 4, 5, 4],
+							"loop": false}
 				}
 			},
 			"head": {
@@ -369,9 +374,9 @@
 					"frame": 0,
 					"type": 0,
 					"customParams": {
-						"protein": 1,
-						"carbs": 23,
-						"fat": 0.5,
+						"protein": 7,
+						"carbs": 43,
+						"fat": 16,
 						"available": 1
 					}
 				},
@@ -649,12 +654,14 @@
 			"protein": "Protein",
 			"carbs": "Carbs",
 			"fat": "Fat",
-			"touchScreen": "Choose Yammy's activity and GO",
+			"touchScreen": "Time for a meal!",
 			"youHaveGot": "You've got a",
 			"itsA": "It's a",
 			"playAt": "Play at",
 			"helpMessage": "Hey, help me today prepare my meals!",
-			"mealReady": "A balanced meal is ready!"
+			"mealReady": "A balanced meal is ready!",
+			"foodOver": "Food supply is over!",
+			"mealGoals": "Meal Goals"
 		}
 	},
 	"url": "https://test-pwa-phaser.herokuapp.com/",
