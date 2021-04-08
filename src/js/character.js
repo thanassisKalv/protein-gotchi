@@ -32,8 +32,8 @@ let Character = function (game, position, properties) {
   this.head.anchor.setTo(0.5);
 
   //Init spritesheet frame
-  this.frame = properties.frame.body; //body frame
-  this.head.frame = properties.frame.head; //head frame
+  this.frame = properties.frame.body;       //body frame
+  this.head.frame = properties.frame.head;  //head frame
 
   //Animations info
   this._animationsInfo = properties.animations;
@@ -100,7 +100,21 @@ let Character = function (game, position, properties) {
   this.inputEnabled = true;
   this.events.onInputDown.add(this.annoyed, this);
   this.jumpingAway = false;
+  this.jumpingRope = false;
   
+  this.jumpRopeAnim = this.animations.getAnimation("ropejump");
+  this.jumpRopeAnim.onComplete.add(function () {
+    //Stop animation and set stopped frame
+    //console.log("JumpRope finished!");
+    this.jumpingRope = false;
+  }, this);
+
+  this.jumpAnim = this.animations.getAnimation("jump");
+  this.jumpAnim.onComplete.add(function () {
+    //Stop animation and set stopped frame
+    this.jumpingAway = false;
+  }, this);
+
   /* 	@require util.js
 		Set that physics don't affect to character children
     */
@@ -137,27 +151,40 @@ Character.prototype.jumpAway = function(foodItem){
   this.annoyed();
   this.jumpingAway = true;
   this.animations.stop();
-  if (this.characterMov!== 'undefined' && this.characterMov.isRunning){
-    this.characterMov.pause();
-    this.characterMov.stop();
-  }
+  if (typeof this.characterMov !== 'undefined')
+    if (this.characterMov.isRunning){
+      this.characterMov.pause();
+      this.characterMov.stop();
+    }
 
   if (foodItem.x<this.x){
     this.animations.play("jump");
-    this.body.velocity.y = -350;
+    this.body.velocity.y = -250;
     this.body.velocity.x = 250;
   }
   else{
     this.animations.play("jump");
-    this.body.velocity.y = -350;
+    this.body.velocity.y = -250;
     this.body.velocity.x = -250
   }
 
-  var jumpAnim = this.animations.getAnimation("jump");
-  jumpAnim.onComplete.add(function () {
-    //Stop animation and set stopped frame
-    this.jumpingAway = false;
-  }, this);}
+}
+
+Character.prototype.jumpRope = function(){
+  this.annoyed();
+  this.jumpingRope = true;
+  this.animations.stop();
+  if (typeof this.characterMov !== 'undefined')
+    if (this.characterMov.isRunning){
+      this.characterMov.pause();
+      this.characterMov.stop();
+    }
+
+  this.animations.play("ropejump");
+  this.body.velocity.y = -350;
+
+}
+
 
   /**
    * Character moves to a touched position
@@ -166,7 +193,7 @@ Character.prototype.jumpAway = function(foodItem){
    * @param {object} targetPosition
    */
   Character.prototype.walkingTo = function(sprite, pointer, targetPosition) {
-    if(this.jumpingAway)
+    if(this.jumpingAway || this.jumpingRope)
       return;
     var head = findChild(this, "headHero");
     var x, y;
