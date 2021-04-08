@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Healthy Habits Tamagotchi</title>
+  <title>Proteingotchi -  Yammy </title>
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
@@ -11,16 +11,29 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="theme-color" content="#ffffff">
   <link rel="shortcut icon" type="image/png" href="assets/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Luckiest+Guy">
   <style>
     html,
     body {
       margin: 0;
       padding: 0;
+      font-family: 'Luckiest Guy';
     }
   </style>
 </head>
 
+
+<script>
+  //check if browser version supports the api
+  function insideInstalledApp(){
+      return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true
+    }
+</script>
+
 <body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="src/js/PhaserModal.js"></script>
+
   <div id="content"></div>
   <div id="orientation"></div>
 <script type="text/javascript" src="./dist/vendor.bundle.js"></script><script type="text/javascript" src="./dist/bundle.js"></script></body>
