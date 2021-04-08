@@ -1,0 +1,148 @@
+{
+    "menu_instructions": [
+        { 
+            "type": "bitmapText",
+            "content": "Listen to mom carefully!!",
+            "fontFamily": "LuckiestGuy",
+            "fontSize": 24,
+            "color": "0xff0000",
+            "offsetX": -50,
+            "offsetY": -250,
+            "graphicWidth": 220
+        },
+        {
+            "type": "image",
+            "content": "momInfo",
+            "contentScale": 0.5,
+            "offsetX": 100,
+            "offsetY": -260,
+            "graphicWidth": 200
+        },
+        { 
+            "type": "bitmapText",
+            "content": "-change food quantity according to her advice",
+            "fontFamily": "LuckiestGuy",
+            "fontSize": 22,
+            "color": "0xff3877",
+            "offsetX": -40,
+            "offsetY": -180,
+            "graphicWidth": 220
+        },
+        {
+            "type": "image",
+            "content": "plusMinusInfo",
+            "contentScale": 0.25,
+            "offsetX": 110,
+            "offsetY": -180,
+            "graphicWidth": 200
+        },
+        { 
+            "type": "bitmapText",
+            "content": "-some food should be saved for later",
+            "fontFamily": "LuckiestGuy",
+            "fontSize": 22,
+            "color": "0xff3877",
+            "offsetX": -50,
+            "offsetY": -130,
+            "graphicWidth": 220
+        },
+        {
+            "type": "image",
+            "content": "store-button",
+            "contentScale": 0.65,
+            "offsetX": 110,
+            "offsetY": -130,
+            "graphicWidth": 200
+        },
+            {
+            "type": "image",
+            "content": "introType1",
+            "contentScale": 0.3,
+            "offsetY": 0,
+            "offsetX": -70
+            },
+            {
+            "type": "bitmapText",
+            "content": "Cardio day, mostly carbo-hungry",
+            "fontFamily": "LuckiestGuy",
+            "fontSize": 20,
+            "color": "0x0000bb",
+            "offsetY": 0,
+            "offsetX": 70,              
+            "graphicWidth": 180
+            },
+            {
+            "type": "image",
+            "content": "introType2",
+            "contentScale": 0.3,
+            "offsetY": 90,
+            "offsetX": -70
+            },
+            {
+            "type": "bitmapText",
+            "content": "Weightlifting day, muscles hungry for protein",
+            "fontFamily": "LuckiestGuy",
+            "fontSize": 20,
+            "color": "0xbb0000",
+            "offsetY": 90,
+            "offsetX": 70,              
+            "graphicWidth": 180
+            },
+            {
+            "type": "image",
+            "content": "introType3",
+            "contentScale": 0.3,
+            "offsetY": 160,
+            "offsetX": -70
+            },
+            {
+            "type": "bitmapText",
+            "content": "Day at the office, let's eat lightly",
+            "fontFamily": "LuckiestGuy",
+            "fontSize": 20,
+            "color": "0x00bb00",
+            "offsetY": 160,
+            "offsetX": 70,              
+            "graphicWidth": 180
+            }
+        ],
+
+    "nutriInfoTable":[
+        {
+            "type": "bitmapText",
+            "content": "per 100g",
+            "fontFamily": "LuckiestGuy",
+            "fontSize": 16,
+            "color": "0x4438ff",
+            "offsetY": -240,
+            "offsetX": -90
+        },
+        {
+            "type": "bitmapText",
+            "content": "PROTEIN",
+            "fontFamily": "LuckiestGuy",
+            "fontSize": 16,
+            "color": "0x4438ff",
+            "offsetY": -240,
+            "offsetX": -10
+        },
+        {
+            "type": "bitmapText",
+            "content": "CARBS",
+            "fontFamily": "LuckiestGuy",
+            "fontSize": 16,
+            "color": "0x4438ff",
+            "offsetY": -240,
+            "offsetX": 50
+        },
+        {
+            "type": "bitmapText",
+            "content": "FAT",
+            "fontFamily": "LuckiestGuy",
+            "fontSize": 16,
+            "color": "0x4438ff",
+            "offsetY": -240,
+            "offsetX": 110
+        }
+    ]
+}
