@@ -4,33 +4,15 @@
 		"items":[
 			{"key": "roomCabinet", "x": 320, "y": 300},
 			{"key": "roomDesk", "x": 80, "y": 360, "contains": "meal_add", "mommyWarns": ["Let's add some protein, Yummy!"] },
-			{"key": "schoolbag", "x": 280, "y": 350, "contains": "optionsBreakfastBag", "mommyWarns": ["Add some carbs to your protein!"] }
-		],
-		"mommyWarns": ["And keep your room clean!"],
-		"foodWarnings":[
-			{"includes":["eggs", "lean-chicken"], "text":["Nice protein choice!"]},
-			{"includes":["pasta-cheese"], "text":["You got plenty of carbons but not enough protein!"]},
-			{"includes":["broccoli"], "text":["this is low in protein, fat and carbs but rich in vitamins and mineral!"]}
-		],
-		"events":{
-
-		}
+			{"key": "schoolbag", "x": 280, "y": 350, "contains": "meal_finish", "mommyWarns": ["Add some carbs to your protein!"] }
+		]
 	},
 	"kitchen":{
 		"background": "roomKitchen",
 		"items":[
-			{"key": "kitchenFridge", "x": 315, "y": 370, "contains": "breakfastFridge", "mommyWarns": ["Try to include lean protein for your post-workout meal!"] },
-			{"key": "kitchenCabinet", "x": 60, "y": 300, "contains": "breakfastCabinet", "mommyWarns": ["Why not opt for some whole-grain carbs!"] }
-		],
-		"mommyWarns": ["Kitchen time! Be careful with knives over there!!"],
-		"foodWarnings":[
-			{"includes":["eggs", "lean-chicken"], "text":["Nice protein choice!"]},
-			{"includes":["pasta-cheese"], "text":["You got plenty of carbons but not enough protein!"]},
-			{"includes":["broccoli"], "text":["this is low in protein, fat and carbs but rich in vitamins and mineral!"]}
-		],		
-		"events":{
-			
-		}
+			{"key": "kitchenFridge", "x": 315, "y": 370, "contains": "meal_add", "mommyWarns": ["Let's add some lean protein and healthy oils!"] },
+			{"key": "kitchenCabinet", "x": 60, "y": 300, "contains": "meal_finish", "mommyWarns": ["Your snack choice!"] }
+		]
 	},
 	"market":{
 		"background": "marketplace",
@@ -47,13 +29,8 @@
 	"picnic":{
 		"background": "picnic",
 		"items":[
-			{"key": "picnicBag", "x": 150, "y": 200},
-			{"key": "picnicTable", "x": 50, "y": 200}
-		],
-		"mommyWarns": ["you got some nice energy boost Yammy", "why not go a picnic in the woods?"],
-		"foodWarnings":[],
-		"events":{
-			
-		}
+			{"key": "picnicBag", "x": 280, "y": 250, "contains": "meal_add"},
+			{"key": "picnicTable", "x": 100, "y": 350, "contains": "meal_finish"}
+		]
 	}
 }

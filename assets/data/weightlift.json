@@ -9,8 +9,6 @@
 
 	"mealNames": ["breakfast", "lunch", "afternoonSnack"],
 
-	"closeBadOptions": "You didn't really need this shit!",
-
 	"mealParts": [3, 3, 3],
 
 	"mealGoals": [
