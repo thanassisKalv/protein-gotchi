@@ -18,7 +18,10 @@ let Item = function (game, position, properties) {
   this.x = position.x;
   this.y = position.y;
   this.anchor.setTo(0.5);
+  this.scale.setTo(0.75);
   this.name = properties.name;
+  this.toDo = properties.toDo;
+  this.amount = properties.amount;
   //Sprite Type
   this.frame = properties.spriteType;
 
@@ -47,7 +50,6 @@ Item.prototype.constructor = Item;
  * Reset Item features
  * @param {object} position
  * @param {object} properties
- * @param {object} properties
  */
 Item.prototype.reset = function (position, properties) {
   Phaser.Sprite.prototype.reset.call(this, position.x, position.y);
@@ -56,6 +58,9 @@ Item.prototype.reset = function (position, properties) {
   }
   this.angle = 0;
   this.customParams = properties.statsImpact;
+  this.name = properties.name;
+  this.toDo = properties.toDo;
+  this.amount = properties.amount;
   this.frame = properties.spriteType;
   this.body.collideWorldBounds = true;
   this.outOfBoundsKill = false;
