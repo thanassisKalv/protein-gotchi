@@ -124,6 +124,7 @@ gameModal = function (game) {
                 var graphicOpacity = item.graphicOpacity || 1;
                 var graphicW = item.graphicWidth || 200;
                 var graphicH = item.graphicHeight || 200;
+                var context = item.context || null;
 
                 modalLabel = null;
 
@@ -147,6 +148,8 @@ gameModal = function (game) {
                         modalLabel = game.add.bitmapText(0, 0, itemFontfamily, String(content), itemFontSize);
                         modalLabel.contentType = 'bitmapText';
                         modalLabel.align = textAlign;
+                        modalLabel.tint = itemColor;
+                        modalLabel.maxWidth = graphicW;
                         modalLabel.updateText();
                         modalLabel.x = (centerX - (modalLabel.width / 2)) + offsetX;
                         modalLabel.y = (centerY - (modalLabel.height / 2)) + offsetY;
@@ -166,6 +169,7 @@ gameModal = function (game) {
                     modalLabel.contentType = 'sprite';
                     modalLabel.x = (centerX - ((modalLabel.width) / 2)) + offsetX;
                     modalLabel.y = (centerY - ((modalLabel.height) / 2)) + offsetY;
+                    modalLabel.context = context;
                 }
                 else if(itemType === "button") {
                     modalLabel = game.add.button(0, 0, atlasParent, callback, this, buttonHover, content, buttonActive, content);
