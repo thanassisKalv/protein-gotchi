@@ -10,15 +10,16 @@ export default class extends Phaser.State {
     this.load.image("preloader", "./assets/images/preloader.ico");
   }
 
+
   create() {
     this.game.input.maxPointers = 1;
 
     if (this.game.device.desktop) {
-      this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+     // this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
       this.scale.pageAlignHorizontally = true;
       this.scale.pageAlignVertically = true;
     } else {
-      this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+      //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
       this.scale.pageAlignHorizontally = true;
       this.scale.pageAlignVertically = true;
       this.scale.refresh();
