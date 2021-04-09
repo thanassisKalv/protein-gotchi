@@ -144,5 +144,24 @@
             "offsetY": -240,
             "offsetX": 110
         }
-    ]
+    ],
+
+    "emptyStorage":[
+        {
+          "type": "bitmapText",
+          "content": "Your storage is empty!",
+          "fontFamily": "minecraftia",
+          "fontSize": 22,
+          "color": "0xfb387c",
+          "offsetY": -80
+        },
+        {
+          "type": "bitmapText",
+          "content": "Keep preparing your meal...",
+          "fontFamily": "minecraftia",
+          "fontSize": 22,
+          "color": "0x00bb00",
+          "offsetY": 40
+        }
+      ]
 }
