@@ -79,7 +79,7 @@ export function saveLocalItem(key, data) {
  * @param {string} key
  * @param {string|Array|Object} data
  */
- export function saveLocalItemStorage(key, data) {
+ export function saveLocalStorage(key, data) {
   var prefix = "vjcare_storage_";
 
   if (typeof data === "string") {
@@ -87,6 +87,11 @@ export function saveLocalItem(key, data) {
   } else {
     localStorage.setItem(prefix + key, JSON.stringify(data));
   }
+}
+
+export function cleanLocalStorage(key){
+  var prefix = "vjcare_storage_";
+  localStorage.removeItem(prefix+key); 
 }
 
 /**
