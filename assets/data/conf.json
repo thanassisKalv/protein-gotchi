@@ -661,7 +661,8 @@
 			"helpMessage": "Hey, help me today prepare my meals!",
 			"mealReady": "A balanced meal is ready!",
 			"foodOver": "Food supply is over!",
-			"mealGoals": "Meal Goals"
+			"mealGoals": "Meal Goals",
+			"nextMealButton": "Next Meal ->"
 		}
 	},
 	"url": "https://test-pwa-phaser.herokuapp.com/",
