@@ -8,6 +8,7 @@ import {
   getLocalItem,
   saveLocalItem,
   saveLocalStorage,
+  saveMealStatus,
   shuffle,
   getRandomInt,
   tweenTint,
@@ -988,6 +989,8 @@ export default class extends Phaser.State {
     this.fatCounter.setText( this.character.customParams.fat.toFixed(1).toString() + "/" + this.currentGoals.fat+" gr.") ;
   }
 
+
+
   nextMeal(){
     var today = new Date();
     var curHr = today.getHours();
@@ -1008,6 +1011,12 @@ export default class extends Phaser.State {
 
     return [nxMeal, nxTime];
   }
+
+  currentDay(){
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    var nowDate = new Date();
+    return days[nowDate.getDay()];
+  }
   
   /**
    * The game ends and show game over screen
@@ -1015,6 +1024,9 @@ export default class extends Phaser.State {
    */
   gameOver(messages, winner) {
     if (!this.gameOverFlag) {
+
+      saveMealStatus(this.currentDay(), this.mealHour, winner);
+
       var gameOverPanelTween;
 
       //Resets
@@ -1037,7 +1049,6 @@ export default class extends Phaser.State {
 
       gameOverPanelTween.onComplete.add(function () {
         var highscoreData = getLocalItem("highscore"),
-          highscore = !!highscoreData ? highscoreData : "0",
           halfWidth = this.game.width / 2,
           halfHeight = this.game.height / 2,
           gameOverText,
