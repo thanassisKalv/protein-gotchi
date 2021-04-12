@@ -89,6 +89,30 @@ export function saveLocalItem(key, data) {
   }
 }
 
+/**
+ * Private handler to save each day meal-status in LocalStorage
+ * @param {string} currentDay
+ * @param {string} currentMeal
+ * @param {string|Array|Object} data
+ */
+export function saveMealStatus(currentDay, currentMeal, status){
+  var key = "vjcare_meals_status";
+
+  var data = localStorage.getItem(key);
+  console.log(data);
+
+  if(data == null) {
+    data = {};
+  }else{
+    data = JSON.parse(data);
+  }
+  
+  data[currentDay+"_"+currentMeal] = status;
+
+  localStorage.setItem(key, JSON.stringify(data));
+
+}
+
 export function cleanLocalStorage(key){
   var prefix = "vjcare_storage_";
   localStorage.removeItem(prefix+key); 
