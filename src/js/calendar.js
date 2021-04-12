@@ -11,7 +11,7 @@ import {
  * @constructor
  * @extends {Phaser.BitmapText}
  */
-let Calendar = function (game, position) {
+let Calendar = function (game, position, currentMeal) {
   Phaser.BitmapText.call(this, game, position.x, position.y, "minecraftia", "Meal Calendar", 17);
 
   //Location
@@ -20,6 +20,7 @@ let Calendar = function (game, position) {
   this.game = game;
   this.anchor.setTo(0.5);
   this.tint = 0xfcb338;
+  this.mealNow = currentMeal;
 
   //this.scale.setTo(0.75);
   this.calendarButton = game.add.sprite(0, 35, "mealCalendar" );
@@ -50,7 +51,7 @@ Calendar.prototype.createModals = function () {
   const posX = [-120, 0, 120, -120, 0, 120, 0];
   var d = new Date();
   var today = days[d.getDay()];
-  var mealNow = this.dayPeriod();
+  //var mealNow = this.dayPeriod();
 
   for(var i=0; i<days.length; i++){
     itemsArrNew.push({
@@ -70,7 +71,7 @@ Calendar.prototype.createModals = function () {
       offsetX: posX[i]
       })
     for(var j=0; j<meals.length; j++){
-      var nextMeal = (days[i]==today && mealNow==meals[j]);
+      var nextMeal = (days[i]==today &&  this.mealNow==meals[j]);
       itemsArrNew.push({
         type: "bitmapText",
         content: nextMeal ? '-> '+meals[j] : meals[j],
@@ -106,7 +107,7 @@ Calendar.prototype.dayPeriod = function (){
 
 
 Calendar.prototype.displayModal = function () {
-  console.log(this.emptyModalName);
+
   this.game.modalHandler.showModal(this.emptyModalName);
 }
 
