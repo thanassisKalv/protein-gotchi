@@ -1,6 +1,6 @@
 import {
-  saveLocalItemStorage,
-  getLocalItemStorage
+  getLocalItemStorage,
+  cleanLocalStorage
 } from "./util";
 
 /**
@@ -26,22 +26,20 @@ let Storage = function (game, position, confData) {
 
   this.addChild(this.unstoreButton);
 
-  //this.unstoreButton.events.onInputOver.add(changeAlpha, this);
-
   //Item properties
   this.confData = confData;
-  console.log(this.confData);
-  //console.log(this);
 
   this.storedFoods = [];
 
   this.unstoreButton.events.onInputDown.add(foodsModal, this);
   this.events.onInputDown.add(this.storeNewFood, this);
 
-  this.modalHandler = new gameModal(game);
+  //this.game.modalHandler = new gameModal(game);
+  this.modalContent = JSON.parse(this.game.cache.getText("modals_content"));
   this.emptyModalName = "emptyfoodStorage";
   this.containsModalName = "foodStorage";
 
+  this.createModals();
   this.checkExistingStorage();
 
 };
@@ -52,7 +50,9 @@ Storage.prototype.constructor = Storage;
 Storage.prototype.checkExistingStorage = function () {
 
   this.storedFoods = getLocalItemStorage("foods");
-  console.log(this.storedFoods);
+  //console.log(this.storedFoods);
+  if (this.storedFoods==null)
+    this.storedFoods = [];
   this.updateModal();
 }
 
@@ -84,37 +84,54 @@ Storage.prototype.storeNewFood = function () {
   });
 }
 
+Storage.prototype.emptyStorage = function(){
+  //console.log(this.context);
+  this.context.storedFoods = [];
+  this.context.game.modalHandler.hideModal(this.context.containsModalName);
+  this.context.updateModal();
+  this.context.game.modalHandler.showModal(this.context.emptyModalName);
+  cleanLocalStorage("foods");
+}
 
 Storage.prototype.updateModal = function() {
-  this.modalHandler.destroyModal(this.containsModalName);
-  console.log(this.storedFoods);
+  this.game.modalHandler.destroyModal(this.containsModalName);
 
   const startY= -220;
   var itemsArrNew = [];
   for(var i=0; i<this.storedFoods.length; i++){
     itemsArrNew.push({
-      type: "text",
+      type: "bitmapText",
       content: this.storedFoods[i].name,
-      fontFamily: "Luckiest Guy",
+      fontFamily: "LuckiestGuy",
       fontSize: 22,
       color: "0xfb387c",
-      offsetY: startY+i*55,
-      offsetX: -50,
-      graphicWidth: 200
+      offsetY: startY+i*60,
+      offsetX: -50
     })
     itemsArrNew.push({
       type: "sprite",
       atlasParent: this.storedFoods[i].key,
       content: this.storedFoods[i].frame,
-      offsetY: startY+i*45,
+      offsetY: startY+i*60,
       offsetX: 50,
       graphicWidth: 200
     })
   }
 
-  console.log(itemsArrNew);
+  itemsArrNew.push({
+    type: "sprite",
+    atlasParent: "discardButton",
+    offsetY: 150,
+    offsetX: 160,
+    graphicWidth: 200,
+    contentScale: 0.5,
+    context: this,
+    callback: this.emptyStorage
+  })
 
-  this.modalHandler.createModal({
+  //console.log(itemsArrNew);
+
+  this.game.modalHandler.createModal({
       type: this.containsModalName,
       includeBackground: true,
       modalCloseOnInput: true,
@@ -125,67 +142,27 @@ Storage.prototype.updateModal = function() {
 
 Storage.prototype.createModals = function () {
 
-  this.modalHandler.createModal({
+  this.game.modalHandler.createModal({
     type: this.emptyModalName,
     includeBackground: true,
     modalCloseOnInput: true,
-    itemsArr: [
-          {
-            type: "text",
-            content: "Your storage is empty!",
-            fontFamily: "Luckiest Guy",
-            fontSize: 22,
-            color: "0xfb387c",
-            offsetY: -80,
-            graphicWidth: 200
-          },
-          {
-            type: "text",
-            content: "Keep preparing your meal...",
-            fontFamily: "Luckiest Guy",
-            fontSize: 22,
-            color: "0x00bb00",
-            offsetY: 40,
-            graphicWidth: 200
-          }
-        ]
+    itemsArr: this.modalContent.emptyStorage
     });
 
-    this.modalHandler.createModal({
+    this.game.modalHandler.createModal({
       type: this.containsModalName,
       includeBackground: true,
       modalCloseOnInput: true,
       itemsArr: [
-            {
-              type: "text",
-              content: "Item X (sample banana)",
-              fontFamily: "Luckiest Guy",
-              fontSize: 22,
-              color: "0xfb387c",
-              offsetY: -100,
-              offsetX: -50,
-              graphicWidth: 200
-            },
-            {
-              type: "sprite",
-              atlasParent: "items-breakfast",
-              content: 3,
-              fontFamily: "Luckiest Guy",
-              fontSize: 22,
-              color: "0x00bb00",
-              offsetY: -100,
-              offsetX: 50,
-              graphicWidth: 200
-            }
           ]
       });
 }
 
 Storage.prototype.displayModal = function (empty) {  
   if(empty)
-    this.modalHandler.showModal(this.emptyModalName);
+    this.game.modalHandler.showModal(this.emptyModalName);
   else
-    this.modalHandler.showModal(this.containsModalName);
+    this.game.modalHandler.showModal(this.containsModalName);
 }
 
 
