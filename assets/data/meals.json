@@ -1,5 +1,297 @@
 {
 "meals":{
+
+	"breakfast_for_carbs":{
+		"_id": "Charite-C2-1800-43",
+		"momIntro":[
+			"I know you're planning some outdoor excercise",
+			"time to eat some nice carbs, but not so heavy meal"
+		],
+		"place": "bedroom",
+		"foods": ["crepe", "strawberry", "milk", "Bananas", "almonds"],
+		"tags": ["kcal", "fat", "carb", "protein", "fiber"],
+		"nutrition": [369, "10", "57", "13", "6"],
+		"snack": [154, "9", "16", "4", "1"],
+		"instructions": [
+			["you will get your carbs mainly from your pasta", "add up more of it"], 
+			["Tuna is a lean source of protein, why not add more of it"],
+			["hmm Yammy you got already plenty of carbs in your breakfast", "let's save these snacks for later time"] 
+		],
+		"meal_basic": [
+			{
+				"name": "crepe",
+				"spritesheet": "breakfast-carbs",
+				"order": 1,
+				"offsetY": -90,
+				"frame": 0,
+				"type": 0,
+				"toDo": "eat",
+				"gram": 60,
+				"step": 20,
+				"customParams": {
+					"protein": 7,
+					"carbs": 39,
+					"fat": 7,
+					"available": 1
+				}
+			},
+			{
+				"name": "strawberry",
+				"spritesheet": "breakfast-carbs",
+				"order": 2,
+				"offsetY": -90,
+				"frame": 1,
+				"type": 1,
+				"toDo": "eat",
+				"gram": 60,
+				"step": 20,
+				"customParams": {
+					"protein": 7,
+					"carbs": 39,
+					"fat": 7,
+					"available": 1
+				}
+			},
+			{
+				"name": "milk",
+				"spritesheet": "breakfast-carbs",
+				"order": 3,
+				"offsetY": -90,
+				"frame": 2,
+				"type": 2,
+				"toDo": "eat",
+				"gram": 60,
+				"step": 20,
+				"customParams": {
+					"protein": 3.2,
+					"carbs": 5,
+					"fat": 3.3,
+					"available": 1
+				}
+			}
+		],
+		"meal_add": [
+			{
+				"name": "banana",
+				"spritesheet": "breakfast-bag",
+				"order": 1,
+				"offsetY": -45,
+				"frame": 0,
+				"type": 0,
+				"toDo": "eat",
+				"gram":100,
+				"step":20,
+				"customParams": {
+					"protein": 1,
+					"carbs": 23,
+					"fat": 0.3,
+					"available": 1
+				}
+			},
+			{
+				"name": "almonds",
+				"spritesheet": "dinner-veggies",
+				"order": 2,
+				"offsetY": -90,
+				"frame": 2,
+				"type": 2,
+				"toDo": "eat",
+				"gram":40,
+				"step":20,
+				"customParams": {
+					"protein": 21,
+					"carbs": 22,
+					"fat": 50,
+					"available": 1
+				}
+			}
+		],
+		"meal_finish": [
+			{
+				"name": "croissant",
+				"spritesheet": "kitchen-cabinet",
+				"order": 1,
+				"offsetY": -90,
+				"frame": 0,
+				"type": 0,
+				"toDo": "save",
+				"gram":100,
+				"step":20,
+				"customParams": {
+					"protein": 7,
+					"carbs": 43,
+					"fat": 16,
+					"available": 1
+				}
+			},
+			{
+				"name": "choco-bisquits",
+				"spritesheet": "kitchen-cabinet",
+				"order": 2,
+				"offsetY": -90,
+				"frame": 1,
+				"type": 1,
+				"toDo": "save",
+				"gram": 50,
+				"step": 10,
+				"customParams": {
+					"protein": 3.6,
+					"carbs": 66,
+					"fat": 26,
+					"available": 1
+				}
+			}
+
+		]
+	},
+
+	"lunch_after_cardio":{
+		"_id": "Charite-C2-1800-43"
+	},
+
+	"dinner_with_vegs":{
+		"momIntro":[
+			"okay, time for dinner",
+			"let's prepare your Couscous with some veggies"
+		],
+		"place": "kitchen",
+		"foods": ["Couscous", "Eggplant", "Tomatoes", "Parsley", "Garlic", "Lemon juice", "Coconut milk"],
+		"tags": ["kcal", "fat", "carb", "protein", "fiber"],
+		"nutrition": [279, "7", "45", "10", "6"],
+		"id_": "Charite-C2-1400-33-VegetarianL",
+		"instructions": [
+			["you will get your carbs mainly from your pasta", "add up more of it"], 
+			["Tuna is a lean source of protein, why not add more of it"],
+			["let's add up more healthy fats", "hmm... let's save the carbs for another breakfast"] 
+		],
+		"meal_basic": [
+			{
+				"name": "couscous",
+				"spritesheet": "dinner-veggies",
+				"order": 1,
+				"offsetY": -90,
+				"frame": 0,
+				"type": 0,
+				"toDo": "eat",
+				"gram":80,
+				"step":20,
+				"customParams": {
+					"protein": 3.8,
+					"carbs": 23,
+					"fat": 0,
+					"available": 1
+				}
+			},
+			{
+				"name": "eggplant",
+				"spritesheet": "dinner-veggies",
+				"order": 2,
+				"offsetY": -90,
+				"frame": 1,
+				"type": 1,
+				"toDo": "eat",
+				"gram":40,
+				"step":20,
+				"customParams": {
+					"protein": 1,
+					"carbs": 9,
+					"fat": 0,
+					"available": 1
+				}
+			},
+			{
+				"name": "tomatoes",
+				"spritesheet": "salad-lunch",
+				"order": 3,
+				"offsetY": -90,
+				"frame": 2,
+				"type": 2,
+				"toDo": "eat",
+				"gram":40,
+				"step":20,
+				"customParams": {
+					"protein": 1,
+					"carbs": 9,
+					"fat": 0,
+					"available": 1
+				}
+			}
+		],
+		"meal_add": [
+			{
+				"name": "tuna",
+				"spritesheet": "main-lunch",
+				"order": 1,
+				"offsetY": -90,
+				"frame": 0,
+				"type": 0,
+				"toDo": "eat",
+				"gram": 60,
+				"step":20,
+				"customParams": {
+					"protein": 24,
+					"carbs": 0,
+					"fat": 3,
+					"available": 1
+				}
+			},
+			{
+				"name": "broccoli",
+				"spritesheet": "main-lunch",
+				"order": 2,
+				"offsetY": -90,
+				"frame": 1,
+				"type": 1,
+				"toDo": "eat",
+				"gram": 80,
+				"step":-1,
+				"customParams": {
+					"protein": 2.5,
+					"carbs": 7,
+					"fat": 0.5,
+					"available": 1
+				}
+			}
+		],
+		"meal_finish": [
+			{
+				"name": "olive oil",
+				"spritesheet": "main-lunch",
+				"order": 1,
+				"offsetY": -90,
+				"frame": 2,
+				"type": 2,
+				"toDo": "eat",
+				"gram": 10,
+				"step": 2,
+				"customParams": {
+					"protein": 0,
+					"carbs": 0,
+					"fat": 100,
+					"available": 1
+				}
+			},
+			{
+				"name": "toast bread",
+				"spritesheet": "kitchen-cabinet",
+				"order": 2,
+				"offsetY": -90,
+				"frame": 2,
+				"type": 2,
+				"toDo": "save",
+				"gram": 60,
+				"step": 10,
+				"customParams": {
+					"protein": 11,
+					"carbs": 52,
+					"fat": 4.5,
+					"available": 1
+				}
+			}
+
+		]
+	},
+
     "coffee_sandwich":{
             "foods": ["Coffee", "Bread", "Margarine", "Marmalade", "Ham", "Tomatoes"],
             "tags": ["kcal", "fat", "carb", "protein", "fiber"],
@@ -63,7 +355,7 @@
 					"offsetY": -90,
 					"frame": 0,
 					"type": 0,
-                    "toDo": "eat",
+					"toDo": "eat",
 					"gram":200,
 					"step":50,
 					"customParams": {
@@ -80,7 +372,7 @@
 					"offsetY": -90,
 					"frame": 1,
 					"type": 1,
-                    "toDo": "eat",
+					"toDo": "eat",
 					"gram":40,
 					"step":20,
 					"customParams": {
@@ -97,7 +389,7 @@
 					"offsetY": -90,
 					"frame": 2,
 					"type": 2,
-                    "toDo": "save",
+					"toDo": "save",
 					"gram":150,
 					"step":-1,
 					"customParams": {
@@ -116,7 +408,7 @@
 					"offsetY": -90,
 					"frame": 0,
 					"type": 0,
-                    "toDo": "eat",
+					"toDo": "eat",
 					"gram": 60,
 					"step":-1,
 					"customParams": {
@@ -133,7 +425,7 @@
 					"offsetY": -90,
 					"frame": 2,
 					"type": 2,
-                    "toDo": "save",
+					"toDo": "save",
 					"gram": 80,
 					"step":-1,
 					"customParams": {
@@ -449,6 +741,6 @@
 				}
 	
 			]
-			}
+		}
 	}
 }

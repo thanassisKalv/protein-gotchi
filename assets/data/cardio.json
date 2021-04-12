@@ -7,26 +7,26 @@
 		"let's choose wisely and create a breakfast easy to digest"
 	],
 
-	"mealNames": ["breakfast", "lunch", "afternoonSnack"],
+	"mealNames": ["breakfast_for_carbs", "lunch_at_office", "dinner_with_vegs"],
 
 	"mealParts": [3, 3, 3],
 
 	"mealGoals": [
-		{"protein":55, "carbs": 60, "fat": 25}, 
-		{"protein":50, "carbs": 50, "fat": 30}, 
+		{"protein":25, "carbs": 70, "fat": 19}, 
+		{"protein":50, "carbs": 50, "fat": 25}, 
 		{"protein":35, "carbs": 35, "fat": 25}
 	],
 
 	"gameoverLimits":[
-		{"protein":70, "carbs": 70, "fat": 35}, 
-		{"protein":60, "carbs": 50, "fat": 35}, 
+		{"protein":35, "carbs": 80, "fat": 27}, 
+		{"protein":65, "carbs": 65, "fat": 35}, 
 		{"protein":45, "carbs": 45, "fat": 30}
 	],
 
 	"foodWarnings":[
 		{"includes":["eggs", "lean-chicken"], "text":"Lean protein, better for post-workout!", "immediate":false, "positive":false},
 		{"includes":["pasta-cheese"], "text":"Nice, you got plenty of carbons and a few protein!", "immediate":false, "positive":true},
-		{"includes":["broccoli"], "text":"this is low in protein, fat and carbs but rich in vitamins and minerals!", "immediate":false, "positive":true},
+		{"includes":["broccoli"], "text":"broccoli is rich in vitamins and minerals!", "immediate":false, "positive":true},
 		{"includes":["cupcake"],  "text":"Too much sugar Yammy! You better replace it with some slow carbs", "immediate":false, "positive":false},
 		{"includes":["yogurt"], "text": "easily digestible protein, perfect for pre-workout", "immediate":false, "positive":true},
 		{"includes":["banana", "apple"], "text": "healthy carbs choice! let's add some protein!", "immediate":true, "positive":false}
