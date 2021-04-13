@@ -405,7 +405,7 @@ export default class extends Phaser.State {
   }
 
   createNavigationButtons(){
-    this.exerciseButton = this.game.add.sprite( this.game.width-15, 2*this.game.height/4 + 10, "jumpRope");
+    this.exerciseButton = this.game.add.sprite( this.game.width-15, this.game.height/6, "jumpRope");
     this.exerciseButton.anchor.setTo(0.5);
     this.exerciseButton.scale.setTo(0.4);
     //this.exerciseButton.alpha = 0.5;
@@ -434,6 +434,10 @@ export default class extends Phaser.State {
     var position2 = labelPortion + labelPortion / 2;
     var position3 = labelPortion * 2 + labelPortion / 2;
 
+    this.scoreBoard = this.game.add.sprite(position2, 80, "scoreBoard");
+    this.scoreBoard.alpha = 0.7;
+    this.scoreBoard.anchor.setTo(0.5);
+    this.scoreBoard.scale.setTo(1.08);
     this.mealGoalsLabel = this.game.add.bitmapText( 70, 15, "minecraftia", this.confData.text[this.locale].mealGoals, 23 );
     this.mealGoalsLabel.tint = 0x4400ff;
     this.mealGoalsLabel.anchor.setTo(0.5);
@@ -1159,7 +1163,7 @@ export default class extends Phaser.State {
    * Restart game properties
    */
   restart() {
-    console.log(this.buttons);
+    //console.log(this.buttons);
     //Reset and restart the game
     this.timerTimeUpdate.stop();
     this.uiBlocked = false;
