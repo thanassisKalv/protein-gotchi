@@ -75,7 +75,7 @@
 				"name": "banana",
 				"spritesheet": "breakfast-bag",
 				"order": 1,
-				"offsetY": -45,
+				"offsetY": -90,
 				"frame": 0,
 				"type": 0,
 				"toDo": "eat",
@@ -288,7 +288,304 @@
 					"available": 1
 				}
 			}
+		]
+	},
 
+	"dinner_for_carbs":{
+		"_id": "Charite-C2-1800-50",
+		"momIntro":[
+			"with these ingredients you can have light dinner",
+			"with a fruity and high-energy snack"
+		],
+		"foods": ["Bread-slices", "Cucumber", "Cottage", "Banana", "Strawberry", "Yogurt"],
+		"place": "kitchen",
+		"nutrition": [264, "8", "34", "16", "5"],
+		"snack": [198, "3", "40", "6", "0"],
+		"instructions": [
+			["you will get your carbs mainly from your grains", "add up more of it"], 
+			["great, smoothie time", "you need more of these tasty fruits"],
+			["I am sure that some protein is missing from this smoothie!", "and will make it more creamy too"] 
+		],
+		"meal_basic": [
+			{
+				"name": "bread",
+				"spritesheet": "breakfast",
+				"order": 1,
+				"offsetY": -90,
+				"frame": 2,
+				"type": 2,
+				"toDo": "save",
+				"gram": 80,
+				"step": 20,
+				"customParams": {
+					"protein": 9,
+					"carbs": 49,
+					"fat": 3,
+					"available": 1
+				}
+			},
+			{
+				"name": "cucumber",
+				"spritesheet": "salad-lunch",
+				"order": 2,
+				"offsetY": -90,
+				"frame": 0,
+				"type": 0,
+				"toDo": "eat",
+				"gram":20,
+				"step":20,
+				"customParams": {
+					"protein": 1,
+					"carbs": 3.5,
+					"fat": 0,
+					"available": 1
+				}
+			},
+			{
+				"name": "cottage",
+				"spritesheet": "breakfast",
+				"order": 3,
+				"offsetY": -90,
+				"frame": 0,
+				"type": 0,
+				"gram":60,
+				"step":20,
+				"customParams": {
+					"protein": 11,
+					"carbs": 3.5,
+					"fat": 4.5,
+					"available": 1
+				}
+			}
+		],
+		"meal_add": [
+			{
+				"name": "banana",
+				"spritesheet": "breakfast-bag",
+				"order": 1,
+				"offsetY": -90,
+				"frame": 0,
+				"type": 0,
+				"toDo": "eat",
+				"gram":100,
+				"step":20,
+				"customParams": {
+					"protein": 1,
+					"carbs": 23,
+					"fat": 0.3,
+					"available": 1
+				}
+			},
+			{
+				"name": "strawberry",
+				"spritesheet": "breakfast-carbs",
+				"order": 2,
+				"offsetY": -90,
+				"frame": 1,
+				"type": 1,
+				"toDo": "eat",
+				"gram": 60,
+				"step": 20,
+				"customParams": {
+					"protein": 7,
+					"carbs": 39,
+					"fat": 7,
+					"available": 1
+				}
+			}
+		],
+		"meal_finish": [
+			{
+				"name": "yogurt",
+				"spritesheet": "breakfast-desk",
+				"order": 1,
+				"offsetY": -90,
+				"frame": 0,
+				"type": 0,
+				"toDo": "eat",
+				"gram": 60,
+				"step": 20,
+				"customParams": {
+					"protein": 6,
+					"carbs": 7,
+					"fat": 2,
+					"available": 1
+				}
+			},
+			{
+				"name": "peanutbutter",
+				"spritesheet": "breakfast-desk",
+				"order": 2,
+				"offsetY": -90,
+				"frame": 1,
+				"type": 1,
+				"toDo": "eat",
+				"gram": 30,
+				"step": 10,
+				"customParams": {
+					"protein": 22,
+					"carbs": 24,
+					"fat": 50,
+					"available": 1
+				}
+			}
+		]
+	},
+
+	"dinner_high_protein":{
+		"_id": "FMH-B2-1500-01",
+		"momIntro":[
+			"it was a tough day",
+			"you need good portion of proteins"
+		],
+		"foods": ["veg-soup", "salmon", "sweet-potato", "Lettuce", "Banana", "Strawberry"],
+		"place": "kitchen",
+		"nutrition": [617, "25", "56", "44", "7"],
+		"instructions": [
+			["pick up some veggies for your starting soup"],
+			["I can smell the fish Yammy", "accompany it with some salad"], 
+			["prepare a fruit salad for snack","you will get some healthy carbs"] 
+		],
+		"meal_add": [
+			{
+				"name": "salmon",
+				"spritesheet": "dinner-protein",
+				"order": 1,
+				"offsetY": -90,
+				"frame": 0,
+				"type": 0,
+				"toDo": "eat",
+				"gram": 60,
+				"step": 20,
+				"customParams": {
+					"protein": 22,
+					"carbs": 0,
+					"fat": 12,
+					"available": 1
+				}
+			},
+			{
+				"name": "sweet-potato",
+				"spritesheet": "dinner-protein",
+				"order": 2,
+				"offsetY": -90,
+				"frame": 1,
+				"type": 1,
+				"toDo": "eat",
+				"gram": 60,
+				"step": 20,
+				"customParams": {
+					"protein": 2,
+					"carbs": 21,
+					"fat": 0,
+					"available": 1
+				}
+			},
+			{
+				"name": "lettuce",
+				"spritesheet": "dinner-protein",
+				"order": 3,
+				"offsetY": -90,
+				"frame": 2,
+				"type": 2,
+				"toDo": "eat",
+				"gram": 60,
+				"step": 20,
+				"customParams": {
+					"protein": 1,
+					"carbs": 3,
+					"fat": 0,
+					"available": 1
+				}
+			}
+		],
+		"meal_basic": [
+			{
+				"name": "carrot",
+				"spritesheet": "breakfast-bag",
+				"order": 1,
+				"offsetY": -90,
+				"frame": 3,
+				"type": 3,
+				"gram":50,
+				"step":20,
+				"customParams": {
+					"protein": 1,
+					"carbs": 8.5,
+					"fat": 0.2,
+					"available": 3
+				}
+			},
+			{
+				"name": "onion",
+				"spritesheet": "dinner-soup",
+				"order": 2,
+				"offsetY": -90,
+				"frame": 0,
+				"type": 0,
+				"toDo": "eat",
+				"gram":100,
+				"step":20,
+				"customParams": {
+					"protein": 1.5,
+					"carbs": 10,
+					"fat": 0.2,
+					"available": 1
+				}
+			},
+			{
+				"name": "beans",
+				"spritesheet": "dinner-soup",
+				"order": 3,
+				"offsetY": -90,
+				"frame": 1,
+				"type": 1,
+				"toDo": "save",
+				"gram": 60,
+				"step": 20,
+				"customParams": {
+					"protein": 7,
+					"carbs": 39,
+					"fat": 7,
+					"available": 1
+				}
+			}
+		],
+		"meal_finish": [
+			{
+				"name": "banana",
+				"spritesheet": "breakfast-bag",
+				"order": 1,
+				"offsetY": -90,
+				"frame": 0,
+				"type": 0,
+				"toDo": "eat",
+				"gram":60,
+				"step":20,
+				"customParams": {
+					"protein": 1,
+					"carbs": 23,
+					"fat": 0.3,
+					"available": 1
+				}
+			},
+			{
+				"name": "peach",
+				"spritesheet": "muesli-yogurt",
+				"order": 2,
+				"offsetY": -90,
+				"frame": 2,
+				"type": 2,
+				"toDo": "save",
+				"gram":60,
+				"step":20,
+				"customParams": {
+					"protein": 1,
+					"carbs": 9.5,
+					"fat": 0,
+					"available": 1
+				}
+			}
 		]
 	},
 
@@ -600,7 +897,7 @@
 		]
 		},
 	
-		"dinner_after_office":{
+	"dinner_after_office":{
 			"momIntro":[
 				"hey Yammy, time for dinner",
 				"this can be a like a light snack"

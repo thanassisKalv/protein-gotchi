@@ -7,20 +7,20 @@
 		"you need a good portion of proteins and some energy"
 	],
 
-	"mealNames": ["breakfast", "lunch", "afternoonSnack"],
+	"mealNames": ["breakfast_for_carbs", "dinner_after_office", "dinner_high_protein"],
 
 	"mealParts": [3, 3, 3],
 
 	"mealGoals": [
-		{"protein":40, "carbs": 60, "fat": 25}, 
-		{"protein":50, "carbs": 50, "fat": 30}, 
-		{"protein":35, "carbs": 45, "fat": 25}
+		{"protein":17, "carbs": 73, "fat": 19}, 
+		{"protein":35, "carbs": 56, "fat": 18}, 
+		{"protein":44, "carbs": 56, "fat": 25}
 	],
 
 	"gameoverLimits":[
-		{"protein":55, "carbs": 75, "fat": 35}, 
-		{"protein":50, "carbs": 50, "fat": 30}, 
-		{"protein":35, "carbs": 45, "fat": 25}
+		{"protein":25, "carbs": 80, "fat": 35}, 
+		{"protein":50, "carbs": 63, "fat": 25}, 
+		{"protein":50, "carbs": 63, "fat": 31}
 	],
 
 	"foodWarnings":[

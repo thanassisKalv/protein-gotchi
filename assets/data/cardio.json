@@ -7,20 +7,20 @@
 		"let's choose wisely and create a breakfast easy to digest"
 	],
 
-	"mealNames": ["breakfast_for_carbs", "lunch_at_office", "dinner_with_vegs"],
+	"mealNames": ["breakfast_for_carbs", "lunch_at_office", "dinner_for_carbs"],
 
 	"mealParts": [3, 3, 3],
 
 	"mealGoals": [
-		{"protein":25, "carbs": 70, "fat": 19}, 
-		{"protein":50, "carbs": 50, "fat": 25}, 
-		{"protein":35, "carbs": 35, "fat": 25}
+		{"protein":17, "carbs": 70, "fat": 19}, 
+		{"protein":35, "carbs": 55, "fat": 18},
+		{"protein":22, "carbs": 74, "fat": 22}
 	],
 
 	"gameoverLimits":[
-		{"protein":35, "carbs": 80, "fat": 27}, 
-		{"protein":65, "carbs": 65, "fat": 35}, 
-		{"protein":45, "carbs": 45, "fat": 30}
+		{"protein":27, "carbs": 80, "fat": 25}, 
+		{"protein":45, "carbs": 65, "fat": 26}, 
+		{"protein":32, "carbs": 83, "fat": 28}
 	],
 
 	"foodWarnings":[
