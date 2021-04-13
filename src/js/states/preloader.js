@@ -45,6 +45,8 @@ export default class extends Phaser.State {
     this.load.spritesheet("items-main-lunch", "./assets/sprites/items/items-main-lunch.png", 90, 90);
     this.load.spritesheet("items-dinner-veggies", "./assets/sprites/items/items-dinner-veggies.png", 90, 90);
     this.load.spritesheet("items-breakfast-carbs", "./assets/sprites/items/items-breakfast-carbs.png", 90, 90);
+    this.load.spritesheet("items-dinner-soup", "./assets/sprites/items/items-dinner-soup.png", 90, 90);
+    this.load.spritesheet("items-dinner-protein", "./assets/sprites/items/items-dinner-protein.png", 90, 90);
     
     this.load.spritesheet("items-pill-texture", "./assets/sprites/pill-texture.png", 50, 50);
 
@@ -61,6 +63,8 @@ export default class extends Phaser.State {
     this.load.spritesheet("muesli-yogurt", "./assets/sprites/experts/yogurt_muesli.png", 70, 70);
     this.load.spritesheet("salad-lunch", "./assets/sprites/experts/lunch-salad.png", 70, 70);
     this.load.spritesheet("main-lunch", "./assets/sprites/experts/lunch-main.png", 70, 70);
+    this.load.spritesheet("dinner-protein", "./assets/sprites/experts/dinner-protein.png", 70,70);
+    this.load.spritesheet("dinner-soup", "./assets/sprites/experts/dinner-soup.png", 70,70);
 
     this.load.spritesheet("button-retry", "./assets/sprites/button-retry.png", 225, 112);
     this.load.spritesheet("button-next", "./assets/sprites/button-next.png", 225, 112);
@@ -81,6 +85,7 @@ export default class extends Phaser.State {
     this.load.image("picnic", "./assets/images/rooms/picnic-pix.png");
     this.load.image("nutriInfo", "./assets/images/nutInfoPix.gif");
 
+    this.load.image("scoreBoard", "./assets/images/score-board.png");
     this.load.image("panelTime", "./assets/images/panel-right.png");
     this.load.image("mealCalendar", "./assets/images/meal-calendar.png");
     this.load.image("kitchenButton", "./assets/images/kichenButton.png");
