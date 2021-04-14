@@ -646,6 +646,7 @@
 			"highProtein": "Yammy got too many proteins",
 			"highCarbs": "Yammy got too many carbs",
 			"highFat": "Yammy got too many fat",
+			"donotExercise": "Yammy eat your meal before exercise",
 
 			"tryAgain": "Try Again!",
 			"gameOver": "Help Yammy with next meal",
