@@ -144,7 +144,7 @@ export default class extends Phaser.State {
     this.game.itemsGroup = this.itemsGroup;
 
     // UI-elements group so we can get them "in-front" with a single call
-    this.createNavigationButtons();
+    //this.createNavigationButtons();
     this.createActionButtons();
 
     //Create UI
@@ -251,8 +251,8 @@ export default class extends Phaser.State {
     var tmpTip = new Phasetips(this.game, {
       targetObject: targetSprite,
       context: dialog,
-      fontSize: 14, fontFill: "blue",
-      backgroundColor: 0xff9d5c, roundedCornersRadius: 10,
+      fontSize: 16, fontFill: "blue",
+      backgroundColor: 0xff9d5c, roundedCornersRadius: 14,
       strokeColor: 0xfec72c, position: pos, animationDelay: 100, 
       animation: "grow", animationSpeedShow:200, animationSpeedHide:100
     });
@@ -402,12 +402,10 @@ export default class extends Phaser.State {
     this.storeButton = new Storage(this.game, {x: -2, y: this.game.height/2-100}, this.confData);
     //this.storeButton.createModals();
     this.uiButtons.add(this.storeButton);
-  }
 
-  createNavigationButtons(){
-    this.exerciseButton = this.game.add.sprite( this.game.width-15, this.game.height/6, "jumpRope");
+    this.exerciseButton = this.game.add.sprite( 80, this.game.height-30, "jumpRope");
     this.exerciseButton.anchor.setTo(0.5);
-    this.exerciseButton.scale.setTo(0.4);
+    this.exerciseButton.scale.setTo(0.3);
     //this.exerciseButton.alpha = 0.5;
     this.exerciseButton.inputEnabled = true;
     this.exerciseButton.events.onInputDown.add(this.doesRopeJumping, this);
@@ -924,6 +922,10 @@ export default class extends Phaser.State {
         messages.reason = this.confData.text[this.locale].highCarbs;
       if (this.character.customParams.fat > this.upperLimit.fat) 
         messages.reason = this.confData.text[this.locale].highFat;
+
+      if (this.character.jumpingRope){
+        messages.reason = this.confData.text[this.locale].donotExercise;
+      }
       
 
       messages.tryAgain = this.confData.text[ this.locale ].tryAgain.toUpperCase();
@@ -1021,6 +1023,12 @@ export default class extends Phaser.State {
     var nowDate = new Date();
     return days[nowDate.getDay()];
   }
+  nextDay(){
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    var nowDate = new Date();
+    var tomorrow = (nowDate.getDay() + 1) % 7;
+    return days[tomorrow];
+  }
   
   /**
    * The game ends and show game over screen
@@ -1083,9 +1091,9 @@ export default class extends Phaser.State {
         sharedBodySprite.addChild(sharedHeadSprite);
 
         function getNextMealNotification(){
-          var nxMeal = this.nextMeal();
+          var nxMeal = this.nextDay();
           // ---- inform server about finishing this meal ----
-          checkNextMeal(nxMeal[0], nxMeal[1]);
+          checkNextMeal(nxMeal);
 
           this.game.add.tween(notifyButton).to({ x: notifyButton.x+300, y:notifyButton.y}, 300).start()
           this.game.add.tween(gameOverText).to({ x: gameOverText.x+300, y:gameOverText.y}, 300).start()
@@ -1098,16 +1106,20 @@ export default class extends Phaser.State {
         gameOverText = this.add.bitmapText( halfWidth, 50, "minecraftia", this.confData.text[this.locale].gameOver.toUpperCase()+"!", 18);
         gameOverText.anchor.setTo(0.5);
         gameOverText.maxWidth = 250;
+        // these will be visible after last meal of the day
+        notifyButton.visible = false;
+        gameOverText.visible = false
 
         reasonText = this.add.bitmapText( halfWidth, 140, "minecraftia", messages.reason, 30 );
         reasonText.anchor.setTo(0.5);
         reasonText.maxWidth = 290;
+        reasonText.tint = winner? 0x00cc00 : 0xffa500;
 
         var startingWarnings = 220;
         var _game = this.game;
         this.finishWarnPositive.forEach( function(warnText, index){
           var warnBitText = _game.add.bitmapText( halfWidth-40 , startingWarnings+index*60, "minecraftia", "+ "+warnText.toUpperCase(), 16);
-          warnBitText.tint = 0x000cc00;
+          warnBitText.tint = 0x00cc00;
           warnBitText.maxWidth = 220;
           gameOverGroup.add(warnBitText);
         });
@@ -1125,6 +1137,13 @@ export default class extends Phaser.State {
         nextMealButton.anchor.setTo(0.5);
         nextMealText = this.add.bitmapText( nextMealButton.x, nextMealButton.y, "minecraftia", this.confData.text[this.locale].nextMealButton, 22 );
         nextMealText.anchor.setTo(0.5);
+        var nextMeal = this.mealOrder+1;
+        if ( nextMeal%3==0) {
+          nextMealText.visible = false;
+          nextMealButton.visible = false;
+          notifyButton.visible = true;
+          gameOverText.visible = true;
+        }
 
         //Credits
         creditsText = this.add.bitmapText( 0, this.game.height - 20, "minecraftia", "By protein.eu", 10 );
