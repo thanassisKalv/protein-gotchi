@@ -1,6 +1,7 @@
 import {
   getLocalItemStorage,
-  cleanLocalStorage
+  cleanLocalStorage,
+  loadMealStatus
 } from "./util";
 
 /**
@@ -52,7 +53,8 @@ Calendar.prototype.createModals = function () {
   var d = new Date();
   var today = days[d.getDay()];
   //var mealNow = this.dayPeriod();
-
+  var mealStatus = loadMealStatus()
+  
   for(var i=0; i<days.length; i++){
     itemsArrNew.push({
       type: "bitmapText",
@@ -71,13 +73,18 @@ Calendar.prototype.createModals = function () {
       offsetX: posX[i]
       })
     for(var j=0; j<meals.length; j++){
-      var nextMeal = (days[i]==today &&  this.mealNow==meals[j]);
+      var mealTag = days[i]+"_"+meals[j];
+      var mealCompleted = mealStatus[ mealTag ];
+      var mealColor = mealCompleted ? "0x00FF00" : "0xfb387c";
+      //if (mealStatus[days[i]+"_"+meals[j]]) 
+      var nextMeal = (days[i]==today && this.mealNow==meals[j]);
+      mealColor = nextMeal? "0xffa500" : mealColor;
       itemsArrNew.push({
         type: "bitmapText",
-        content: nextMeal ? '-> '+meals[j] : meals[j],
+        content: nextMeal ? '-> '+meals[j] : (mealCompleted? "*"+meals[j] : meals[j] ),
         fontFamily: "LuckiestGuy",
         fontSize: 18,
-        color: nextMeal?  "0x77ff33": "0xfb387c",
+        color: mealColor,
         offsetY: posY[i]+(j+1)*40,
         offsetX: posX[i]
       })
