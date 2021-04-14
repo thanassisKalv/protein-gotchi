@@ -113,6 +113,19 @@ export function saveMealStatus(currentDay, currentMeal, status){
 
 }
 
+export function loadMealStatus(){
+  var key = "vjcare_meals_status";
+  var data = localStorage.getItem(key);
+
+  if(data == null) 
+    data = {};
+  else
+    data = JSON.parse(data);
+  
+  return data;
+}
+
+
 export function cleanLocalStorage(key){
   var prefix = "vjcare_storage_";
   localStorage.removeItem(prefix+key); 
