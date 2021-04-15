@@ -6,31 +6,31 @@
             "fontFamily": "LuckiestGuy",
             "fontSize": 24,
             "color": "0xff0000",
-            "offsetX": -50,
+            "offsetX": -30,
             "offsetY": -250,
-            "graphicWidth": 220
+            "graphicWidth": 250
         },
         {
             "type": "image",
             "content": "momInfo",
             "contentScale": 0.5,
-            "offsetX": 100,
+            "offsetX": 130,
             "offsetY": -260,
             "graphicWidth": 200
         },
         { 
             "type": "bitmapText",
-            "content": "-change food quantity according to her advice",
+            "content": "- check your options",
             "fontFamily": "LuckiestGuy",
             "fontSize": 22,
             "color": "0xff3877",
-            "offsetX": -40,
+            "offsetX": -50,
             "offsetY": -180,
             "graphicWidth": 220
         },
         {
             "type": "image",
-            "content": "plusMinusInfo",
+            "content": "nutriInfo",
             "contentScale": 0.25,
             "offsetX": 110,
             "offsetY": -180,
@@ -38,74 +38,114 @@
         },
         { 
             "type": "bitmapText",
-            "content": "-some food should be saved for later",
+            "content": "- change food quantity according to her advice",
             "fontFamily": "LuckiestGuy",
             "fontSize": 22,
             "color": "0xff3877",
-            "offsetX": -50,
-            "offsetY": -130,
+            "offsetX": -40,
+            "offsetY": -120,
             "graphicWidth": 220
         },
         {
             "type": "image",
-            "content": "store-button",
-            "contentScale": 0.65,
+            "content": "plusMinus",
+            "contentScale": 0.28,
             "offsetX": 110,
-            "offsetY": -130,
+            "offsetY": -120,
             "graphicWidth": 200
         },
-            {
+        { 
+            "type": "bitmapText",
+            "content": "- discard and go to next",
+            "fontFamily": "LuckiestGuy",
+            "fontSize": 22,
+            "color": "0xff3877",
+            "offsetX": -50,
+            "offsetY": -60,
+            "graphicWidth": 220
+        },
+        {
+            "type": "image",
+            "content": "discardButton",
+            "contentScale": 0.6,
+            "offsetX": 110,
+            "offsetY": -60,
+            "graphicWidth": 200
+        },
+        { 
+            "type": "bitmapText",
+            "content": "- have an overview of the...",
+            "fontFamily": "LuckiestGuy",
+            "fontSize": 22,
+            "color": "0xff3877",
+            "offsetX": -50,
+            "offsetY": 0,
+            "graphicWidth": 220
+        },
+        {
+            "type": "bitmapText",
+            "content": "meal goals",
+            "fontFamily": "LuckiestGuy",
+            "fontSize": 22,
+            "color": "0x4400ff",
+            "offsetX": 110,
+            "offsetY": -10,
+            "graphicWidth": 200
+        },
+
+
+        {
             "type": "image",
             "content": "introType1",
-            "contentScale": 0.3,
-            "offsetY": 0,
+            "contentScale": 0.25,
+            "offsetY": 70,
             "offsetX": -70
-            },
-            {
+        },
+        {
             "type": "bitmapText",
             "content": "Cardio day, mostly carbo-hungry",
             "fontFamily": "LuckiestGuy",
-            "fontSize": 20,
+            "fontSize": 19,
             "color": "0x0000bb",
-            "offsetY": 0,
+            "offsetY": 70,
             "offsetX": 70,              
             "graphicWidth": 180
-            },
-            {
+        },
+        {
             "type": "image",
             "content": "introType2",
-            "contentScale": 0.3,
-            "offsetY": 90,
-            "offsetX": -70
-            },
-            {
-            "type": "bitmapText",
-            "content": "Weightlifting day, muscles hungry for protein",
-            "fontFamily": "LuckiestGuy",
-            "fontSize": 20,
-            "color": "0xbb0000",
-            "offsetY": 90,
-            "offsetX": 70,              
-            "graphicWidth": 180
-            },
-            {
-            "type": "image",
-            "content": "introType3",
-            "contentScale": 0.3,
+            "contentScale": 0.25,
             "offsetY": 160,
             "offsetX": -70
-            },
-            {
+        },
+        {
+            "type": "bitmapText",
+            "content": "Weightlifting day, muscles need protein",
+            "fontFamily": "LuckiestGuy",
+            "fontSize": 19,
+            "color": "0xbb0000",
+            "offsetY": 160,
+            "offsetX": 70,              
+            "graphicWidth": 180
+        },
+        {
+            "type": "image",
+            "content": "introType3",
+            "contentScale": 0.25,
+            "offsetY": 230,
+            "offsetX": -70
+        },
+        {
             "type": "bitmapText",
             "content": "Day at the office, let's eat lightly",
             "fontFamily": "LuckiestGuy",
-            "fontSize": 20,
+            "fontSize": 19,
             "color": "0x00bb00",
-            "offsetY": 160,
+            "offsetY": 230,
             "offsetX": 70,              
             "graphicWidth": 180
-            }
-        ],
+        }
+    ],
 
     "nutriInfoTable":[
         {
