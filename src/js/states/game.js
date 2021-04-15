@@ -106,16 +106,6 @@ export default class extends Phaser.State {
     this.timeCounter.visible = false;
 
 
-    //Time highscore
-    var highscoreData = getLocalItem("highscore");
-    if (!highscoreData) {
-      highscoreData = 0;
-      saveLocalItem("highscore", 0);
-    }
-    // this.highscore = this.game.add.text(85, 32, "0", { font: "12px Arial", fill: "#ffffff", align: "center", });
-    // this.highscore.anchor.setTo(0.5, 0.5);
-    // this.highscore.setText(highscoreData);
-
     //Sounds
     this.sounds = {
       kidLevelMusic: this.game.add.audio("kidLevelMusic"),
@@ -899,13 +889,7 @@ export default class extends Phaser.State {
         messages.reason = this.confData.text[this.locale].donotExercise;
       }
       
-
       messages.tryAgain = this.confData.text[ this.locale ].tryAgain.toUpperCase();
-
-      //Update highscore if necessary
-      if (this.timeCounter.count > getLocalItem("highscore")) {
-        saveLocalItem("highscore", this.timeCounter.count);
-      }
 
       // saveLocalStorage("foods", this.storeButton.storedFoods);
       //save next_meal's name
@@ -1079,8 +1063,7 @@ export default class extends Phaser.State {
       gameOverPanelTween = this.game.add.tween(this.gameOverPanel).to({ alpha: 0.8 }, 300, Phaser.Easing.Linear.None, true);
 
       gameOverPanelTween.onComplete.add(function () {
-        var highscoreData = getLocalItem("highscore"),
-          halfWidth = this.game.width / 2,
+        var halfWidth = this.game.width / 2,
           halfHeight = this.game.height / 2,
           reasonHeight = this.game.height / 6,
           gameOverText,
