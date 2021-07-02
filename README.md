@@ -6,14 +6,16 @@ Try to choose some nice and healthy ingredients and an appropriate quantity to c
 
 ============
 
-Credis to Jvalen for the code of the original game https://github.com/jvalen/virtualJCare
+Credis to Jvalen for the open-source code on top of which Protein-gotchi was built -> https://github.com/jvalen/virtualJCare
+
+============
 
 
 ### Credits
 
 **Code and graphics** created by [jvalen](http://www.jvrpath.com)
 
-**Main theme** and **intro music** by [Kuja182](https://soundcloud.com/search?q=kuja182)
+**Main theme** and **intro music** by [Kuja182](https://soundcloud.com/search?q=kuja182) (not used in proteingotchi)
 
 **Sound effects** picked from [Freesound](www.freesound.org):
   - Aura sound: [Zetauri](https://www.freesound.org/people/Zetauri/)
