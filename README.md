@@ -1,7 +1,7 @@
 ***
-Little Yammy needs some help with his meals. His mother knows about his habits and throws some advices from time to time
+Little Yammy needs some help with his meals. His mother knows more about a balanced meal plean and throws some advices from time to time.
 
-Explore the rooms and choose some nice and healthy ingredients for Yammy's meals
+Try to choose some nice and healthy ingredients and an appropriate quantity to complete Yammy's weekly meal plan!
 ***
 
 ============
