@@ -4,6 +4,10 @@ Little Yammy needs some help with his meals. His mother knows more about a balan
 Try to choose some nice and healthy ingredients and an appropriate quantity to complete Yammy's weekly meal plan!
 ***
 
+![proteingotchi-1](screenshots/playing-the-game.png)
+
+![proteingotchi-2](screenshots/user-interfaces.png)
+
 ============
 
 Credis to Jvalen for the open-source code on top of which Protein-gotchi was built -> https://github.com/jvalen/virtualJCare
